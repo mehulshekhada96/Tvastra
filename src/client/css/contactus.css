@@ -1,0 +1,155 @@
+ @import "./theme.css";
+ .cont_top{
+    width: 100%;
+    padding: 0;
+    position: relative;
+    height: 15rem;
+}
+ .cont_top img {
+    object-fit: cover;
+    z-index: -10;
+}
+.title {
+    position: absolute;
+    bottom: 22.5%;
+    left: 25%;
+    
+}
+.title h1, .title h5, .title h5 a{
+    color: var(--text-white);
+    font-weight: 900;
+}
+iframe {
+    padding: 5%;
+    width: 90%;
+    height: 15rem;
+}
+.con_det{
+    display: grid;
+    padding: 0;
+    grid-template-columns: 20% auto;
+    grid-row: 60% 40%;
+    height: auto;
+    grid-template-areas: "icon heading"
+    "icon details" ;
+}
+.con_det i {
+    grid-area: icon;
+    color: var(--btn-bg);
+    justify-self: center;
+    align-self: center;
+    font-size: 1.5rem;
+}
+.con_det h4{
+    grid-area: heading ;
+    text-align: start;
+    margin: 0.2rem;
+  
+}
+.con_det p{
+    grid-area: details ;
+    text-align: start;
+    margin: 0.2rem;
+}
+.contact_details{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+#qurform{
+    padding: 1rem;
+    background-color: var(--bg-light-blue);
+    display: grid;
+    position: relative;
+    height: auto;
+} 
+#sbmt{
+    justify-self: right;
+    background-color: var(--text-blue);
+    color: var(--text-white);
+    border: 2px solid var(--text-blue);
+    width: 10rem;
+}
+hr{
+    display: none;
+}
+@media screen and (min-width: 768px){
+    .contact_details{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 95%;
+        height: auto;
+        justify-items: center ;
+        margin: 0;
+        padding: 1rem;
+       
+    }
+    .con_det{
+        grid-template-columns: auto auto;
+        grid-row: auto auto;
+        height: auto;
+    }
+    .con_det i {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+    .title {
+        left: 30%;
+    }
+    #qurform{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4,auto);
+        grid-template-areas: "name msg"
+        "email msg"
+        "subj msg"
+        ". sbmt" ;
+        gap: 0.5rem;
+    }
+    #name{
+        grid-area: name;
+    }
+    #email{
+        grid-area: email;
+    }
+    #subject{
+        grid-area: subj;
+    }
+    #msg{
+        grid-area: msg;
+        
+    }
+    #sbmt{
+        grid-area: sbmt;
+    }
+    #qurform input{
+        margin: 0;
+    }
+   
+}
+@media screen and (min-width: 1025px){
+    .title {
+        left: 5%;
+    }
+    .title h5 {
+        text-align: start;
+    }
+    #det_form{
+        display: grid;
+        grid-template-columns: 30% auto;
+        padding: 1rem 5rem;
+    }
+    .contact_details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 1rem;
+       
+    }
+    hr{
+        display: block;
+    }
+    footer{
+        padding: 2rem 4rem;
+    }
+}

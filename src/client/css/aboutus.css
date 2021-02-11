@@ -1,0 +1,81 @@
+@import "./theme.css";
+
+.about_top{
+  padding: 0;
+  height: 24rem;
+  position: relative;
+}
+.about_top img {
+    object-fit: cover;
+    z-index: -10;
+}
+.title {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+   
+}
+.title h1, .title p{
+    color: white;
+}
+section{
+    padding: 0;
+} 
+.sign{
+    width: 50%;
+    margin: auto;
+}
+.abt_dtl{
+    background-color: black;
+    padding: 1rem 0;
+}
+.abt_dtl1 h2,.abt_dtl1 p {
+    color: white;
+}
+.numbers h3, .numbers p{
+    color: white;
+}
+.numbers{
+    margin:1rem;
+    border: 1px solid var(--text-gray);
+    border-radius: 5px;
+}
+.checkup{
+    width: 50%;
+    margin: 1rem 25%;
+}
+@media screen and (min-width: 768px){
+    .mid{
+        margin: 1rem;
+        display: grid;
+        grid-template-areas: "head img"
+        "para img"
+        "sign .";
+        grid-template-columns: 60%  40%;
+    }
+    .mid h2{
+        grid-area: head;
+        text-align: start;
+    }
+    .mid .para{
+        grid-area: para;
+        padding: 0;
+    }
+    .mid .sign{
+        grid-area: sign;
+    }
+    .mid .female_doctor{
+        grid-area: img;
+        height: max-content;
+        padding: 2rem 0;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    .para p{
+        text-align: start;
+    }
+    .
+}

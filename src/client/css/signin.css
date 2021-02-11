@@ -1,0 +1,82 @@
+@import "./theme.css";
+#full {
+   background-color: var(--bg-light-blue);
+   height: 100%;
+   width: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 0;
+}
+.logo{
+   margin: 0;
+}
+.formcont{
+   background-color: white;
+   margin:  auto 1rem;
+   padding: 0;
+   width: 90%;
+   align-self: center;
+}
+hr{
+   width: 100%;
+}
+.signinform{
+   display: flex;
+   flex-direction: column;
+   padding: 1rem;
+}
+.signinform input, #gender{
+   border: 1px solid var(--light-gray);
+   padding: 1rem;
+   margin: 0.5rem 0;
+}
+.signinform .btn{
+   width: 100%;
+   padding: 1rem;
+}
+footer{
+   display: flex;
+   background: none;
+   margin: 0;
+}
+.arrow{
+   color:#ffffff ;
+   position: relative;
+   bottom: 2.25rem;
+   font-size: 0.75rem;
+}
+.arrow::before{
+   padding-left: 90%;
+}
+.fa-question-circle{
+   
+   position: relative;
+   top: 2.5rem;
+   color: var(--light-gray);
+   padding-left: 90%;
+}
+#login{
+   font-size: 1rem;
+   font-family: "Nexa-bold";
+   font-weight: 900;
+   letter-spacing: 0.4rem;
+}
+h4, h5 a{
+   color: var(--text-blue);
+}
+h5 a{
+   font-family: "Nexa-bold";
+}
+@media only screen and (min-width: 768px){
+   .formcont {
+      width: 500px;
+      height: auto; 
+   }
+}
+@media only screen and (min-width: 1025px ){
+   .formcont {
+      width: 800px;
+      height: auto; 
+   }
+}   

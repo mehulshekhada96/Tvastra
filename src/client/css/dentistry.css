@@ -1,0 +1,242 @@
+@import "./theme.css";
+.logo{
+    padding: 1rem auto;
+}
+.dent_top{
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    background: linear-gradient(to right,var(--btn-bg), rgba(255,255,255,0));
+    padding: 0;
+}
+.dent_top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    object-position: 10% 10%;
+}
+.title {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    
+}
+.title h1, .title h5, .title h5 a{
+    color: var(--text-white);
+    font-weight: 700;
+    text-align: left;
+}
+.vacc{
+    padding: 2rem;
+}
+.abt_dent{
+    padding: 0;
+}
+.abt_dent h2, .abt_dent p{
+    text-align: start;
+    line-height: 1.4rem;
+}
+ul li::before {
+    content: "\2022";
+    color:var(--text-blue);
+    font-weight: 900;
+    display: inline-block; 
+    width: 1rem;
+    margin-left: -1rem;
+}
+ul li {
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+.symb{
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bg-light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 1.2rem auto;   
+}
+.symb .fas {
+    color: var(--dark-blue);
+    padding: 0;
+    font-size: 1.5rem;
+}
+.types1 h3, .types1 p {
+    margin:  0.5rem 0;
+}
+.cards{
+    border: 2px solid var(--light-gray);
+    padding: 0.5rem 0rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    height: auto;
+}
+.card{
+    padding: 0;
+}
+.cards h3{
+    text-align: start;
+    margin:  1rem 0;
+}
+.cards h3::before{
+    content: "\2500\0A00";
+    color: var(--text-blue);
+    font-weight: 900;
+}
+hr{
+  color: var(--light-gray) ;  
+  margin: 0.3rem 1.5rem;
+}
+.card_details{
+    padding: 0.75rem 1.5rem 0 1.5rem ;
+    display: flex;
+    justify-content: space-between;
+}
+.card_details h5{
+    margin: 0;
+}
+.value{
+    color: var(--text-gray);
+}
+.moreservice h2{
+    color: white;
+}
+.moreservice{
+    background-color: var(--bg-light-blue) ;
+}
+.arrows{
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    margin-bottom: 0 !important;
+  
+}
+.arrows i {
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem;
+}
+.moreservice div{
+    padding: 0;
+}
+.figs{
+    padding: 0;
+    
+}
+
+.figs figure {
+    margin: 0.5rem;
+    padding: 0;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+figure img{
+    border-radius: 1rem 1rem 0 0;
+}
+figcaption {
+    height: 2rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--dark-blue);
+}
+figcaption::before{
+    margin-right: 0.2rem;
+    color: var(--text-blue);
+}
+@media screen and (min-width: 768px){
+   .vacc {
+       display: grid;
+       grid-template-areas: "title title"
+       "image about";
+   }
+   .vacc h1{
+       grid-area: title;
+       text-align: start;
+       margin: 1rem 0;
+   }
+   .vacc img {
+       grid-area: image;
+   }
+   .abt_dent h2{
+       margin-top: 0 ;
+   }
+   .types{
+       display: flex;
+       padding: 0.2rem;
+   }
+   .card{
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+   }
+   .cards:nth-child(2) {
+       height: 10rem;
+   }
+   
+   .moreservice div{
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 1rem;
+       align-items: center;
+   }
+   figure{
+    width: 32%;
+    
+   }
+   .figs{
+    display: flex;
+   }
+}
+@media screen and (min-width: 1025px){
+    .title {
+        position: absolute;
+        top: 15%;
+        left: 4rem;
+        
+    }
+    .main{
+        display: grid;
+        grid-template-areas: "vacc card"
+        "det card";
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto auto;
+       margin: 0 3rem;
+    }
+    .vacc{
+        grid-area: vacc;
+
+    }
+    .vacc img{
+        height: 20rem;
+    }
+    li{
+        font-weight: 500;
+    }
+    .card{
+        grid-area: card;
+        padding: 1rem;
+    }
+    .types{
+        grid-area: det;
+    }
+    .card{
+        display: flex;
+       flex-direction: column;
+    }
+    
+    footer{
+            padding: 2rem 4rem;
+    }
+    
+}

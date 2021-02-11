@@ -1,0 +1,35 @@
+h3{
+    color: var(--text-blue);
+}
+h5{
+    text-align: left;
+    margin: 1rem 0;
+}
+div{
+    padding: 0;
+}
+label{
+    font-family: "Nexa-light";
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+#file{
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+}
+textarea{
+    font-size: 1rem;
+    font-family: "Nexa-light";
+    line-height: 2rem;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 5%;
+    height: 0.8rem;
+}
+.formcont{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

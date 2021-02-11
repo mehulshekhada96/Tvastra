@@ -1,0 +1,33 @@
+@import "./theme.css";
+#full{
+    height: auto;
+}
+#gender, #birthdate{ 
+        background: none;
+        font-size: 1rem;
+      }
+   #sel{
+         color: var(--light-gray);
+        }
+#birthdate {
+        width:auto;
+       font-size: 1rem;
+     }
+     .city_state{
+         width: auto;  
+         display: inline-flex;
+         padding: 0;
+         justify-content: space-between;
+     
+     }
+     #city1, #state{
+         width: 40%;
+         
+     }
+    .formcont{
+        margin-top: 10%;
+        height: auto;
+    }
+    h4, h5 a{
+        color: var(--text-blue);
+     }

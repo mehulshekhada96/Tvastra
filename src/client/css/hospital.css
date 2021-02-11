@@ -1,0 +1,320 @@
+@import "./theme.css";
+.logo {
+    margin: 0;
+}
+.hos_top, .filter{
+    visibility: hidden;
+    display: none;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sort{
+    margin: 1rem 0;
+    align-self:end;
+    margin: 1rem;
+    position: relative;
+    top: 0;
+}
+#sortbtn{
+    padding: 0.5rem;
+    background-color: var(--light-gray);
+    justify-self: end;
+}
+.hospital_list{
+    padding: 0;
+}
+.qualification li {
+    display: flex;
+    align-content: center;
+    margin: 0;
+    padding-left: 1rem;
+    line-height: 1rem;
+}
+.qualification li span {
+    margin:  1rem;
+}
+ li .fas {
+    position: relative;
+    top: 1rem;
+    color: var(--text-blue);
+}
+.hos_pro h4{
+    text-align:  left ;
+    margin-left: 0;
+    color: var(--text-blue);
+}
+.hos_pro h4::before{
+    content: "\2500\2500\0A00\0A00\0A00";
+    
+}
+.hos_pro {
+    border: 2px solid var(--light-gray);
+    padding: 0;
+    margin-bottom: 1rem;
+}
+.hos_pro .btn{
+    width:60%;
+    justify-self: center;
+    margin-left: 20%;
+}
+.hos_pro img{
+    height: 90vw;
+    object-position: 40% 0%;
+}
+.tre1{
+    grid-area: tre1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.tre1 span{
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-blue);
+    border-radius: 2rem;
+    margin: 0.2rem;
+    font-size: 0.75rem;
+}
+li span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@media only screen and (min-width: 768px){
+    .hos_top{
+        background:var(--bg-light-blue);
+        background-size: 100%;
+        width: 100%;
+        display: flex;
+        visibility: visible;
+        padding: 0;
+        height: 15rem;
+        background-position: center;
+        position: relative;
+    
+    }
+    .hos_top img{
+        object-fit:cover;
+        opacity: 0.1;
+        transform: scaleX(-1);
+    }
+    .hos_top h1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5.5rem 2rem;
+        font-family: "Nexa-light" ;
+    }
+    .hos_cont{
+        height: 2rem;
+    }
+    #sort{
+        margin: 0;
+        padding: 0 1rem 0 0;
+    }
+    #sortbtn {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+        border: none;
+    }
+    .hos_main {
+        display: grid;
+        grid-template-areas: "filter hospitals";
+        grid-template-columns: 30% 70%;
+    }
+    .filter, .filt{
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        grid-area: filter;
+        padding-bottom: 0;
+        padding: 0;
+    }
+    .filter h5 {
+        background: var(--light-gray);
+        padding: 1rem;
+        margin: 0 1rem 1rem 0;
+        text-align: start;
+    }
+    .filt{
+        padding-right: 1rem;
+    }
+    .filt span {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        margin: 1rem 0;
+    }
+    .filt span h6{
+        margin: 0;
+        font-size: 1.1em;
+        text-align: start;
+        padding: 0.4rem 0 0 1rem;
+        color: var(--text-gray);
+    }
+    .filt span button {
+        background: none;
+        padding: 0;
+        border: none;
+        justify-self: end;
+    }
+    .filt span button::after{
+        content: "\0A00\2500\2500";  
+        color: var(--text-gray);
+    }
+    .filt div{
+        padding: 0.25rem 0 0.25rem 1rem;
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+    .filt div label {
+        padding: auto;
+        margin: auto 1rem;
+    }
+    .filt div input{
+       
+        width: 0.75rem;
+        height: 0.75rem;
+        
+    }
+    .showmore, .fa-search{
+        color: var(--text-blue);
+    }
+    .showmore{
+        padding-left: 1rem;
+    }
+    hr{
+        margin-right: 1rem;
+        width: 95%;
+        color: var(--text-gray);
+    }
+    .qualification li{
+        display: grid;
+        font-size: 0.5rem;
+        grid-template-columns: 20% 80%;
+        grid-template-areas: "icons para";
+        position: relative;
+        align-content: center;
+    }
+    .qualification li i{
+        margin: auto;
+        position: absolute;
+        bottom: 100%;
+        text-align: center;
+        text-justify: center;
+        align-self: center;
+        grid-area: icons;
+        font-size: 1rem;
+    }
+    .qualification li span {
+        grid-area: para;
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+        text-align: start;
+        position: relative;
+    }
+    .hos_pro{
+        display: grid;
+        grid-template-columns: auto 40%;
+        grid-template-rows: 3rem auto auto;
+        grid-template-areas: "name photo"
+        "ul photo"
+        "btn photo" ;
+        height: auto;
+    }
+    .hos_pro h4{
+        grid-area: name;
+    }
+    .hos_pro img{
+        grid-area: photo; 
+        width: 100%;
+        height: 100%
+    }
+    .hos_pro ul {
+        grid-area: ul;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "loc bed"
+        "tre ."
+        "tre1 tre1";
+        grid-template-columns: 50% 50%;
+        flex-wrap: wrap ;
+       
+    }
+    .loc{
+        grid-area: loc;
+    }
+    .bed {
+        grid-area: bed;
+    }
+    .tre{
+        grid-area: tre;
+    }
+    
+    .hos_pro button {
+        grid-area: btn;
+    }
+    .hos_pro .btn{
+        width:80%;
+        justify-self: start;
+        margin: 1rem 10%;
+    }
+    label{
+        color: var(--dark-blue);
+    }
+}
+@media screen and (min-width: 1025px){
+    .hos_pro{
+        display: grid;
+        grid-template-columns: auto 30%;
+        grid-template-rows: 3rem 12rem 4rem;
+    }
+    .fa-bars{
+        display: none;
+        visibility: hidden;
+    }
+    .hos_top h1{
+        margin-left: 4rem;  
+    }
+    .hos_cont {
+        margin: 1rem 3rem;
+     }
+    .hos_pro ul{
+        padding-left: 1.5rem;
+    }
+    .hos_pro .btn{
+        width:50%;
+        justify-self: start;
+        margin-left: 10%;
+    }
+    .filt div{
+        grid-template-columns: 10% 90%;
+    }
+    .filt span button::after{
+        content: "\0A00\0A00\0A00\0A00\2500\2500";  
+        color: var(--text-gray);
+    }
+    .help h2, .help p {
+        text-align: start;
+    }
+    .hos_main {
+        grid-template-columns: 20% 80%;
+    }
+    .qualification li{
+        grid-template-columns: 10% 90%;
+    }
+    .qualification li span {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    footer{
+        padding: 2rem 4rem;
+    }
+    footer p {
+        font-family:sans-serif;
+        font-weight: 200;
+    }
+}
