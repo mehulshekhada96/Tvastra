@@ -1,0 +1,842 @@
+@import "theme";
+.hero{
+    position: relative;
+    height: 132rem;
+    padding: 0;
+    background-image: linear-gradient($light-blue, white);
+
+    img{
+        height: 25rem;
+        @media screen and (min-width: 768px) {
+            height:30rem;
+            object-position: 10% 90%;
+        }
+        object-position: 1% 15%;
+    }
+    .title{
+        position: absolute;
+        top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        h1{
+            margin:1rem 0;
+        }
+        p{
+            margin: 0.5rem 0;
+        }
+        
+    }
+    .skybluebtn{
+        border-radius: 0.5rem;
+        font-weight: 800;
+        padding: 0.8rem 1rem ;
+        margin: 1rem;
+    }
+    .plans{
+        position: relative;
+        top: -10rem;
+        background-color:white;
+        border-radius: 0.5rem;
+        padding: 1rem 0 0 0;
+        box-shadow: 0 0 2rem $light-gray;
+        margin: 2rem 1rem;
+        @media screen and (min-width:768px) {
+            margin: 1rem 2rem;
+            padding-bottom: 2rem;
+        }
+        @media screen and (min-width: 1025px){
+            margin: 1rem 5rem;
+        }
+        h2{
+            margin: 1rem;
+            text-align: center;
+        }
+        
+        hr{
+            border-color: $bg-light;
+            margin: 2rem 1rem;
+            @media screen and (min-width:768px) {
+                margin-bottom: 0;
+            }
+        }
+        #plan{
+            padding: 0 0.5rem;
+        }
+        .basic, .advanced, .compre{
+            height: auto;
+            hr{
+                margin: 1rem 2rem;
+               
+            }
+            padding: 0;
+            h3{ 
+                margin: 1rem;
+                font-size: 1.4rem;
+                text-align: center;
+            }
+            p{
+                margin: 1rem 2rem ;
+            }
+            .buy{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                h4{
+                    color: $text-blue;
+                    margin-top: 0;
+                }
+                .skybluebtn{
+                    width: 8rem;
+                    font-weight: 900;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        .advanced {
+            background-image: linear-gradient($shadow,white);
+            @media  screen and (min-width: 768px) {
+                border-left: 1px solid $text-blue;
+                border-right: 1px solid $text-blue;    
+            }
+            
+           .pop{
+               padding: 0;
+               display: flex;
+               justify-content: center;
+            } 
+           span{
+                font-family: $lightfont;
+                background-color: green;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius:1rem;
+                font-weight: 900;
+                position: relative;
+                top: -0.75rem;
+                text-align: center;
+                
+            }
+        }
+
+    }
+
+}
+.review{
+    padding-bottom: 0;
+
+     h2:first-child{
+         margin-bottom: 2rem;
+         text-align: center;
+     }
+     p{
+         margin-bottom: 2rem;
+     }
+
+    .rating{
+        display: flex;
+        flex-direction: column;
+        
+        .star{
+           width: auto;
+           position: relative;
+           width: 4.8rem;
+           
+           margin-bottom: 1rem;
+           justify-content: center;
+           align-self: center;
+           .inner{
+               display: flex;
+               justify-content: left;
+               position: absolute;
+               
+               flex-wrap: nowrap;
+               width: 90%;
+               overflow-x: hidden;
+           }
+           .outer{
+            display: flex;
+            justify-content: left;
+            position: absolute;
+            
+            flex-wrap: nowrap;
+            width: 100%;
+            overflow-x: hidden;
+
+           }
+        }
+        .stars{
+            text-align: center;
+            padding: 0;
+            i{
+                color: $text-blue;
+                margin: 0rem;
+            }
+             
+        }
+        h2{
+            color: $text-blue;
+            font-size: 2.5rem;
+            margin: 0.5rem;
+        }
+        span{
+            font-size: 1rem;
+            margin: 0.5rem auto;
+            font-family: $lightfont; 
+            color: $text-blue;
+        }  
+    }
+    .rating_bars{
+        margin: 1rem auto;
+        .row{
+            display: grid;
+            grid-template-columns: 2rem auto;
+            padding:0.5rem 1rem;
+            
+            width: auto;
+            div{
+                font-size: 1rem;
+                font-family: $boldfont;
+                font-size: 1.2rem;
+                color: $text-blue;
+            }
+
+            .middle{
+                width: auto;
+                margin-left: 1rem;
+            }
+            // .side{
+            //     width: 100%;
+            // }
+            .bar-container{
+                background-color: $light-gray;
+                width: 100%;
+                height: 1rem;
+                border-radius: 0.5rem;
+                .bar-5, .bar-1, .bar-2, .bar-3, .bar-4{
+                    background-color: $text-blue;
+                    width: 70%;
+                    height: 1rem;
+                    border-radius: 0.5rem;
+                }
+                .bar-4{
+                    width: 40%;
+                }
+                .bar-3{
+                    width: 45%;
+                }
+                .bar-2{
+                    width: 25%;
+                }
+                .bar-1{
+                    width: 10%;
+                }
+            }
+        }
+    }
+    .achievements{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        .achievement{
+            color: $text-blue;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            i{
+                font-size: xx-large;
+                color: $text-blue;
+                text-align: center;
+
+            }
+            h3{
+                color: $text-blue;
+                margin: 0.5rem 0;
+            }
+            h5{
+                color: $text-blue;
+                font-family: $lightfont;
+            }
+        }
+    }
+}
+.benifits{
+    h2:first-child{
+        margin-bottom: 2rem;
+    }
+    padding-bottom: 1rem;
+    .title_p{
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $text-gray;
+    }
+    hr{
+        height: 0.3rem;
+        background-color: $shadow;
+        border-color: $shadow;
+        color: $shadow;
+        border-radius: 0.15rem;
+        border: none;
+        width: 90%;
+        margin: 1rem auto;
+    }
+    .clinic-hospital{
+        .zero-fees{
+            .para{
+                display: grid;
+                grid-template-columns: 2rem auto;
+                i{
+                    background-color: $light-blue;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    
+                    border-radius: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    margin-top: 0.2rem;
+
+                }
+                p{
+                    text-align: start;
+                }
+            }
+        }
+        .top_hospital{
+            .logos{
+                display: grid;
+                grid-template-columns: repeat(2,50%);
+                grid-template-rows: repeat(3, 8rem);
+                .logo{
+                    width: 100%;
+                    height: 8rem; 
+                    align-self: center;
+                    justify-self: center;
+                    justify-content: center;
+                    justify-items: center;
+                    
+                    img{
+                        object-fit: fill;
+                        margin:0.5rem 5%;
+                        width: 90%;
+                        height: 7rem;
+                    }
+                    
+                }
+                .logo1{
+                    border-right: 2px solid $shadow;
+                    border-bottom: 2px solid $shadow;
+                }
+                .logo2,.logo4{
+                    border-left: 2px solid $shadow;
+                    border-bottom: 2px solid $shadow;
+                }
+                .logo3{
+                    border-bottom: 2px solid $shadow;
+                }
+                .logo6{
+                    border-left: 2px solid $shadow;
+                    border-top: 2px solid $shadow;
+                }
+            }
+            h5{
+                color: $text-gray;
+                font-family: $lightfont;
+                font-weight: 500;
+                margin-top: 1rem;
+
+            }
+        }
+    }
+}
+.facilities{
+    h2:first-child{
+        margin: 0 1rem 2rem;
+        
+    }
+    padding-bottom: 0;
+         .facility1, .facility2, .facility3{
+             padding-bottom: 2rem;
+         }
+        .para{
+            display: grid;
+            grid-template-columns: 2rem auto;
+            padding: 0 1rem ;
+            i{
+                background-color: $light-blue;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                margin-top: 0.2rem;
+
+            }
+            p{
+                text-align: start;
+            }
+            
+        }
+        .facility_img{
+            
+            border: none;
+            border-radius: 1rem;
+            height: 15rem;
+            img{
+            border-radius: 1rem;
+            width: 100%;
+           
+            box-shadow: 0 0 1rem $light-gray;
+            }
+            
+
+        }
+    
+}
+.tests{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+ }
+ .test_div{
+     width: 48%;
+     height: 13rem;
+     overflow: hidden;
+     box-shadow: 0 0 1rem $light-gray;
+     margin-top: 1rem;
+ }
+.test1{
+    width: 100%;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    
+    h5{
+        font-family: $lightfont;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+.test_img{
+    margin:1rem 30%;
+    width: 40%;
+    height: 32%;
+    justify-self: center;
+}
+.dots{
+        display: flex;
+        flex-direction: row;
+        margin: 2rem auto 0 auto;
+        justify-content: center;
+    .dot{
+        
+        margin:0.4rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: none;
+        background-color: $light-gray;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .active_dot{
+        background-color: $text-blue;
+    }
+}
+.love{
+    .love_heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        h2{ 
+            
+            margin: 0;
+            margin-right: 0.5rem;
+        }
+    }
+
+        span{
+            background-color: $text-blue;
+            color: white;
+            padding:  0.7rem;
+            border-radius: 0.3rem;
+            font-size: 0.9rem;
+            font-family: $lightfont;
+            font-weight: 800;
+            letter-spacing: 0.09rem;
+            vertical-align: text-top;
+
+        }
+        .comments{
+            margin-top: 2rem;
+        }
+        .comment1{
+            box-shadow: 0 0 1rem $light-gray;
+            padding: 1rem;
+            margin-top: 1rem;
+            h5{
+                text-align: left;
+            }
+        }
+        .name{
+            display: grid;
+            grid-template-areas: "img name2"
+            "img plan";
+            grid-template-columns: 5rem auto;
+            grid-template-rows: 2.5rem 2.5rem;
+            img{
+                grid-area: img;
+                border-radius: 50%;
+            }
+            h4{
+                grid-area: name2;
+                text-align: left;
+                margin: 0 0 1rem 1rem;
+                align-self: center;
+            }
+            h6{
+                grid-area: plan;
+                text-align: left;
+                margin: 0 0 0 1rem;
+                align-self: center;
+                color: $text-blue;
+                background-color: $shadow;
+                padding: 0.5rem 1rem;
+                width: fit-content;
+                border-radius: 0.3rem;
+            }
+        }
+    
+}
+.menu{
+    display: grid;
+    grid-template-columns:  auto 10%;
+    color: $text-blue;
+    padding:  0.5rem;
+    i{
+        color: $text-blue;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+        align-self: center;
+    }
+    .arrows{
+        justify-self: end;
+    }
+    .fa-angle-up, .fa-angle-down{
+       background: $shadow;
+       margin-top: 0.3rem ;
+       width: 1.5rem;
+       height: 1.5rem;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       justify-self: end;
+       cursor: pointer;
+       align-self: center;
+       &::before{
+           justify-self: center;
+           margin:  25%;
+           position: relative;
+           top: 0.25rem;
+
+       }
+    
+       
+    }
+    h4{ 
+        margin: 0.4rem;
+        color: $text-blue;
+        text-align: start;
+        align-self: center;
+        
+    }
+}
+
+.menu_para{
+    margin: 0 0.5rem;
+    text-align: start;
+    background: $shadow;
+    padding: 0.5rem;
+    animation: scrolling 1.5s ;
+    @keyframes scrolling {
+        from{
+            opacity: 0;
+        }
+        to{
+             opacity: 1;  
+        }
+        
+    }
+}
+@media screen and (min-width: 768px){
+    .hero{
+        height: auto ;
+    }
+    .title{
+        display: flex;
+        margin-left: 1rem;
+        margin-top: 3rem;
+        .skybluebtn{
+            align-self: flex-start;
+            margin-left: 0;
+        }
+        h1{
+            text-align: start;
+            align-self: flex-start;
+        }
+        p{
+            text-align: start;
+            align-self: flex-start;
+        }
+    }
+    #plan{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .review1{
+        margin: 1rem 20%;
+    }
+    .rating{
+        margin:2rem 1rem;
+        float: left;
+        .star{
+            width: 5.95rem !important;
+            
+        }
+    }
+    
+    .achievement{
+        width: 25% !important;
+        i{
+            font-size: 2rem !important;
+            margin-bottom: 1rem;
+        }
+        h3, h5{
+            text-align: center;
+        }
+    }
+    .benifits hr{
+        width: 40%;
+    }
+    .clinic-hospital{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem ;
+        gap: 2rem;
+        .zero-fees{
+            h2{
+                text-align: left;
+            }
+        }
+    }
+    .facility1, .facility3{
+        display: grid;
+        grid-template-areas: 
+        "image1 para";
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        
+        
+    }
+    .facility2{
+        display: grid;
+        grid-template-areas: 
+        "para image1";
+        grid-template-columns: 1fr 1fr ;
+        margin: 2rem auto;
+        gap: 1rem;
+    }
+    .facilities{
+        h2{
+            grid-area: head;
+        }
+        .paragraph{
+            grid-area: para;
+        }
+        img{
+            grid-area: image1;
+        }
+    }
+    .test_sec{
+        h5{
+            text-align: left;
+        }
+        .test1{
+            width: 100%;
+            .test_img{
+                margin:1rem 40%;
+                width: 20%;
+                height: fit-content;
+                justify-self: center;
+            }
+            h5{
+                font-family: $lightfont;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+        }
+    }
+    .love{
+        .love_heading{
+            justify-content: start;
+            text-align: start;
+            margin-left: 0.5rem;
+        }
+        .comments{
+            display:grid;
+            grid-template-columns: 50% 50%;
+            margin: auto;
+        }
+        .comment1{
+            width: auto;
+            margin: 0.5rem;
+        }
+    }
+    .main{
+        h2{
+            text-align: left;
+            margin-left: 0.5rem;
+        }
+    }
+    .fa-check{
+        font-size: 0.85rem;
+    }
+}
+@media screen and (min-width: 1025px){
+     .hero{
+      height: 68rem;    
+     }
+    .title{
+        margin-left: 5rem;
+        margin-top: 5rem;
+        padding: 0 !important;
+    }
+    
+    .test_sec{
+        h5{
+            text-align: left;
+        }
+        .test_div{
+            width: 23%;
+        }
+        .test1{
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            align-items: flex-start;
+            padding-left: 1rem;
+            .test_img{
+                margin:1rem 0;
+                width: 20%;
+                height: fit-content;
+                justify-self: center;
+            }
+            h5{
+                font-family: $lightfont;
+                margin-bottom: 2rem;
+                text-align:left;
+            }
+        }
+    }
+    
+    .review{
+        margin: auto 10rem ;
+        p{
+            margin: auto 10rem;
+        }
+        .star{
+            width: 4.55rem !important;
+            
+        }
+        .stars{
+            margin-bottom: 0.5rem;
+            i{
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .clinic-hospital{
+        
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        padding: 2rem ;
+        gap: 5rem;
+        .zero-fees{
+            h2{
+                text-align: left;
+            }
+        }
+        .top_hospital{
+            h3,h5{
+                text-align: center;
+            }
+            .logo{
+                margin-left: 0;
+            }
+        }
+    }
+
+    
+        .love{
+            padding-top: 0rem; 
+            .love_heading{
+                justify-content: start;
+                text-align: start;
+                margin-left: 0.5rem;
+            }
+            .comments{
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: auto;
+            }
+            .comment1{
+                width: auto;
+                margin: 0.5rem;
+            }
+        }
+        
+        
+    
+    .facilities{
+        h2{
+            margin-left: 1rem;
+        }
+        .facility1, .facility2, .facility3{
+            grid-template-rows: auto;
+            gap: 5rem;
+            padding-bottom: 1rem;
+            .facility_img{
+                margin: 0 3rem;
+                width: 20rem;
+                height: 17rem;
+            }
+        }
+        .facility1,.facility3{
+            grid-template-columns: 2fr 3fr;
+           
+        }
+        .facility2{
+            grid-template-columns: 3fr 2fr;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+    .main{
+        padding-top: 0 ;
+        padding-bottom: 1rem;
+    }
+}

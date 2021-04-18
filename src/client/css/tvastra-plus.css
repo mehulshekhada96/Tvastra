@@ -1,0 +1,1154 @@
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
+}
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+.hero {
+  position: relative;
+  height: 132rem;
+  padding: 0;
+  background-image: linear-gradient(#6aa5cf, white);
+}
+.hero img {
+  height: 25rem;
+  -o-object-position: 1% 15%;
+     object-position: 1% 15%;
+}
+@media screen and (min-width: 768px) {
+  .hero img {
+    height: 30rem;
+    -o-object-position: 10% 90%;
+       object-position: 10% 90%;
+  }
+}
+.hero .title {
+  position: absolute;
+  top: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.hero .title h1 {
+  margin: 1rem 0;
+}
+.hero .title p {
+  margin: 0.5rem 0;
+}
+.hero .skybluebtn {
+  border-radius: 0.5rem;
+  font-weight: 800;
+  padding: 0.8rem 1rem;
+  margin: 1rem;
+}
+.hero .plans {
+  position: relative;
+  top: -10rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem 0 0 0;
+  box-shadow: 0 0 2rem #d1d0d0;
+  margin: 2rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .hero .plans {
+    margin: 1rem 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .hero .plans {
+    margin: 1rem 5rem;
+  }
+}
+.hero .plans h2 {
+  margin: 1rem;
+  text-align: center;
+}
+.hero .plans hr {
+  border-color: #e4e4e483;
+  margin: 2rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .hero .plans hr {
+    margin-bottom: 0;
+  }
+}
+.hero .plans #plan {
+  padding: 0 0.5rem;
+}
+.hero .plans .basic, .hero .plans .advanced, .hero .plans .compre {
+  height: auto;
+  padding: 0;
+}
+.hero .plans .basic hr, .hero .plans .advanced hr, .hero .plans .compre hr {
+  margin: 1rem 2rem;
+}
+.hero .plans .basic h3, .hero .plans .advanced h3, .hero .plans .compre h3 {
+  margin: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.hero .plans .basic p, .hero .plans .advanced p, .hero .plans .compre p {
+  margin: 1rem 2rem;
+}
+.hero .plans .basic .buy, .hero .plans .advanced .buy, .hero .plans .compre .buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .plans .basic .buy h4, .hero .plans .advanced .buy h4, .hero .plans .compre .buy h4 {
+  color: #008dc5;
+  margin-top: 0;
+}
+.hero .plans .basic .buy .skybluebtn, .hero .plans .advanced .buy .skybluebtn, .hero .plans .compre .buy .skybluebtn {
+  width: 8rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+.hero .plans .advanced {
+  background-image: linear-gradient(#b7dfffb2, white);
+}
+@media screen and (min-width: 768px) {
+  .hero .plans .advanced {
+    border-left: 1px solid #008dc5;
+    border-right: 1px solid #008dc5;
+  }
+}
+.hero .plans .advanced .pop {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.hero .plans .advanced span {
+  font-family: "Nexa-light";
+  background-color: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 900;
+  position: relative;
+  top: -0.75rem;
+  text-align: center;
+}
+
+.review {
+  padding-bottom: 0;
+}
+.review h2:first-child {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.review p {
+  margin-bottom: 2rem;
+}
+.review .rating {
+  display: flex;
+  flex-direction: column;
+}
+.review .rating .star {
+  width: auto;
+  position: relative;
+  width: 4.8rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-self: center;
+}
+.review .rating .star .inner {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  flex-wrap: nowrap;
+  width: 90%;
+  overflow-x: hidden;
+}
+.review .rating .star .outer {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: hidden;
+}
+.review .rating .stars {
+  text-align: center;
+  padding: 0;
+}
+.review .rating .stars i {
+  color: #008dc5;
+  margin: 0rem;
+}
+.review .rating h2 {
+  color: #008dc5;
+  font-size: 2.5rem;
+  margin: 0.5rem;
+}
+.review .rating span {
+  font-size: 1rem;
+  margin: 0.5rem auto;
+  font-family: "Nexa-light";
+  color: #008dc5;
+}
+.review .rating_bars {
+  margin: 1rem auto;
+}
+.review .rating_bars .row {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: auto;
+}
+.review .rating_bars .row div {
+  font-size: 1rem;
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  color: #008dc5;
+}
+.review .rating_bars .row .middle {
+  width: auto;
+  margin-left: 1rem;
+}
+.review .rating_bars .row .bar-container {
+  background-color: #d1d0d0;
+  width: 100%;
+  height: 1rem;
+  border-radius: 0.5rem;
+}
+.review .rating_bars .row .bar-container .bar-5, .review .rating_bars .row .bar-container .bar-1, .review .rating_bars .row .bar-container .bar-2, .review .rating_bars .row .bar-container .bar-3, .review .rating_bars .row .bar-container .bar-4 {
+  background-color: #008dc5;
+  width: 70%;
+  height: 1rem;
+  border-radius: 0.5rem;
+}
+.review .rating_bars .row .bar-container .bar-4 {
+  width: 40%;
+}
+.review .rating_bars .row .bar-container .bar-3 {
+  width: 45%;
+}
+.review .rating_bars .row .bar-container .bar-2 {
+  width: 25%;
+}
+.review .rating_bars .row .bar-container .bar-1 {
+  width: 10%;
+}
+.review .achievements {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.review .achievements .achievement {
+  color: #008dc5;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.review .achievements .achievement i {
+  font-size: xx-large;
+  color: #008dc5;
+  text-align: center;
+}
+.review .achievements .achievement h3 {
+  color: #008dc5;
+  margin: 0.5rem 0;
+}
+.review .achievements .achievement h5 {
+  color: #008dc5;
+  font-family: "Nexa-light";
+}
+
+.benifits {
+  padding-bottom: 1rem;
+}
+.benifits h2:first-child {
+  margin-bottom: 2rem;
+}
+.benifits .title_p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #626060;
+}
+.benifits hr {
+  height: 0.3rem;
+  background-color: #b7dfffb2;
+  border-color: #b7dfffb2;
+  color: #b7dfffb2;
+  border-radius: 0.15rem;
+  border: none;
+  width: 90%;
+  margin: 1rem auto;
+}
+.benifits .clinic-hospital .zero-fees .para {
+  display: grid;
+  grid-template-columns: 2rem auto;
+}
+.benifits .clinic-hospital .zero-fees .para i {
+  background-color: #6aa5cf;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 0.2rem;
+}
+.benifits .clinic-hospital .zero-fees .para p {
+  text-align: start;
+}
+.benifits .clinic-hospital .top_hospital .logos {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, 8rem);
+}
+.benifits .clinic-hospital .top_hospital .logos .logo {
+  width: 100%;
+  height: 8rem;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+}
+.benifits .clinic-hospital .top_hospital .logos .logo img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin: 0.5rem 5%;
+  width: 90%;
+  height: 7rem;
+}
+.benifits .clinic-hospital .top_hospital .logos .logo1 {
+  border-right: 2px solid #b7dfffb2;
+  border-bottom: 2px solid #b7dfffb2;
+}
+.benifits .clinic-hospital .top_hospital .logos .logo2, .benifits .clinic-hospital .top_hospital .logos .logo4 {
+  border-left: 2px solid #b7dfffb2;
+  border-bottom: 2px solid #b7dfffb2;
+}
+.benifits .clinic-hospital .top_hospital .logos .logo3 {
+  border-bottom: 2px solid #b7dfffb2;
+}
+.benifits .clinic-hospital .top_hospital .logos .logo6 {
+  border-left: 2px solid #b7dfffb2;
+  border-top: 2px solid #b7dfffb2;
+}
+.benifits .clinic-hospital .top_hospital h5 {
+  color: #626060;
+  font-family: "Nexa-light";
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.facilities {
+  padding-bottom: 0;
+}
+.facilities h2:first-child {
+  margin: 0 1rem 2rem;
+}
+.facilities .facility1, .facilities .facility2, .facilities .facility3 {
+  padding-bottom: 2rem;
+}
+.facilities .para {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  padding: 0 1rem;
+}
+.facilities .para i {
+  background-color: #6aa5cf;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 0.2rem;
+}
+.facilities .para p {
+  text-align: start;
+}
+.facilities .facility_img {
+  border: none;
+  border-radius: 1rem;
+  height: 15rem;
+}
+.facilities .facility_img img {
+  border-radius: 1rem;
+  width: 100%;
+  box-shadow: 0 0 1rem #d1d0d0;
+}
+
+.tests {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.test_div {
+  width: 48%;
+  height: 13rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem #d1d0d0;
+  margin-top: 1rem;
+}
+
+.test1 {
+  width: 100%;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.test1 h5 {
+  font-family: "Nexa-light";
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.test_img {
+  margin: 1rem 30%;
+  width: 40%;
+  height: 32%;
+  justify-self: center;
+}
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto 0 auto;
+  justify-content: center;
+}
+.dots .dot {
+  margin: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #d1d0d0;
+}
+.dots .dot:hover {
+  cursor: pointer;
+}
+.dots .active_dot {
+  background-color: #008dc5;
+}
+
+.love .love_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.love .love_heading h2 {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+.love span {
+  background-color: #008dc5;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-family: "Nexa-light";
+  font-weight: 800;
+  letter-spacing: 0.09rem;
+  vertical-align: text-top;
+}
+.love .comments {
+  margin-top: 2rem;
+}
+.love .comment1 {
+  box-shadow: 0 0 1rem #d1d0d0;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.love .comment1 h5 {
+  text-align: left;
+}
+.love .name {
+  display: grid;
+  grid-template-areas: "img name2" "img plan";
+  grid-template-columns: 5rem auto;
+  grid-template-rows: 2.5rem 2.5rem;
+}
+.love .name img {
+  grid-area: img;
+  border-radius: 50%;
+}
+.love .name h4 {
+  grid-area: name2;
+  text-align: left;
+  margin: 0 0 1rem 1rem;
+  align-self: center;
+}
+.love .name h6 {
+  grid-area: plan;
+  text-align: left;
+  margin: 0 0 0 1rem;
+  align-self: center;
+  color: #008dc5;
+  background-color: #b7dfffb2;
+  padding: 0.5rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.3rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: auto 10%;
+  color: #008dc5;
+  padding: 0.5rem;
+}
+.menu i {
+  color: #008dc5;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  align-self: center;
+}
+.menu .arrows {
+  justify-self: end;
+}
+.menu .fa-angle-up, .menu .fa-angle-down {
+  background: #b7dfffb2;
+  margin-top: 0.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  cursor: pointer;
+  align-self: center;
+}
+.menu .fa-angle-up::before, .menu .fa-angle-down::before {
+  justify-self: center;
+  margin: 25%;
+  position: relative;
+  top: 0.25rem;
+}
+.menu h4 {
+  margin: 0.4rem;
+  color: #008dc5;
+  text-align: start;
+  align-self: center;
+}
+
+.menu_para {
+  margin: 0 0.5rem;
+  text-align: start;
+  background: #b7dfffb2;
+  padding: 0.5rem;
+  -webkit-animation: scrolling 1.5s;
+          animation: scrolling 1.5s;
+}
+@-webkit-keyframes scrolling {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scrolling {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: auto;
+  }
+
+  .title {
+    display: flex;
+    margin-left: 1rem;
+    margin-top: 3rem;
+  }
+  .title .skybluebtn {
+    align-self: flex-start;
+    margin-left: 0;
+  }
+  .title h1 {
+    text-align: start;
+    align-self: flex-start;
+  }
+  .title p {
+    text-align: start;
+    align-self: flex-start;
+  }
+
+  #plan {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .review1 {
+    margin: 1rem 20%;
+  }
+
+  .rating {
+    margin: 2rem 1rem;
+    float: left;
+  }
+  .rating .star {
+    width: 5.95rem !important;
+  }
+
+  .achievement {
+    width: 25% !important;
+  }
+  .achievement i {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
+  .achievement h3, .achievement h5 {
+    text-align: center;
+  }
+
+  .benifits hr {
+    width: 40%;
+  }
+
+  .clinic-hospital {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .clinic-hospital .zero-fees h2 {
+    text-align: left;
+  }
+
+  .facility1, .facility3 {
+    display: grid;
+    grid-template-areas: "image1 para";
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .facility2 {
+    display: grid;
+    grid-template-areas: "para image1";
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem auto;
+    gap: 1rem;
+  }
+
+  .facilities h2 {
+    grid-area: head;
+  }
+  .facilities .paragraph {
+    grid-area: para;
+  }
+  .facilities img {
+    grid-area: image1;
+  }
+
+  .test_sec h5 {
+    text-align: left;
+  }
+  .test_sec .test1 {
+    width: 100%;
+  }
+  .test_sec .test1 .test_img {
+    margin: 1rem 40%;
+    width: 20%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-self: center;
+  }
+  .test_sec .test1 h5 {
+    font-family: "Nexa-light";
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .love .love_heading {
+    justify-content: start;
+    text-align: start;
+    margin-left: 0.5rem;
+  }
+  .love .comments {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+  }
+  .love .comment1 {
+    width: auto;
+    margin: 0.5rem;
+  }
+
+  .main h2 {
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+
+  .fa-check {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .hero {
+    height: 68rem;
+  }
+
+  .title {
+    margin-left: 5rem;
+    margin-top: 5rem;
+    padding: 0 !important;
+  }
+
+  .test_sec h5 {
+    text-align: left;
+  }
+  .test_sec .test_div {
+    width: 23%;
+  }
+  .test_sec .test1 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+  .test_sec .test1 .test_img {
+    margin: 1rem 0;
+    width: 20%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-self: center;
+  }
+  .test_sec .test1 h5 {
+    font-family: "Nexa-light";
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .review {
+    margin: auto 10rem;
+  }
+  .review p {
+    margin: auto 10rem;
+  }
+  .review .star {
+    width: 4.55rem !important;
+  }
+  .review .stars {
+    margin-bottom: 0.5rem;
+  }
+  .review .stars i {
+    font-size: 0.8rem;
+  }
+
+  .clinic-hospital {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 2rem;
+    gap: 5rem;
+  }
+  .clinic-hospital .zero-fees h2 {
+    text-align: left;
+  }
+  .clinic-hospital .top_hospital h3, .clinic-hospital .top_hospital h5 {
+    text-align: center;
+  }
+  .clinic-hospital .top_hospital .logo {
+    margin-left: 0;
+  }
+
+  .love {
+    padding-top: 0rem;
+  }
+  .love .love_heading {
+    justify-content: start;
+    text-align: start;
+    margin-left: 0.5rem;
+  }
+  .love .comments {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+  }
+  .love .comment1 {
+    width: auto;
+    margin: 0.5rem;
+  }
+
+  .facilities h2 {
+    margin-left: 1rem;
+  }
+  .facilities .facility1, .facilities .facility2, .facilities .facility3 {
+    grid-template-rows: auto;
+    gap: 5rem;
+    padding-bottom: 1rem;
+  }
+  .facilities .facility1 .facility_img, .facilities .facility2 .facility_img, .facilities .facility3 .facility_img {
+    margin: 0 3rem;
+    width: 20rem;
+    height: 17rem;
+  }
+  .facilities .facility1, .facilities .facility3 {
+    grid-template-columns: 2fr 3fr;
+  }
+  .facilities .facility2 {
+    grid-template-columns: 3fr 2fr;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .main {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+}/*# sourceMappingURL=tvastra-plus.css.map */

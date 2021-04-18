@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctor</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/doctor.css">
+    <script src="https://kit.fontawesome.com/c08742ea51.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <%- include ('partials/header.ejs') %>
+    </header>
+    <div class="doc_top">
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png" alt="Surgeon">
+        <h1>Cardiac Surgeon in <u>Delhi</u></h1>
+    </div>
+    <div class="title doc_cont">
+        <span><a href="./index.html">Home</a> <a href="./doctor.html">/ Doctor List</a></span>
+        
+        <form method="POST" action="/sort-by" id="sort">
+            <select class="breadcrumb__sort" name="sort" onchange="this.form.submit()" id="sortbtn">
+                <option value="not-specified" selected disabled>Sort By</option>
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="doctor.avg_fees-asc">Fees Low-High</option>
+                <option value="doctor.avg_fees-desc">Fees High-Low</option>
+                <option value="doctor.experience-desc">Experience</option>
+            </select>	
+        </form>
+    </div>
+    <section class="doc_main">
+        <div class="filter">
+            <h5>Filter By</h5>
+            <div class="doctor_list__container__col-1__filter-by__tags"
+            id="doctor_list__container__col-1__filter-by__tags">
+            <% if(filter) { %>
+                <% let key=Object.keys(filter) %>
+                    <% key.forEach(el=> { %>
+                        <% for(let i=0; i < filter[el].length; i++) { %>
+                            <div class="filter_button">
+                                <p class="text">
+                                    <%= filter[el][i] %>
+                                </p>
+                                <button onclick="form_submit(this)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                                    <% } %>
+        </div>
+            <form class="filt" action="/add-filters">
+                <span>
+                    <h6>Location</h6>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </span>
+                <div><input type="checkbox" id="location1" name="location1" value="Mumbai">
+                    <label for="location1">Mumbai</label>
+                </div>
+                <div><input type="checkbox" id="location2" name="location2" value="Ahmedabad">
+                    <label for="location2">Ahmedabad</label>
+                </div>
+                <div><input type="checkbox" id="location3" name="location3" value="Delhi">
+                    <label for="location3">Delhi</label>
+                </div>
+                <div><input type="checkbox" id="location4" name="location4" value="Rajkot">
+                    <label for="location4">Rajkot</label>
+                </div>
+                <div><input type="checkbox" id="location5" name="location5" value="Surat">
+                    <label for="location5">Surat</label>
+                </div>
+                <div><input type="checkbox" id="location6" name="location6" value="Kolkata">
+                    <label for="location6">Kolkata</label>
+                </div>
+                <div><input type="checkbox" id="location7" name="location7" value="Chennai">
+                    <label for="location7">Chennai</label>
+                </div>
+            </form>
+            <a class="showmore" href="#">+ Show More</a>
+            <hr>
+            <form class="filt" action="#">
+                <span>
+                    <h6>Treatment</h6>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </span>
+                <div><input type="checkbox" id="Treatment1" name="Treatment1" value="Multi Organ Transplant">
+                    <label for="Treatment1">Multi Organ Transplant</label>
+                </div>
+                <div><input type="checkbox" id="Treatment2" name="Treatment2" value="Orthopedic Surgery">
+                    <label for="Treatment2">Orthopedic Surgery</label>
+                </div>
+                <div><input type="checkbox" id="Treatment3" name="Treatment3" value="Infertility Treatment">
+                    <label for="Treatment3">Infertility Treatment</label>
+                </div>
+                <div><input type="checkbox" id="Treatment4" name="Treatment4" value="Dentistry">
+                    <label for="Treatment4">Dentistry</label>
+                </div>
+                <div><input type="checkbox" id="Treatment5" name="Treatment5" value="Cardiology">
+                    <label for="Treatment5">Cardiology</label>
+                </div>
+                <div><input type="checkbox" id="Treatment6" name="Treatment6" value="Cancer">
+                    <label for="Treatment6">Cancer</label>
+                </div>
+                <div><input type="checkbox" id="Treatment7" name="Treatment7" value="Skin Care">
+                    <label for="Treatment7">Skin Care</label>
+                </div>
+            </form>
+            <a class="showmore" href="#">+ Show More</a>
+            <hr>
+            <form class="filt" action="#">
+                <span>
+                    <h6>Hospital</h6>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </span>
+                <div><input type="checkbox" id="Hospital1" name="Hospital1" value="Apollo Hospital">
+                    <label for="Hospital1">Apollo Hospital</label>
+                </div>
+                <div><input type="checkbox" id="Hospital2" name="Hospital2" value="Manipal Northside Hospital">
+                    <label for="Hospital2">Manipal Northside Hospital</label>
+                </div>
+                <div><input type="checkbox" id="Hospital3" name="Hospital3" value="Northstar">
+                    <label for="Hospital3">Northstar</label>
+                </div>
+                <div><input type="checkbox" id="Hospital4" name="Hospital4" value="AIIMS">
+                    <label for="Hospital4">AIIMS</label>
+                </div>
+                <div><input type="checkbox" id="Hospital5" name="Hospital5" value="Fortis Hospital">
+                    <label for="Hospital5">Fortis Hospital</label>
+                </div>
+                <div><input type="checkbox" id="Hospital6" name="Hospital6" value="Albit Diagnostic">
+                    <label for="Hospital6">Albit Diagnostic</label>
+                </div>
+                <div><input type="checkbox" id="Hospital7" name="Hospital7" value="City Hospital">
+                    <label for="Hospital7">City Hospital</label>
+                </div>
+            </form>
+            <a class="showmore" href="#">+ Show More</a>
+            <hr>
+            <form class="filt" action="#">
+                <span>
+                    <h6> Years of Experience</h6>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </span>
+                <div><input type="checkbox" id="experience1" name="experience1" value="30+">
+                    <label for="experience1">30+</label>
+                </div>
+                <div><input type="checkbox" id="experience2" name="experience2" value="25+">
+                    <label for="experience2">25+</label>
+                </div>
+                <div><input type="checkbox" id="experience3" name="experience3" value="20+">
+                    <label for="experience3">20+</label>
+                </div>
+                <div><input type="checkbox" id="experience4" name="experience4" value="15+">
+                    <label for="experience4">15+</label>
+                </div>
+                <div><input type="checkbox" id="experience5" name="experience5" value="10+">
+                    <label for="experience5">10+</label>
+                </div>
+                <div><input type="checkbox" id="experience6" name="experience6" value="5+">
+                    <label for="experience6">5+</label>
+                </div>
+            </form>
+            <a class="showmore" href="#">+ Show More</a>
+            <hr>
+        </div>
+
+        <section class="doctors_list">
+            <div class="doc_pro" id="prof1">
+                <h3>Charlie Moon</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Homeopethic</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>MBBS, MD, BDMS</p></li>
+                    <li><i class='fas fa-award'></i><p>Gold Medal in Homeopethy</p></li>
+                    <li><i class='fas fa-clock'></i><p>5 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>AIIMS</p></li>
+                    <li><i class='fas fa-map-marker-alt'></i><p>Delhi</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" alt="">
+            </div>
+            <div class="doc_pro" id="prof2">
+                <h3>Rose Sanson</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Neurological Surgeon</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>BHMS MSH</p></li>
+                    <li><i class='fas fa-award'></i><p>Doctor of The year 2012</p></li>
+                    <li><i class='fas fa-clock'></i><p>15 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>Apollo Hospital</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Mumbai</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="">
+            </div>
+            <div class="doc_pro" id="prof3">
+                <h3>Duke Moon</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Orthopedic Surgeon</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>DHNS MD Ortho.</p></li>
+                    <li><i class='fas fa-award'></i><p>2015 Medical Student of the Year</p></li>
+                    <li><i class='fas fa-clock'></i><p>5 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>City Hospital</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Ahmedabad</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="">
+            </div>
+            <div class="doc_pro" id="prof4">
+                <h3>Akshay Kumar</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Heart Specialist</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>MSEE MBBS MD</p></li>
+                    <li><i class='fas fa-award'></i><p>Most Successful Doctor </p></li>
+                    <li><i class='fas fa-clock'></i><p>8 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>Northstar</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Kolkatta</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg" alt="">
+            </div>
+            <div class="doc_pro" id="prof5">
+                <h3>Manisha Khanna</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Eye Specialist</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>MHSC MD</p></li>
+                    <li><i class='fas fa-award'></i><p>President of Doctor Ass.</p></li>
+                    <li><i class='fas fa-clock'></i><p>7 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>Fortis Hopspital</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Rajkot</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="">
+            </div>
+            <div class="doc_pro" id="prof6">
+                <h3>Babita Savaliya</h3>
+                <ul class="qualification">
+                    <li><i class='fas fa-certificate'></i><p>Infertility and Child Specialist</p></li>
+                    <li><i class='fas fa-user-graduate'></i><p>MDC BHMS</p></li>
+                    <li><i class='fas fa-award'></i><p>Specialist of the year 2010</p></li>
+                    <li><i class='fas fa-clock'></i><p>25 Years of Experience</p></li>
+                    <li><i class='fas fa-hospital'></i><p>City Hospital</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Chennai</p></li>
+                </ul>
+                <button class='darkbluebtn btn'> Book an Appointment</button>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="">
+            </div>
+        </section>
+
+    </section>
+    <section class="container help">
+        <h2>Need Help?</h2>
+        <p>Just let us know, we will happy to assist you</p>
+        <button class=" skybluebtn btns">Submit your enquiry</button>
+    </section>
+    <footer>
+        <%- include ('partials/footer.ejs') %>
+    </footer>
+    <div class="lastline"></div>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="../js files/index.js"></script>
+</body>
+
+</html>

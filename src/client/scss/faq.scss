@@ -1,0 +1,143 @@
+@import "theme";
+.cont_top{
+    width: 100%;
+    padding: 0;
+    position: relative;
+    height: 15rem;
+    display: flex;
+    align-content: center;
+    
+}
+ .cont_top img {
+    object-fit: cover;
+    z-index: -10;
+}
+.title {
+    width: 100%;
+    padding: 0;
+    
+    position: absolute;
+    bottom: 22.5%;
+    
+}
+.title h1, .title h5, .title h5 a{
+    color: $text-white;
+    font-weight: 900;
+}
+.main {
+    padding: 1rem;
+    
+}
+.doctor{
+    padding: 0.5rem;
+}
+.darkbluebtn{
+    border-radius: 0;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-weight: 800;
+}
+.details{
+    padding: 0;
+
+    p{
+        margin: 1rem;
+        text-align: start;
+    }
+    
+    .menu{
+        display: grid;
+        grid-template-columns:  auto 10%;
+        color: $text-blue;
+        padding:  0.5rem;
+        i{
+            color: $text-blue;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            align-self: center;
+        }
+        .arrows{
+            justify-self: end;
+        }
+        .fa-angle-up, .fa-angle-down{
+           background: $shadow;
+           margin-top: 0.3rem ;
+           width: 1.5rem;
+           height: 1.5rem;
+           border-radius: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           justify-self: end;
+           cursor: pointer;
+           align-self: center;
+           &::before{
+               justify-self: center;
+               margin:  25%;
+               position: relative;
+               top: 0.15rem;
+
+           }
+        
+           
+        }
+        h3{ 
+            margin: 0.4rem;
+            color: $text-blue;
+            text-align: start;
+            align-self: center;
+            
+        }
+    }
+
+    .menu_para{
+        margin: 0 0.5rem;
+        text-align: start;
+        background: $shadow;
+        padding: 0.5rem;
+        animation: scrolling 1.5s ;
+        @keyframes scrolling {
+            from{
+                opacity: 0;
+            }
+            to{
+                 opacity: 1;  
+            }
+            
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .title {
+        position: absolute;
+        bottom: 22.5%;
+        
+    }
+    .main{
+        padding: 2rem 1.5rem;
+    }
+}
+@media screen and (min-width: 1025px){
+    .title{
+        width: auto;
+        padding: 0 5rem;
+        h5{
+            text-align: start;
+        }
+    }
+    .main{
+        padding: 3rem 5rem;
+        
+    }
+    .help h2{
+        margin-left: 0;
+    }
+    .help p{
+        text-align: start;
+        margin-left: 0;
+    }
+    footer{
+        margin: 0;
+        padding: 3rem 5rem;
+    }
+}

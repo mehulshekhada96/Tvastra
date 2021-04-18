@@ -1,0 +1,124 @@
+@import "./theme.scss";
+#full {
+   background-color: $light-blue;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+    padding:  0;
+}
+
+.formcont{
+   background-color: white;
+   margin: 3rem 1rem;
+   padding:2rem 0;
+   height: auto;
+   width: 90%;
+   align-self: center;
+   justify-self: center;
+   box-shadow: 0 0 1rem $text-gray;
+   h1{
+      width: 100%;
+      margin-bottom: 2rem;
+      color: $text-blue;
+   }
+      
+}
+.signinform{
+   display: flex;
+   flex-direction: column;
+   padding: 0 1rem;
+}
+.signinform input, textarea{
+   border: 2px solid $light-gray;
+   padding: 1rem;
+   margin: 0.5rem 0;
+}
+.signinform .btn{
+   width: 100%;
+   padding: 1.5rem 1rem;
+   margin: 0.5rem 0;
+}
+footer{
+   display: flex;
+   background: $light-blue;
+   padding-bottom: 2rem;
+   h6{
+      margin: 0;
+   }
+}
+.arrow{
+   color:#ffffff ;
+   position: relative;
+   bottom: 3.2rem;
+   left: 92%;
+   width: 1rem;
+}
+
+.fa-question-circle{
+   
+   position: relative;
+   top: 3rem;
+   color: $light-gray;
+   left: 92%;
+   width: 1rem;
+   
+}
+#login{
+
+   font-family: $boldfont;
+   font-weight: 900;
+   letter-spacing: 0.4rem;
+   
+}
+
+@media only screen and (min-width: 768px){
+   .formcont {
+      width: 60%;
+      height: auto; 
+   }
+   .btn{
+      font-size: 1.2rem;
+   }
+}
+@media only screen and (min-width: 1025px ){
+   .formcont {
+      width: 50%;
+      height: auto; 
+   }
+   h1{
+      font-size: 1.7rem;
+      text-align: center;
+      margin: 1rem 0;
+   }
+   .btn{
+      font-size: 1.2rem;
+   }
+   .arrow{
+      font-size: 1.2rem;
+      bottom: 3.4rem;
+   }
+   .signinform input, #gender{
+    
+      padding:1rem;
+      padding-right: 2rem;
+      
+   }
+   .signinform .btn{
+   
+      padding:  1rem;
+   
+   }
+   .arrow{
+       bottom: 2.75rem;
+       font-size: 1rem;
+     
+   }
+   input, textarea{
+      border-width: 4px !important;
+   }
+   .fa-question-circle{
+      top: 2.4rem;
+      font-size: 1rem;
+   }
+   
+}   

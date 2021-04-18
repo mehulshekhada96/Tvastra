@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <script src="https://kit.fontawesome.com/c08742ea51.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <%- include ('partials/header.ejs') %>
+    </header>
+    <section id="full">
+
+        <div class="formcont">
+            <h1>Sign Up</h1>
+            <hr>
+            <form class="signinform" action="signup" method="POST">
+                <input type="text" id="name" name="name" placeholder="Enter Name">
+                <input type="email" id="email" name="email" placeholder="Enter Email">
+                <input type="Password" id="pwd" name="password" placeholder="Enter Password">
+                <input type="text" list="gender" name="gender" placeholder="Select Your Gender">
+                <datalist id="gender">
+                    <option value="Male"></option>
+                    <option value="Female"></option>
+                    <option value="Other"></option>
+                </datalist>
+                <input type="date" name="dob" id="birthdate">
+                <input id="phone" type="tel" name="phoneNumber" placeholder=" Enter Phone Number" pattern="[0-9]{10}">
+                <div class="city_state"> <input id="city1" name="location" type="text" placeholder="Enter City">
+                    <input id="state" type="text" name="state" placeholder="Enter State">
+                </div>
+                <input type="text" list="country" name="country" placeholder="Select Your Country">
+                <datalist id="country">
+                    <option value="India"></option>
+                    <option value="USA"></option>
+                    <option value="UK"></option>
+                </datalist>
+                <div class="isDoctor" id="isDoctorInput">
+                    <input name="isDoctor" id="isDoctor" type="checkbox" class="form_container__form__email">
+                    <label for="isDoctor">Are You A Doctor?</label>
+                </div>
+                <div class="sbmt">
+                    <button class="darkbluebtn btn" id="login" type="submit">SIGN UP</button>
+                    <i class='fas fa-arrow-right arrow'></i>
+                </div>
+
+            </form>
+            <h5>Already registered? <a href="/email-login">Login</a></h5>
+        </div>
+    </section>
+    <section class="foooter">
+        <h6>All Rights Reserved. &#169 tvastra 2021</h6>
+    </section>
+    <script src="../js files/index.js"></script>
+</body>
+
+</html>

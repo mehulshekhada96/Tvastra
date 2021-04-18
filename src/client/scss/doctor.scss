@@ -1,0 +1,329 @@
+@import "./colors.scss";
+.doc_top, .filter{
+    visibility: hidden;
+    display: none;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    span a{
+        font-weight: 800;
+        color: $text-gray;
+    }
+}
+
+#sort{
+    align-self:end;
+    font-size: 0.8rem;
+    // margin: 1rem;
+    position: relative;
+    top: 0;
+}
+#sortbtn{
+    padding: 0.5rem;
+    background-color: $light-gray;
+    justify-self: end;
+    border: none;
+}
+.doc_main{
+    padding: 0 1rem;
+}
+
+.qualification li {
+   display: grid;
+   grid-template-columns: 15% auto;
+   grid-template-areas: "icon details";
+   margin: 0.5rem 0;
+   .fas {
+    position: relative;
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    color: $text-blue;
+    grid-area: icon;
+    align-self: center;
+}
+}
+.qualification li p {
+    margin: 0;
+    font-size: 1rem;
+    grid-area: details;
+    text-align: start;
+    line-height: 1.4rem;
+    
+}
+
+.doc_pro h3{
+    text-align:  left ;
+    margin-left: 0;
+    margin-top: 1rem;
+    color: $text-blue;
+}
+.doc_pro h3::before{
+    content: "\2015\0A00\0A00";
+    font-size: 2rem;
+    font-weight: 900;
+}
+.doc_pro {
+    border: 3px solid  $light-gray;
+    padding: 0;
+    margin-bottom: 1rem;
+    height: 100%;
+}
+.doc_pro .btn{
+    width:auto;
+    display: flex;
+    padding: 0.7rem 1rem;
+    border-radius: 0;
+    margin: 0.5rem auto;
+    font-weight: 900;
+   
+}
+.doc_pro img{
+    height: 100vw;
+    @media screen and (max-width: 767px){
+        position: relative;
+        top: 0.25rem;
+    }
+    
+}
+@media only screen and (min-width: 768px){
+    .doc_top{
+        background:$light-blue;
+        background-size: 100%;
+        width: 100%;
+        display: flex;
+        visibility: visible;
+        padding: 0;
+        height: 15rem;
+        background-position: center;
+        position: relative;
+    
+    }
+    .title{
+        padding: 2rem 2rem 1rem;
+    }
+    span a{
+        font-size: 1.2rem;
+    }
+    .doctors_list{
+        padding-left:0 ;
+    }
+    .doc_top img{
+        object-fit:cover;
+        opacity: 0.1;
+        transform: scaleX(-1);
+    }
+    .doc_top h1{
+        position: absolute;
+        top: 6rem;
+        left: 2rem;
+        margin-bottom: 0;
+        
+        font-family: "Nexa-light" ;
+    }
+    .doc_cont{
+        height: 2rem;
+    }
+    #sort{
+        margin: 0;
+        padding: 0 1rem 0 0;
+    }
+    #sortbtn {
+        font-size: 1.2rem;
+        padding: 0.75rem;
+        border: none;
+    }
+    .doc_main {
+        display: grid;
+        grid-template-areas: "filter doctors";
+        grid-template-columns: 28% 72% !important;
+    }
+    .filter, .filt{
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        grid-area: filter;
+        padding-bottom: 0;
+      
+    }
+   
+    .filter{
+        padding: 1rem 2rem 1rem 1rem ;
+    }
+    .filter h5 {
+        background: $light-gray;
+        padding: 1rem;
+        margin: 1rem 0 0 0 ;
+        text-align: start;
+    }
+    
+    .filt span {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        margin: 1rem 0;
+    }
+    .filt span h6{
+        margin: 0;
+        font-size: 1.1em;
+        text-align: start;
+        padding: 0.4rem 0 0 1rem;
+        color: $text-gray;
+    }
+    .filt span button {
+        background: none;
+        padding: 0;
+        border: none;
+        justify-self: end;
+        i{
+            font-size: 1rem;
+        }
+    }
+    .filt span button::after{
+        content: "\0A00\0a00\0a00\2500";  
+        color: $text-gray;
+        font-weight: 900;
+        font-size: 1rem;
+    }
+    .filt div{
+        padding: 0.25rem 0 0.25rem 1rem;
+        display: grid;
+        grid-template-columns: 10% 90%;
+    }
+    .filt div label {
+        line-height: 1.2rem;
+        margin-left: 1rem;
+    }
+    .filt div input{
+        
+        width: 1rem;
+        height: 1rem;
+        align-self: center;
+    }
+    .showmore, .fa-search{
+        color: $text-blue;
+    }
+    .showmore{
+        padding-left: 1rem;
+    }
+    hr{
+        margin-right: 1rem;
+        width: 100%;
+        color: $text-gray;
+     }
+    
+    .doc_pro{
+        display: grid;
+        grid-template-columns: auto 30%;
+        grid-template-rows: 4rem 13rem 6rem;
+        grid-template-areas: "name photo"
+        "ul photo"
+        "btn photo" ;
+        height: auto;
+    }
+    .doc_pro h4{
+        grid-area: name;
+    }
+    .doc_pro img{
+        grid-area: photo; 
+        width: 100%;
+        height: 100%
+    }
+    .doc_pro ul {
+        grid-area: ul;
+        display: flex;
+        flex-wrap: wrap ;
+       
+        li{
+            width: 40%;
+            margin-left: 1rem;
+            p{
+                align-self: center;
+                margin-left: 1rem;
+            }
+            i{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .doc_pro button {
+        grid-area: btn;
+    }
+    .doc_pro .btn{
+        width:70%;
+        font-size: 1.2rem;
+        margin: 0.5rem 2rem;
+        font-weight: 900;
+        justify-content: center;
+        align-self: center;
+    }
+    label{
+        color: $dark-blue;
+        align-self: center;
+    }
+}
+@media screen and (min-width: 1025px){
+    .doc_top h1{
+        left: 5rem;
+    }
+    .doc_pro{
+        display: grid;
+        grid-template-columns: auto 30%;
+        grid-template-rows: 5rem 10rem 6.5rem;
+        img{
+            object-position: 20% 20%;
+        }
+        h3{
+            margin-top: 2rem;
+        }
+    }
+    .fa-bars{
+        display: none;
+        visibility: hidden;
+    }
+    .doc_cont {
+        margin: 1rem 3rem;
+     }
+    .doc_main {
+        padding-left:  4rem;
+        grid-template-columns: 28% 72%;
+    }
+    .doctors_list{
+        padding-top: 0;
+    }
+    .doc_pro ul{
+        padding-left: 1rem;
+        margin: 0.5rem;
+        
+    }
+    .doc_pro .btn{
+        width:40%;
+        justify-self: start;
+        font-size: 1rem;
+        margin-left: 3rem;
+    }
+    .filter{
+      padding-top: 0;
+      h5{
+          margin: 0;
+      }
+    }
+    .filt div{
+        grid-template-columns: 10% 90%;
+    }
+    .filt span button::after{
+        font-size: 1.5rem;
+    }
+    .help h2, .help p {
+        text-align: start;
+    }
+    footer{
+        padding: 2rem 4rem;
+    }
+    footer p {
+        font-family:sans-serif;
+        font-weight: 200;
+    }
+}

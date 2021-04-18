@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/signup.css">
+	<link rel="stylesheet" href="../css/otp.css">
+    <script src="https://kit.fontawesome.com/c08742ea51.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<title>OTP</title>
+</head>
+<body>
+
+   
+    <section id="full">
+        
+        <header>
+        <%- include ('partials/header.ejs') %>
+    </header>
+       
+        <div class="formcont form_container__form__submit">
+            <h1>OTP</h1>
+            <hr>
+            <form class="signinform" action="/otp" method="POST">
+                <p class="para-1 otp-message">We have sent One Time Password (OTP) to your registered Phone Number.</p>
+             
+             
+                <div class="otp_field">
+
+					<input class="otpField" name="otp_1" id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)" required>
+					<input class="otpField" name="otp_2" id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)" required>
+					<input class="otpField" name="otp_3" id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)" required>
+					<input class="otpField" name="otp_4" id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)" required>
+
+				</div>
+                <div class="forgot_password timer resend-otp"><a href="#"><h6 class="para-1">Resend in 35</h6></a></div>
+                <button class="darkbluebtn btn" id="login" type="submit">OTP Submit</button>
+                <i class='fas fa-arrow-right arrow'></i>
+
+            </form>
+            <h5>Not registered? <a href="/signup">Sign Up</a></h5>
+        </div>
+        <footer>
+            <h6>All Rights Reserved. &#169 tvastra 2021</h6>
+        </footer>
+
+    </section>
+    <script src="../js files/togglepassword.js"></script>
+    <script src="../js files/forgotPassword.js"></script>
+	<script type="text/javascript" src="../../otp.js"></script>
+	<script src="../../error.js"></script>
+</body>
+
+</html>

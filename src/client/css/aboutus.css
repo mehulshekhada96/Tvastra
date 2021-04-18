@@ -1,81 +1,581 @@
-@import "./theme.css";
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
+}
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
 
-.about_top{
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+.about_top {
   padding: 0;
   height: 24rem;
   position: relative;
 }
+
 .about_top img {
-    object-fit: cover;
-    z-index: -10;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -10;
+  filter: brightness(75%);
 }
+
 .title {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+}
+
+.title h1, .title p {
+  color: white;
+}
+
+.title p {
+  margin: 1rem;
+}
+
+.para {
+  padding: 0;
+}
+
+.sign {
+  width: 50%;
+  height: 70%;
+  margin: 1rem auto;
+  justify-self: center;
+}
+
+.abt_dtl_main {
+  padding: 0;
+}
+
+.abt_dtl {
+  background-color: black;
+  padding: 0;
+}
+
+.abt_dtl1 h2, .abt_dtl1 p {
+  color: white;
+}
+
+.abt_dtl2 {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+.numbers h3 {
+  color: white;
+  margin: 1rem 0 0.5rem 0;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.numbers h6 {
+  color: #626060;
+  text-align: center;
+}
+
+.numbers {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  border: 3px solid #626060;
+  border-radius: 5px;
+}
+
+.checkup {
+  font-weight: 800;
+  padding: 1rem 2rem;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-self: center;
+  border-radius: 0.5rem;
+}
+
+.skybluebtn {
+  padding: 1rem;
+}
+
+#myVideo {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    width: 100%;
     position: absolute;
-    bottom: 25%;
-    left: 0;
-   
-}
-.title h1, .title p{
-    color: white;
-}
-section{
+    top: 35%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mid {
+    display: grid;
+    grid-template-areas: "head img" "para img" "sign img";
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto auto;
+  }
+
+  .mid h2 {
+    grid-area: head;
+    text-align: start;
+  }
+
+  .mid .para {
+    grid-area: para;
     padding: 0;
-} 
-.sign{
-    width: 50%;
-    margin: auto;
-}
-.abt_dtl{
-    background-color: black;
+  }
+  .mid .para p {
+    margin: 1rem 0;
+    text-align: start;
+  }
+
+  .mid .sign {
+    grid-area: sign;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .mid .female_doctor {
+    grid-area: img;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     padding: 1rem 0;
+  }
+
+  .abt_dtl1 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .abt_dtl1 p {
+    margin: 0 0 3rem 0;
+    text-align: start;
+  }
+  .abt_dtl1 .checkup {
+    margin-left: 0;
+  }
+
+  .abt_dtl2 {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .numbers {
+    width: 27.5%;
+  }
+  .numbers h3 {
+    font-size: 1.5rem;
+  }
 }
-.abt_dtl1 h2,.abt_dtl1 p {
-    color: white;
-}
-.numbers h3, .numbers p{
-    color: white;
-}
-.numbers{
-    margin:1rem;
-    border: 1px solid var(--text-gray);
-    border-radius: 5px;
-}
-.checkup{
-    width: 50%;
-    margin: 1rem 25%;
-}
-@media screen and (min-width: 768px){
-    .mid{
-        margin: 1rem;
-        display: grid;
-        grid-template-areas: "head img"
-        "para img"
-        "sign .";
-        grid-template-columns: 60%  40%;
-    }
-    .mid h2{
-        grid-area: head;
-        text-align: start;
-    }
-    .mid .para{
-        grid-area: para;
-        padding: 0;
-    }
-    .mid .sign{
-        grid-area: sign;
-    }
-    .mid .female_doctor{
-        grid-area: img;
-        height: max-content;
-        padding: 2rem 0;
-    }
-    p{
-        font-size: 0.8rem;
-    }
-    .para p{
-        text-align: start;
-    }
-    .
-}
+@media screen and (min-width: 1025px) {
+  .title h1 {
+    text-align: center;
+  }
+
+  .about_top img {
+    -o-object-position: 25% 5%;
+       object-position: 25% 5%;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  .mid {
+    display: grid;
+    grid-template-areas: "head . img" "para . img" "sign . img";
+    grid-template-columns: 50% 10% 30%;
+    grid-template-rows: auto auto auto;
+  }
+
+  #myVideo {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 31rem;
+    margin-top: -3rem;
+    -o-object-position: 0 -7rem;
+       object-position: 0 -7rem;
+    overflow: hidden;
+  }
+
+  .abt_dtl_main {
+    padding-top: 3rem;
+    position: relative;
+    height: auto;
+  }
+
+  .abt_dtl {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "dtl1 dtl2";
+    padding: 3rem 4rem;
+    margin-top: 3rem;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .abt_dtl .abt_dtl1 {
+    padding: 1rem;
+    grid-area: dtl1;
+  }
+  .abt_dtl .abt_dtl2 {
+    padding: 1rem;
+    grid-area: dtl2;
+  }
+
+  .numbers {
+    width: 26.5%;
+  }
+
+  .help p {
+    text-align: start;
+  }
+}/*# sourceMappingURL=aboutus.css.map */

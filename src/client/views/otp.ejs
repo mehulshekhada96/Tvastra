@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/theme.css">
+	<link rel="stylesheet" href="../css/stylesheet.css">
+	<link rel="stylesheet" href="../css/signin.css">
+	<!-- <link rel="stylesheet" href="../css/signup.css"> -->
+	<link rel="stylesheet" href="../css/otp.css">
+	<script src="https://kit.fontawesome.com/c08742ea51.js" crossorigin="anonymous"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<title>OTP</title>
+</head>
+
+<body>
+
+	<header>
+		<%- include ('partials/header.ejs') %>
+	</header>
+	<section id="full">
+
+	
+
+		<% if(error) {%>
+			<% if(errorType==='Success' ) { %>
+				<div class="error_container error_container--success">
+					<div class="col--1">
+						<div class="error_container__icon">
+							<i class="fas fa-check-circle"></i>
+						</div>
+					</div>
+					<div class="col--2">
+						<div class="error_container__title heading-3">
+							Success
+						</div>
+						<span class="para-1 error" id="cancelLogin">
+							<%= error %>
+								<!-- Valid Only for 60 Seconds. -->
+						</span>
+					</div>
+					<div class="col--3">
+						<div class="error_container__icon" id="cross">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+				</div>
+				<% } %>
+					<% if(errorType==='Failure' ) { %>
+						<div class="error_container">
+							<div class="col--1">
+								<div class="error_container__icon">
+									<i class="fas fa-times-circle"></i>
+								</div>
+							</div>
+							<div class="col--2">
+								<div class="error_container__title heading-3">
+									Failure
+								</div>
+								<span class="para-1 error" id="cancelLogin">
+									<%= error %>
+										<!-- Valid Only for 60 Seconds. -->
+								</span>
+							</div>
+							<div class="col--3">
+								<div class="error_container__icon" id="cross">
+									<i class="fas fa-times"></i>
+								</div>
+							</div>
+						</div>
+						<% } %>
+							<% if(errorType==='Info' ) { %>
+								<div class="error_container error_container--info">
+									<div class="col--1">
+										<div class="error_container__icon">
+											<i class="fas fa-info-circle"></i>
+										</div>
+									</div>
+									<div class="col--2">
+										<div class="error_container__title heading-3">
+											Info
+										</div>
+										<span class="para-1 error" id="cancelLogin">
+											<%= error %>
+												<!-- Valid Only for 60 Seconds. -->
+										</span>
+									</div>
+									<div class="col--3">
+										<div class="error_container__icon" id="cross">
+											<i class="fas fa-times"></i>
+										</div>
+									</div>
+								</div>
+								<% } %>
+									<% } %>
+
+										<div class="form_container__form__submit formcont">
+											<h1>OTP</h1>
+											<hr>
+											<form class="signinform" action="/otp" method="POST">
+												<p class="para-1 otp-message">We have sent One Time Password (OTP) to
+													your registered Phone Number.</p>
+
+
+												<div class="otp_field">
+
+													<input class="otpField" name="otp_1" id="codeBox1" type="number"
+														maxlength="1" onkeyup="onKeyUpEvent(1, event)"
+														onfocus="onFocusEvent(1)" required>
+													<input class="otpField" name="otp_2" id="codeBox2" type="number"
+														maxlength="1" onkeyup="onKeyUpEvent(2, event)"
+														onfocus="onFocusEvent(2)" required>
+													<input class="otpField" name="otp_3" id="codeBox3" type="number"
+														maxlength="1" onkeyup="onKeyUpEvent(3, event)"
+														onfocus="onFocusEvent(3)" required>
+													<input class="otpField" name="otp_4" id="codeBox4" type="number"
+														maxlength="1" onkeyup="onKeyUpEvent(4, event)"
+														onfocus="onFocusEvent(4)" required>
+
+												</div>
+												<div class="forgot_password timer resend-otp"><a href="#">
+														<h6 class="para-1">Resend in 35</h6>
+													</a></div>
+												<div class="sbmt"><button class="darkbluebtn btn" id="login" type="submit">OTP
+													Submit</button>
+												<i class='fas fa-arrow-right arrow'></i>
+											</div>
+											</form>
+											<h5>Not registered? <a href="/signup">Sign Up</a></h5>
+										</div>
+
+	</section>
+    <section class="foooter">
+        <h6>All Rights Reserved. &#169 tvastra 2021</h6>
+    </section>
+	<script src="../js files/index.js"></script>
+
+	<!-- <script src="../js files/togglepassword.js"></script>
+    <script src="../js files/forgotPassword.js"></script> -->
+	<script type="text/javascript">
+		const otpField = document.querySelector('input[name="otp"]');
+		const submit = document.querySelector('.form_container__form__submit');
+		const timer = document.querySelector('.timer').children[0].children[0];
+		const resendOTPBtn = document.querySelector('.resend-otp').children[0];
+
+		resendOTPBtn.style.color = 'grey';
+
+
+		function getCodeBoxElement(index) {
+			return document.getElementById('codeBox' + index);
+		}
+		function onKeyUpEvent(index, event) {
+			const eventCode = event.which || event.keyCode;
+			if (getCodeBoxElement(index).value.length === 1) {
+				if (index !== 4) {
+					getCodeBoxElement(index + 1).focus();
+				} else {
+					getCodeBoxElement(index).blur();
+					// Submit code
+				}
+			}
+			if (eventCode === 8 && index !== 1) {
+				getCodeBoxElement(index - 1).focus();
+			}
+		}
+		function onFocusEvent(index) {
+			for (item = 1; item < index; item++) {
+				const currentElement = getCodeBoxElement(item);
+				if (!currentElement.value) {
+					currentElement.focus();
+					break;
+				}
+			}
+		}
+
+
+		let timerCount = parseInt(timer.innerHTML.split(' ')[2]);
+
+		const countDown = setInterval(() => {
+			if (timerCount === 0) {
+				timer.innerHTML = 'Resend';
+				resendOTPBtn.style.color = '#0173b2';
+				resendOTPBtn.addEventListener('click', (el) => {
+					fetch('/resend-otp', {
+						method: 'put'
+					});
+					event.preventDefault();
+				});
+				clearInterval(countDown);
+			} else {
+				timerCount--;
+				timer.innerHTML = `Resend in ${timerCount}`;
+			}
+
+		}, 1000);
+
+		function moveOnMax(field, nextField) {
+			if (field.value.length >= field.maxLength) {
+				document.querySelector(nextField).focus();
+			}
+		}
+
+
+
+	</script>
+	<script>
+		const error = document.querySelector('.error_container');
+		const cross = document.querySelector('.col--3');
+		const hideError = () => {
+			error.style.display = 'none';
+			fetch('/disable-error', {
+				method: 'put'
+			});
+		}
+
+		if (error) {
+			fetch('/disable-error', {
+				method: 'put'
+			});
+			setTimeout(() => {
+				error.style.display = 'none';
+			}, 5000);
+		}
+
+		cross.addEventListener('click', hideError);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+@import "./theme.scss";
+.logo{
+    padding: 1rem auto;
+}
+.dent_top{
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    background: linear-gradient(to right,$text-blue, rgba(255,255,255,0));
+    padding: 0;
+}
+.dent_top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    object-position: 10% 10%;
+}
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.title h1, .title h5, .title h5 a{
+    color: $text-white;
+    font-weight: 700;
+    text-align: center;
+}
+.vacc{
+    padding: 0;
+}
+.abt_dent{
+    padding: 0;
+}
+.abt_dent h3, .abt_dent p{
+    text-align: start;
+    line-height: 1.4rem;
+    margin: 1rem 0;
+}
+.desease li::before {
+    content: "\2022";
+    color:$text-blue;
+    font-weight: 900;
+    display: inline-block;
+    font-size: 1.5rem;
+    align-self: center;
+    width: 1rem;
+    margin-left: -1rem;
+}
+.desease li {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.symb{
+    width: 2rem;
+    height: 2rem;
+    background-color: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 1rem;   
+}
+.symb .fas {
+    color: $dark-blue;
+    padding: 0;
+    font-size: 1.5rem;
+}
+.types, .types1{
+    padding : 1rem 0;
+}
+.types1 h4, .types1 p {
+    margin:  0.5rem 0;
+}
+.cards{
+    border: 2px solid $light-gray;
+    padding: 0.5rem 0rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    height: auto;
+}
+.card{
+    padding: 0;
+    padding-bottom: 1rem;
+}
+.cards h3{
+    text-align: start;
+    margin:  1rem 0;
+}
+.cards h3::before{
+    content: "\2500\0A00";
+    color: $text-blue;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+hr{
+  color: $light-gray ;  
+  margin: 0.3rem 1.5rem;
+}
+.card_details{
+    padding: 0.75rem 1.5rem 0 1.5rem ;
+    display: flex;
+    justify-content: space-between;
+}
+.card_details h5{
+    margin: 0;
+}
+.value{
+    color: $text-gray;
+}
+.moreservice h2{
+    color: white;
+}
+.moreservice{
+    background-color: $light-blue ;
+}
+
+.arrows{
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    margin-bottom: 0 !important;
+    
+      
+}
+.arrows i {
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+.moreservice div{
+    padding: 0;
+}
+.figs{
+    padding: 0;
+    
+}
+
+.figs .figures_treat {
+    margin: 0.5rem;
+    padding: 0;
+    height: 22rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .figures{
+        width: 100%;
+        height: 22rem;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        position: relative;
+    
+      
+      @keyframes fade {
+        from {opacity: .3;
+            
+            // right:-100%;
+        } 
+        to {opacity: 1;
+        
+    // right:0;
+        }
+      }
+        }
+}
+
+figure img{
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 81%;
+}
+figcaption {
+    height: 2rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    margin: 0;
+    color: $dark-blue;
+    display: grid;
+    grid-template-columns: 2rem auto;
+    align-content: center;
+}
+figcaption::before{
+    content: "\2015";
+    margin-right: 0.2rem;
+    color: $text-blue;
+    font-size: 1.5rem;
+    font-weight: 900;
+    transform: translateY(-0.1rem);
+}
+@media screen and (min-width: 768px){
+    
+   .vacc {
+       display: grid;
+       grid-template-areas: "title title"
+       "image about";
+       grid-template-columns: 40% 60%;
+   }
+   .vacc h2{
+       grid-area: title;
+       text-align: start;
+       margin: 1rem 0;
+   }
+   .vacc img {
+       grid-area: image;
+   } 
+   .abt_dent{
+       padding-left: 1.5rem;
+   }
+   .abt_dent h3{
+       margin-top: 0 ;
+   }
+   .types{
+       display: flex;
+       padding: 0.2rem;
+   }
+   .card{
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+   }
+   .cards:nth-child(2) {
+       height: 11rem;
+   }
+   .symb{
+       margin: 1rem auto;
+   }
+   .moreservice div{
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 1rem;
+       align-items: center;
+   }
+   figure{
+    width: 32%;
+    
+   }
+   .figs{
+    display: flex;
+   }
+}
+@media screen and (min-width: 1025px){
+    .title {
+        width: auto;
+        align-items:flex-start;
+        padding-left: 5rem;
+    }
+    .main{
+        display: grid;
+        grid-template-areas: "vacc card"
+        "det card";
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto auto;
+      
+    }
+    p{
+        font-weight: lighter;
+    }
+    .vacc{
+        grid-area: vacc;
+
+    }
+    .vacc img{
+        height: 20rem;
+    }
+    li{
+        font-weight: 500;
+    }
+    .card{
+        grid-area: card;
+        padding: 1rem;
+        border-width: 4px;
+    }
+    .types{
+        grid-area: det;
+    }
+    .types1{
+        margin: 0.2rem;
+    }
+    h4{
+        text-align: center;
+    }
+    .card{
+        display: flex;
+       flex-direction: column;
+    }
+    
+    footer{
+            padding: 2rem 4rem;
+    }
+    
+}

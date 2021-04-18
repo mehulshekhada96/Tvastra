@@ -1,320 +1,738 @@
-@import "./theme.css";
-.logo {
-    margin: 0;
+@charset "UTF-8";
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
 }
-.hos_top, .filter{
-    visibility: hidden;
-    display: none;
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
 }
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
 }
 
-#sort{
-    margin: 1rem 0;
-    align-self:end;
-    margin: 1rem;
-    position: relative;
-    top: 0;
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
-#sortbtn{
-    padding: 0.5rem;
-    background-color: var(--light-gray);
-    justify-self: end;
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
-.hospital_list{
-    padding: 0;
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
 }
-.qualification li {
-    display: flex;
-    align-content: center;
-    margin: 0;
-    padding-left: 1rem;
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
     line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+.hos_top, .filter {
+  visibility: hidden;
+  display: none;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.title span a {
+  font-weight: 800;
+  color: #626060;
+}
+
+#sort {
+  margin: 1rem 0;
+  align-self: end;
+  position: relative;
+  top: 0;
+}
+
+#sortbtn {
+  padding: 0.5rem;
+  background-color: #d1d0d0;
+  justify-self: end;
+}
+
+.hos_main {
+  padding: 1rem 2rem;
+}
+
+.hospital_list {
+  padding: 0 0 3rem 0;
+}
+
+.qualification li {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  grid-template-areas: "icon details";
+  margin: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.qualification p {
+  margin: 1rem;
+  grid-area: tre1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.qualification p span {
+  margin: 0;
+  padding: 0.5rem;
+  border: 2px solid #d1d0d0;
+  border-radius: 2rem;
+  margin: 0.2rem;
+  font-size: 0.85rem;
 }
 .qualification li span {
-    margin:  1rem;
-}
- li .fas {
-    position: relative;
-    top: 1rem;
-    color: var(--text-blue);
-}
-.hos_pro h4{
-    text-align:  left ;
-    margin-left: 0;
-    color: var(--text-blue);
-}
-.hos_pro h4::before{
-    content: "\2500\2500\0A00\0A00\0A00";
-    
-}
-.hos_pro {
-    border: 2px solid var(--light-gray);
-    padding: 0;
-    margin-bottom: 1rem;
-}
-.hos_pro .btn{
-    width:60%;
-    justify-self: center;
-    margin-left: 20%;
-}
-.hos_pro img{
-    height: 90vw;
-    object-position: 40% 0%;
-}
-.tre1{
-    grid-area: tre1;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.tre1 span{
-    margin: 0;
-    padding: 0.5rem;
-    border: 1px solid var(--dark-blue);
-    border-radius: 2rem;
-    margin: 0.2rem;
-    font-size: 0.75rem;
-}
-li span {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  grid-area: details;
+  text-align: start;
+  line-height: 1.4rem;
 }
 
-@media only screen and (min-width: 768px){
-    .hos_top{
-        background:var(--bg-light-blue);
-        background-size: 100%;
-        width: 100%;
-        display: flex;
-        visibility: visible;
-        padding: 0;
-        height: 15rem;
-        background-position: center;
-        position: relative;
-    
-    }
-    .hos_top img{
-        object-fit:cover;
-        opacity: 0.1;
-        transform: scaleX(-1);
-    }
-    .hos_top h1{
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 5.5rem 2rem;
-        font-family: "Nexa-light" ;
-    }
-    .hos_cont{
-        height: 2rem;
-    }
-    #sort{
-        margin: 0;
-        padding: 0 1rem 0 0;
-    }
-    #sortbtn {
-        font-size: 0.8rem;
-        padding: 0.75rem;
-        border: none;
-    }
-    .hos_main {
-        display: grid;
-        grid-template-areas: "filter hospitals";
-        grid-template-columns: 30% 70%;
-    }
-    .filter, .filt{
-        visibility: visible;
-        display: flex;
-        flex-direction: column;
-        grid-area: filter;
-        padding-bottom: 0;
-        padding: 0;
-    }
-    .filter h5 {
-        background: var(--light-gray);
-        padding: 1rem;
-        margin: 0 1rem 1rem 0;
-        text-align: start;
-    }
-    .filt{
-        padding-right: 1rem;
-    }
-    .filt span {
-        display: grid;
-        grid-template-columns: 65% 35%;
-        margin: 1rem 0;
-    }
-    .filt span h6{
-        margin: 0;
-        font-size: 1.1em;
-        text-align: start;
-        padding: 0.4rem 0 0 1rem;
-        color: var(--text-gray);
-    }
-    .filt span button {
-        background: none;
-        padding: 0;
-        border: none;
-        justify-self: end;
-    }
-    .filt span button::after{
-        content: "\0A00\2500\2500";  
-        color: var(--text-gray);
-    }
-    .filt div{
-        padding: 0.25rem 0 0.25rem 1rem;
-        display: grid;
-        grid-template-columns: 20% 80%;
-    }
-    .filt div label {
-        padding: auto;
-        margin: auto 1rem;
-    }
-    .filt div input{
-       
-        width: 0.75rem;
-        height: 0.75rem;
-        
-    }
-    .showmore, .fa-search{
-        color: var(--text-blue);
-    }
-    .showmore{
-        padding-left: 1rem;
-    }
-    hr{
-        margin-right: 1rem;
-        width: 95%;
-        color: var(--text-gray);
-    }
-    .qualification li{
-        display: grid;
-        font-size: 0.5rem;
-        grid-template-columns: 20% 80%;
-        grid-template-areas: "icons para";
-        position: relative;
-        align-content: center;
-    }
-    .qualification li i{
-        margin: auto;
-        position: absolute;
-        bottom: 100%;
-        text-align: center;
-        text-justify: center;
-        align-self: center;
-        grid-area: icons;
-        font-size: 1rem;
-    }
-    .qualification li span {
-        grid-area: para;
-        font-size: 0.8rem;
-        margin: 0 0.5rem;
-        text-align: start;
-        position: relative;
-    }
-    .hos_pro{
-        display: grid;
-        grid-template-columns: auto 40%;
-        grid-template-rows: 3rem auto auto;
-        grid-template-areas: "name photo"
-        "ul photo"
-        "btn photo" ;
-        height: auto;
-    }
-    .hos_pro h4{
-        grid-area: name;
-    }
-    .hos_pro img{
-        grid-area: photo; 
-        width: 100%;
-        height: 100%
-    }
-    .hos_pro ul {
-        grid-area: ul;
-        display: grid;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: "loc bed"
-        "tre ."
-        "tre1 tre1";
-        grid-template-columns: 50% 50%;
-        flex-wrap: wrap ;
-       
-    }
-    .loc{
-        grid-area: loc;
-    }
-    .bed {
-        grid-area: bed;
-    }
-    .tre{
-        grid-area: tre;
-    }
-    
-    .hos_pro button {
-        grid-area: btn;
-    }
-    .hos_pro .btn{
-        width:80%;
-        justify-self: start;
-        margin: 1rem 10%;
-    }
-    label{
-        color: var(--dark-blue);
-    }
+li .fas_icon {
+  position: relative;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  color: #008dc5;
+  grid-area: icon;
+  align-self: center;
 }
-@media screen and (min-width: 1025px){
-    .hos_pro{
-        display: grid;
-        grid-template-columns: auto 30%;
-        grid-template-rows: 3rem 12rem 4rem;
-    }
-    .fa-bars{
-        display: none;
-        visibility: hidden;
-    }
-    .hos_top h1{
-        margin-left: 4rem;  
-    }
-    .hos_cont {
-        margin: 1rem 3rem;
-     }
-    .hos_pro ul{
-        padding-left: 1.5rem;
-    }
-    .hos_pro .btn{
-        width:50%;
-        justify-self: start;
-        margin-left: 10%;
-    }
-    .filt div{
-        grid-template-columns: 10% 90%;
-    }
-    .filt span button::after{
-        content: "\0A00\0A00\0A00\0A00\2500\2500";  
-        color: var(--text-gray);
-    }
-    .help h2, .help p {
-        text-align: start;
-    }
-    .hos_main {
-        grid-template-columns: 20% 80%;
-    }
-    .qualification li{
-        grid-template-columns: 10% 90%;
-    }
-    .qualification li span {
-        font-size: 1rem;
-        font-weight: 400;
-    }
-    footer{
-        padding: 2rem 4rem;
-    }
-    footer p {
-        font-family:sans-serif;
-        font-weight: 200;
-    }
+
+.hos_pro h3 {
+  text-align: left;
+  margin-left: 0;
+  margin-top: 1rem;
+  color: #008dc5;
+  display: grid;
+  grid-template-columns: 13% auto;
 }
+
+.hos_pro h3::before {
+  content: "──਀";
+}
+
+.hos_pro {
+  border: 2px solid #d1d0d0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.hos_pro .btn {
+  width: auto;
+  display: flex;
+  padding: 0.7rem 3rem;
+  border-radius: 0;
+  margin: 1rem auto;
+  font-weight: 900;
+}
+
+.hos_pro img {
+  height: 90vw;
+  -o-object-position: 40% 0%;
+     object-position: 40% 0%;
+}
+@media screen and (max-width: 767px) {
+  .hos_pro img {
+    position: relative;
+    top: 0.25rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hos_top {
+    background: #6aa5cf;
+    background-size: 100%;
+    width: 100%;
+    display: flex;
+    visibility: visible;
+    padding: 0;
+    height: 15rem;
+    background-position: center;
+    position: relative;
+  }
+
+  .title {
+    padding: 2rem 2rem 1rem;
+  }
+
+  span a {
+    font-size: 1.2rem;
+  }
+
+  .hospital_list {
+    padding-left: 0;
+  }
+
+  .hos_top img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 0.1;
+    transform: scaleX(-1);
+  }
+
+  .hos_top h1 {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    padding: 5.5rem 0rem;
+    font-family: "Nexa-light";
+  }
+
+  .hos_cont {
+    height: 2rem;
+  }
+
+  #sort {
+    margin: 0;
+    padding: 0;
+  }
+
+  #sortbtn {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    border: none;
+  }
+
+  .hos_main {
+    display: grid;
+    grid-template-areas: "filter hostors";
+    grid-template-columns: 25% auto;
+  }
+
+  .filter, .filt {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    grid-area: filter;
+    padding-bottom: 0;
+  }
+
+  .filter {
+    padding: 1rem;
+    padding-top: 0;
+  }
+
+  .filter h5 {
+    background: #d1d0d0;
+    padding: 1rem;
+    margin: 0;
+    text-align: start;
+  }
+
+  .filt span {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin: 1rem 0;
+  }
+
+  .filt span h6 {
+    margin: 0;
+    font-size: 1.1em;
+    text-align: start;
+    padding: 0.4rem 0 0 1rem;
+    color: #626060;
+  }
+
+  .filt span button {
+    background: none;
+    padding: 0;
+    border: none;
+    justify-self: end;
+  }
+  .filt span button i {
+    font-size: 1rem;
+  }
+
+  .filt span button::after {
+    content: "਀਀਀─";
+    color: #626060;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+
+  .filt div {
+    padding: 0.25rem 0 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: 10% 90%;
+  }
+
+  .filt div label {
+    line-height: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  .filt div input {
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+  }
+
+  .showmore, .fa-search {
+    color: #008dc5;
+  }
+
+  .showmore {
+    padding-left: 1rem;
+  }
+
+  hr {
+    margin-right: 1rem;
+    width: 100%;
+    color: #626060;
+  }
+
+  .hos_pro {
+    display: grid;
+    grid-template-columns: auto 40%;
+    grid-template-rows: auto auto 5rem;
+    grid-template-areas: "name photo" "ul photo" "btn photo";
+    height: auto;
+  }
+
+  .hos_pro h4 {
+    grid-area: name;
+  }
+
+  .hos_pro img {
+    grid-area: photo;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hos_pro ul {
+    grid-area: ul;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hos_pro ul li {
+    width: 40%;
+    margin-left: 1rem;
+  }
+  .hos_pro ul li span {
+    align-self: center;
+    margin-left: 1rem;
+  }
+  .hos_pro ul li i {
+    font-size: 1rem;
+  }
+
+  .hos_pro button {
+    grid-area: btn;
+  }
+
+  .hos_pro .btn {
+    width: 70%;
+    font-size: 1.2rem;
+    margin: 0.5rem 2rem;
+    font-weight: 900;
+    justify-content: center;
+    align-self: center;
+  }
+
+  label {
+    color: #021433;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .hos_top h1 {
+    left: 6rem;
+  }
+
+  .hos_pro {
+    border-width: 4px;
+    display: grid;
+    grid-template-columns: auto 30%;
+    grid-template-rows: 4rem auto 5rem;
+  }
+  .hos_pro img {
+    -o-object-position: 20% 20%;
+       object-position: 20% 20%;
+  }
+
+  .fa-bars {
+    display: none;
+    visibility: hidden;
+  }
+
+  .hos_cont {
+    margin: 1rem 4rem;
+    padding-right: 1rem;
+  }
+
+  .hos_main {
+    padding: 0 5rem !important;
+    grid-template-columns: 20% 80%;
+  }
+
+  .hostors_list {
+    padding-top: 0;
+  }
+
+  .hos_pro h3 {
+    grid-template-columns: 6% auto;
+    margin-top: 1.5rem;
+  }
+
+  .hos_pro ul {
+    padding-left: 1rem;
+    margin: 0.5rem;
+  }
+
+  .hos_pro .btn {
+    width: 30%;
+    justify-self: start;
+    font-size: 1rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter {
+    padding-top: 0;
+  }
+  .filter h5 {
+    margin: 0;
+  }
+
+  .filt div {
+    grid-template-columns: 10% 90%;
+  }
+
+  .filt span button::after {
+    font-size: 1.5rem;
+  }
+
+  .help h2, .help p {
+    text-align: start;
+  }
+
+  footer {
+    padding: 2rem 4rem;
+  }
+
+  footer p {
+    font-family: sans-serif;
+    font-weight: 200;
+  }
+}/*# sourceMappingURL=hospital.css.map */

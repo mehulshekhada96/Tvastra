@@ -1,0 +1,222 @@
+@import "theme";
+
+.qualification li {
+    display: grid;
+    grid-template-columns: 2.8rem auto;
+    grid-template-areas: "icon details";
+    margin: 1rem 0;
+    
+ }
+ .qualification {
+    
+    li span {
+        margin: 0;
+        font-size: 1rem;
+        grid-area: details;
+        text-align: start;
+        line-height: 1.4rem;
+        align-self: center;
+    }
+ }
+  li .fas {
+     position: relative;
+     margin-left: 0.5rem;
+     font-size: 1.1rem;
+     color: $text-blue;
+     grid-area: icon;
+     align-self: center;
+ }
+.details p {
+    margin: 1rem 0.5rem;
+}
+.cont_top{
+    width: 100%;
+    padding: 0;
+    position: relative;
+    height: 15rem;
+    display: flex;
+    align-content: center;
+    
+}
+ .cont_top img {
+    object-fit: cover;
+    z-index: -10;
+}
+.title {
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    bottom: 22.5%;
+    
+}
+.title h1, .title h5, .title h5 a{
+    color: $text-white;
+    font-weight: 900;
+}
+.main {
+    margin: 1rem;
+    padding: 0;
+    border: 2px solid $light-gray;
+}
+.doctor{
+    padding: 0.5rem;
+}
+.darkbluebtn{
+    border-radius: 0;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-weight: 800;
+}
+.details{
+    padding: 0;
+    padding-bottom: 1rem;
+    h2{
+        margin: 1rem 0;
+        color: $text-blue;
+        text-align: start;
+        &::before{
+            content: "\2500";
+            font-size: 2rem;
+        }
+    }
+    p{
+        margin: 1rem;
+        text-align: justify;
+    }
+    
+    .menu{
+        display: grid;
+        grid-template-columns: 1.5rem auto 10%;
+        color: $text-blue;
+        padding:  0.5rem;
+        i{
+            color: $text-blue;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            align-self: center;
+        }
+        .arrows{
+            justify-self: end;
+        }
+        .fa-angle-up, .fa-angle-down{
+           background: $shadow;
+           margin-top: 0.3rem ;
+           width: 1.5rem;
+           height: 1.5rem;
+           border-radius: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           justify-self: end;
+           cursor: pointer;
+           align-self: center;
+           &::before{
+               justify-self: center;
+               margin:  25%;
+               position: relative;
+               top: 0.15rem;
+
+           }
+        
+           
+        }
+        h3{ 
+            margin: 0.4rem;
+            color: $text-blue;
+            text-align: start;
+            align-self: center;
+            
+        }
+    }
+
+    .menu_para{
+        margin: 0 0.5rem;
+        text-align: start;
+        background: $shadow;
+        padding: 0.5rem;
+        animation: scrolling 1.5s ;
+        @keyframes scrolling {
+            from{
+                opacity: 0;
+            }
+            to{
+                 opacity: 1;  
+            }
+            
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .title {
+        position: absolute;
+        bottom: 22.5%;
+        
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-areas: "details doctor";
+        margin: 2rem;
+        padding: 0.5rem;
+    }
+    .details{
+      grid-area: details;
+    }
+    .doctor{
+      grid-area: doctor;
+      .darkbluebtn{
+          padding: 1.2rem;
+         font-size: 1.2rem;
+      }
+    }
+    .details h2{
+       margin-left: -0.5rem;
+       &::before{
+           font-size: 2rem;
+           font-weight: 900;
+       }
+    }
+    .qualification{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    }
+}
+@media screen and (min-width: 1025px){
+    .title{
+        width: auto;
+        padding: 0 4rem;
+        h5{
+            text-align: start;
+        }
+    }
+    .main{
+        margin: 3rem 5rem;
+        padding: 2rem;
+        grid-template-columns: 75% 25%;
+    }
+    .menu{
+        grid-template-columns: 2rem auto 10% !important;
+        i {
+            font-size: 1.2rem !important;
+        }
+    }
+    .details h2{
+        margin-left: -2rem;
+        &::before{
+            font-size: 3rem;
+            font-weight: 900;
+        }
+     }
+    .help h2{
+        margin-left: 0;
+    }
+    .help p{
+        text-align: start;
+        margin-left: 0;
+    }
+    footer{
+        margin: 0;
+        padding: 3rem 5rem;
+    }
+}

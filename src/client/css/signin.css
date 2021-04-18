@@ -1,82 +1,545 @@
-@import "./theme.css";
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
+}
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+body {
+  background-color: #6aa5cf;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+}
+
 #full {
-   background-color: var(--bg-light-blue);
-   height: 100%;
-   width: auto;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
-.logo{
-   margin: 0;
+
+.formcont {
+  z-index: 100;
+  background-color: white;
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 0 1rem #626060;
+  padding-bottom: 1rem;
+  vertical-align: middle;
 }
-.formcont{
-   background-color: white;
-   margin:  auto 1rem;
-   padding: 0;
-   width: 90%;
-   align-self: center;
+
+h1 {
+  margin: 1.5rem 0;
+  font-size: 1.35rem;
 }
-hr{
-   width: 100%;
+
+hr {
+  width: 100%;
 }
-.signinform{
-   display: flex;
-   flex-direction: column;
-   padding: 1rem;
+
+.signinform {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
 }
-.signinform input, #gender{
-   border: 1px solid var(--light-gray);
-   padding: 1rem;
-   margin: 0.5rem 0;
+
+.signinform input {
+  border: 2px solid #d1d0d0;
+  margin: 0.5rem 0;
 }
-.signinform .btn{
-   width: 100%;
-   padding: 1rem;
+
+#password {
+  width: 100%;
 }
-footer{
-   display: flex;
-   background: none;
-   margin: 0;
+
+.pass_eye, .sbmt {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.arrow{
-   color:#ffffff ;
-   position: relative;
-   bottom: 2.25rem;
-   font-size: 0.75rem;
+
+.fa-eye, fa-eye-slash {
+  position: absolute;
+  right: 2rem;
+  color: #008dc5;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
-.arrow::before{
-   padding-left: 90%;
+
+.signinform .btn {
+  width: 100%;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
 }
-.fa-question-circle{
-   
-   position: relative;
-   top: 2.5rem;
-   color: var(--light-gray);
-   padding-left: 90%;
+
+.foooter {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  justify-content: center;
+  vertical-align: bottom;
 }
-#login{
-   font-size: 1rem;
-   font-family: "Nexa-bold";
-   font-weight: 900;
-   letter-spacing: 0.4rem;
+.foooter h6 {
+  text-align: center;
+  margin-bottom: 0;
 }
-h4, h5 a{
-   color: var(--text-blue);
+
+.darkbluebtn {
+  width: 100%;
 }
-h5 a{
-   font-family: "Nexa-bold";
+
+.arrow {
+  color: white;
+  position: absolute;
+  right: 2rem;
+  width: 1rem;
+  font-size: 1rem;
 }
-@media only screen and (min-width: 768px){
-   .formcont {
-      width: 500px;
-      height: auto; 
-   }
+
+#login {
+  font-family: "Nexa-bold";
+  font-weight: 900;
+  letter-spacing: 0.4rem;
 }
-@media only screen and (min-width: 1025px ){
-   .formcont {
-      width: 800px;
-      height: auto; 
-   }
-}   
+
+h5 {
+  color: #626060;
+  opacity: 0.7;
+}
+
+h1, h5 a {
+  color: #008dc5;
+}
+
+h5 a {
+  font-family: "Nexa-bold";
+  font-size: 1.1rem;
+}
+
+.forgot_password {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0 1rem 0;
+}
+.forgot_password a {
+  color: #008dc5;
+  font-family: "Nexa-bold";
+  cursor: pointer;
+  text-align: center;
+  text-align: center;
+  margin: 0;
+}
+.forgot_password #forgotPassword a {
+  cursor: pointer;
+}
+
+.forgot_password1 {
+  margin: 0.5rem auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .formcont {
+    width: 30rem;
+    height: auto;
+    margin-top: 5rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+
+  h5 a {
+    font-size: 1.3rem;
+  }
+
+  .fa-eye, fa-eye-slash {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .formcont {
+    width: 30%;
+    height: auto;
+    margin-top: 5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+
+  .signinform input, #gender {
+    border-width: 2px;
+    padding: 0.5rem;
+    padding-right: 2rem;
+  }
+
+  .signinform .btn {
+    padding: 0.75rem;
+  }
+
+  .arrow {
+    font-size: 1rem;
+  }
+
+  .fa-question-circle {
+    top: 2.4rem;
+    font-size: 1rem;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .fa-eye, fa-eye-slash {
+    font-size: 1.5rem;
+  }
+
+  .foooter {
+    padding-bottom: 1rem;
+  }
+}/*# sourceMappingURL=signin.css.map */

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Appointment</title>
+    <%- include ('partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/appointment.css">
+    
+</head>
+
+<body>
+    <header>
+        <%- include ('partials/header.ejs') %>
+    </header>
+    <section id="full">
+       
+        <div class="formcont">
+            <h1>Book an Appointment</h1>
+            <hr>
+            <form class="signinform" action="signin" method="POST">
+                <h5>Select Appointment Date*</h5>
+                <input type="date" id="date">
+                <h5>Time Interval*</h5>
+                <div class="radiobtn"><input type="radio" name="timeinterval" value="Morning" id="morning">
+                    <label for="morning">Morning</label>
+                </div>
+                <div class="radiobtn"><input type="radio" name="timeinterval" value="Afternoon" id="Afternoon">
+                    <label for="Afternoon">Afternoon</label>
+                </div>
+                <div class="radiobtn"><input type="radio" name="timeinterval" value="Evening" id="Evening">
+                    <label for="Evening">Evening</label>
+                </div>
+                <h5>Appointment Status/Urgency*</h5>
+                <div class="radiobtn"><input type="radio" name="urgency" value="routine" id="routine">
+                    <label for="routine">Routine Check-Up</label>
+                </div>
+                <div class="radiobtn"><input type="radio" name="urgency" value="nonurgent" id="nonurgent">
+                    <label for="nonurgent">Non Urgent Check-Up</label>
+                </div>
+                <div class="radiobtn"><input type="radio" name="urgency" value="urgent" id="urgent">
+                    <label for="urgent"> Urgent Check-Up</label>
+                </div>
+                <div class="radiobtn"><input type="radio" name="urgency" value="surgical" id="surgical">
+                    <label for="surgical">Surgical Appointment</label>
+                </div>
+                <h5>Upload Previous Health Record</h5>
+                <input type="file" id="file">
+                <h5>Appointment Details</h5>
+                <textarea name="details" id="appoinment" cols="30" rows="5"></textarea>
+
+                <button class="darkbluebtn btn" id="login" type="submit">BOOK APPOINTMENT</button>
+                <i class='fas fa-arrow-right arrow'></i>
+            </form>
+        </div>
+        
+
+    </section>
+    <section class="foooter">
+        <h6>All Rights Reserved. &#169 tvastra 2021</h6>
+    </section>
+    <script src="../js files/index.js"></script>
+</body>
+
+</html>

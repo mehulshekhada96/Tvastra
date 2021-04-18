@@ -1,242 +1,702 @@
-@import "./theme.css";
-.logo{
-    padding: 1rem auto;
+@charset "UTF-8";
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
 }
-.dent_top{
-    width: 100%;
-    height: 15rem;
-    position: relative;
-    background: linear-gradient(to right,var(--btn-bg), rgba(255,255,255,0));
-    padding: 0;
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
 }
-.dent_top img {
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    object-position: 10% 10%;
-}
-.title {
-    position: absolute;
-    top: 15%;
-    left: 25%;
-    
-}
-.title h1, .title h5, .title h5 a{
-    color: var(--text-white);
-    font-weight: 700;
-    text-align: left;
-}
-.vacc{
-    padding: 2rem;
-}
-.abt_dent{
-    padding: 0;
-}
-.abt_dent h2, .abt_dent p{
-    text-align: start;
-    line-height: 1.4rem;
-}
-ul li::before {
-    content: "\2022";
-    color:var(--text-blue);
-    font-weight: 900;
-    display: inline-block; 
-    width: 1rem;
-    margin-left: -1rem;
-}
-ul li {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
     font-size: 1rem;
-    line-height: 1.8rem;
-}
-.symb{
-    width: 2rem;
-    height: 2rem;
-    background-color: var(--bg-light-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin: 1.2rem auto;   
-}
-.symb .fas {
-    color: var(--dark-blue);
-    padding: 0;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
     font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
 }
-.types1 h3, .types1 p {
-    margin:  0.5rem 0;
+.logo {
+  padding: 1rem auto;
 }
-.cards{
-    border: 2px solid var(--light-gray);
-    padding: 0.5rem 0rem;
-    margin: 0.5rem;
-    border-radius: 1rem;
-    height: auto;
+
+.dent_top {
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  background: linear-gradient(to right, #008dc5, rgba(255, 255, 255, 0));
+  padding: 0;
 }
-.card{
-    padding: 0;
+
+.dent_top img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  -o-object-position: 10% 10%;
+     object-position: 10% 10%;
 }
-.cards h3{
-    text-align: start;
-    margin:  1rem 0;
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.cards h3::before{
-    content: "\2500\0A00";
-    color: var(--text-blue);
-    font-weight: 900;
+
+.title h1, .title h5, .title h5 a {
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
 }
-hr{
-  color: var(--light-gray) ;  
+
+.vacc {
+  padding: 0;
+}
+
+.abt_dent {
+  padding: 0;
+}
+
+.abt_dent h3, .abt_dent p {
+  text-align: start;
+  line-height: 1.4rem;
+  margin: 1rem 0;
+}
+
+.desease li::before {
+  content: "•";
+  color: #008dc5;
+  font-weight: 900;
+  display: inline-block;
+  font-size: 1.5rem;
+  align-self: center;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+.desease li {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.symb {
+  width: 2rem;
+  height: 2rem;
+  background-color: #b7dfffb2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.symb .fas {
+  color: #021433;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.types, .types1 {
+  padding: 1rem 0;
+}
+
+.types1 h4, .types1 p {
+  margin: 0.5rem 0;
+}
+
+.cards {
+  border: 2px solid #d1d0d0;
+  padding: 0.5rem 0rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  height: auto;
+}
+
+.card {
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.cards h3 {
+  text-align: start;
+  margin: 1rem 0;
+}
+
+.cards h3::before {
+  content: "─਀";
+  color: #008dc5;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+hr {
+  color: #d1d0d0;
   margin: 0.3rem 1.5rem;
 }
-.card_details{
-    padding: 0.75rem 1.5rem 0 1.5rem ;
+
+.card_details {
+  padding: 0.75rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_details h5 {
+  margin: 0;
+}
+
+.value {
+  color: #626060;
+}
+
+.moreservice h2 {
+  color: white;
+}
+
+.moreservice {
+  background-color: #6aa5cf;
+}
+
+.arrows {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 0 !important;
+}
+
+.arrows i {
+  width: 2rem;
+  height: 2rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+.moreservice div {
+  padding: 0;
+}
+
+.figs {
+  padding: 0;
+}
+
+.figs .figures_treat {
+  margin: 0.5rem;
+  padding: 0;
+  height: 22rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.figs .figures_treat .figures {
+  width: 100%;
+  height: 22rem;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  position: relative;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+figure img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 81%;
+}
+
+figcaption {
+  height: 2rem;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #021433;
+  display: grid;
+  grid-template-columns: 2rem auto;
+  align-content: center;
+}
+
+figcaption::before {
+  content: "―";
+  margin-right: 0.2rem;
+  color: #008dc5;
+  font-size: 1.5rem;
+  font-weight: 900;
+  transform: translateY(-0.1rem);
+}
+
+@media screen and (min-width: 768px) {
+  .vacc {
+    display: grid;
+    grid-template-areas: "title title" "image about";
+    grid-template-columns: 40% 60%;
+  }
+
+  .vacc h2 {
+    grid-area: title;
+    text-align: start;
+    margin: 1rem 0;
+  }
+
+  .vacc img {
+    grid-area: image;
+  }
+
+  .abt_dent {
+    padding-left: 1.5rem;
+  }
+
+  .abt_dent h3 {
+    margin-top: 0;
+  }
+
+  .types {
+    display: flex;
+    padding: 0.2rem;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards:nth-child(2) {
+    height: 11rem;
+  }
+
+  .symb {
+    margin: 1rem auto;
+  }
+
+  .moreservice div {
     display: flex;
     justify-content: space-between;
-}
-.card_details h5{
-    margin: 0;
-}
-.value{
-    color: var(--text-gray);
-}
-.moreservice h2{
-    color: white;
-}
-.moreservice{
-    background-color: var(--bg-light-blue) ;
-}
-.arrows{
-    display: flex;
-    padding: 0;
-    justify-content: center;
-    margin-bottom: 0 !important;
-  
-}
-.arrows i {
-    width: 2rem;
-    height: 2rem;
-    background: white;
-    border-radius: 50%;
-    display: flex;
+    margin-bottom: 1rem;
     align-items: center;
-    justify-content: center;
-    margin: 0.25rem;
-}
-.moreservice div{
-    padding: 0;
-}
-.figs{
-    padding: 0;
-    
-}
+  }
 
-.figs figure {
-    margin: 0.5rem;
-    padding: 0;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-figure img{
-    border-radius: 1rem 1rem 0 0;
-}
-figcaption {
-    height: 2rem;
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    margin: 0;
-    color: var(--dark-blue);
-}
-figcaption::before{
-    margin-right: 0.2rem;
-    color: var(--text-blue);
-}
-@media screen and (min-width: 768px){
-   .vacc {
-       display: grid;
-       grid-template-areas: "title title"
-       "image about";
-   }
-   .vacc h1{
-       grid-area: title;
-       text-align: start;
-       margin: 1rem 0;
-   }
-   .vacc img {
-       grid-area: image;
-   }
-   .abt_dent h2{
-       margin-top: 0 ;
-   }
-   .types{
-       display: flex;
-       padding: 0.2rem;
-   }
-   .card{
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-   }
-   .cards:nth-child(2) {
-       height: 10rem;
-   }
-   
-   .moreservice div{
-       display: flex;
-       justify-content: space-between;
-       margin-bottom: 1rem;
-       align-items: center;
-   }
-   figure{
+  figure {
     width: 32%;
-    
-   }
-   .figs{
-    display: flex;
-   }
-}
-@media screen and (min-width: 1025px){
-    .title {
-        position: absolute;
-        top: 15%;
-        left: 4rem;
-        
-    }
-    .main{
-        display: grid;
-        grid-template-areas: "vacc card"
-        "det card";
-        grid-template-columns: 70% 30%;
-        grid-template-rows: auto auto;
-       margin: 0 3rem;
-    }
-    .vacc{
-        grid-area: vacc;
+  }
 
-    }
-    .vacc img{
-        height: 20rem;
-    }
-    li{
-        font-weight: 500;
-    }
-    .card{
-        grid-area: card;
-        padding: 1rem;
-    }
-    .types{
-        grid-area: det;
-    }
-    .card{
-        display: flex;
-       flex-direction: column;
-    }
-    
-    footer{
-            padding: 2rem 4rem;
-    }
-    
+  .figs {
+    display: flex;
+  }
 }
+@media screen and (min-width: 1025px) {
+  .title {
+    width: auto;
+    align-items: flex-start;
+    padding-left: 5rem;
+  }
+
+  .main {
+    display: grid;
+    grid-template-areas: "vacc card" "det card";
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto;
+  }
+
+  p {
+    font-weight: lighter;
+  }
+
+  .vacc {
+    grid-area: vacc;
+  }
+
+  .vacc img {
+    height: 20rem;
+  }
+
+  li {
+    font-weight: 500;
+  }
+
+  .card {
+    grid-area: card;
+    padding: 1rem;
+    border-width: 4px;
+  }
+
+  .types {
+    grid-area: det;
+  }
+
+  .types1 {
+    margin: 0.2rem;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 2rem 4rem;
+  }
+}/*# sourceMappingURL=dentistry.css.map */
