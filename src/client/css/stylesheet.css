@@ -343,6 +343,16 @@ button {
     padding: 3rem 5rem;
   }
 }
+.navbar__profile {
+  display: grid;
+  width: 8rem;
+  grid-template-columns: 8rem 1rem;
+  gap: 0;
+}
+.navbar__profile span {
+  line-height: 1.4rem;
+}
+
 #view_on_mouse_over {
   margin-top: 0.3rem;
 }
@@ -415,13 +425,19 @@ button {
 .profile_small_details .profile_picture__container {
   height: 3rem;
   width: 3rem;
-  margin: 0.2rem;
+  margin: 0.5rem;
 }
 .profile_small_details .name_and_phone {
   display: flex;
   flex-direction: column;
+  margin-top: 0.5rem;
+}
+.profile_small_details .name_and_phone a {
+  line-height: 1.4rem;
 }
 .profile_small_details .name_and_phone span {
+  margin-top: 0.2rem;
+  line-height: 1rem;
   color: #008dc5;
 }
 .profile_small_details .name_and_phone .phoneNumber {

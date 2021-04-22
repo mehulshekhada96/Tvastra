@@ -366,17 +366,23 @@ h1, .timer h6 {
   font-family: "Nexa-bold";
   font-size: 1.5rem;
   border-bottom: 3px solid #008dc5 !important;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: textfield;
 }
 .otpField:last-child {
   margin-right: 0;
 }
-.otpField:focus {
+.otpField::-webkit-inner-spin-button, .otpField::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.otpField:focus, .otpField.focus {
   border-color: #008dc5;
   outline: none;
   box-shadow: none;
+}
+.otpField:last-child {
+  margin-right: 0;
 }
 
 .timer {

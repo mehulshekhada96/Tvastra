@@ -22,17 +22,28 @@ margin: auto;
 	font-family: $boldfont;
 	font-size: 1.5rem;
 	border-bottom: 3px solid $text-blue !important ;
-	appearance: none ;
+	-moz-appearance: textfield; 
+	&:last-child{
+		margin-right: 0;
+	}
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button { 
+		-webkit-appearance: none;
+		appearance: none;
+		margin: 0;	
+	}
+	&:focus,
+	&.focus{
+		border-color: $text-blue;
+		outline: none;
+		box-shadow: none;
+	}
 
 	&:last-child{
 		margin-right: 0 ;
 	}
 	
-	&:focus{
-		border-color: $text-blue;
-		outline: none;
-		box-shadow: none;
-	}
+
 }
 .timer{
 	justify-content: center;

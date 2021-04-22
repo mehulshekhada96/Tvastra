@@ -378,7 +378,7 @@ hr {
 .signinform {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 }
 
 .signinform input {
@@ -425,6 +425,7 @@ hr {
 
 .darkbluebtn {
   width: 100%;
+  text-transform: uppercase;
 }
 
 .arrow {

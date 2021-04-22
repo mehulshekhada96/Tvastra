@@ -380,15 +380,14 @@ button {
 }
 
 .doctor_onboarding_title {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 112%;
+  border-bottom: 2px solid #d1d0d0;
 }
-.doctor_onboarding_title h5 {
+.doctor_onboarding_title h3 {
   font-family: "Nexa-bold";
   text-align: center;
   color: #008dc5;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .doctor_onboarding_form_container {

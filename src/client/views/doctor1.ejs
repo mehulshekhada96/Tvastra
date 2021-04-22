@@ -2,10 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Doctor</title>
-    <%- include('partials/head.ejs') %>
-</head>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/doctor.css">
+    <script src="https://kit.fontawesome.com/c08742ea51.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
 
 <body>
     <header>
@@ -685,7 +691,7 @@
 	</div>
 
 	<div class="help">
-		<%- include(' partials/help.ejs') %>
+	
                                 </div>
                                 <footer class="footer">
                                     <%- include('partials/footer.ejs') %>
@@ -698,6 +704,7 @@
                                     }
                                 </script>
                                 <script>
+                                    
                                     let form_submit = (doc) => {
 
                                         let filter_finder = doc.parentElement.querySelector(".text");
