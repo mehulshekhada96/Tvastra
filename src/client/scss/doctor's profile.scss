@@ -93,7 +93,7 @@
         
            
         }
-        h3{ 
+        h5{ 
             margin: 0.4rem;
             color: $text-blue;
             text-align: start;
@@ -102,12 +102,17 @@
         }
     }
 
-    .menu_para{
+    .menu_para {
         margin: 0 0.5rem;
         text-align: start;
         background: $shadow;
         padding: 0.5rem;
+        // display: flex;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        
         animation: scrolling 1.5s ;
+        
         @keyframes scrolling {
             from{
                 opacity: 0;
@@ -116,6 +121,14 @@
                  opacity: 1;  
             }
             
+        }
+        .detail-tag{
+            // padding: .5rem 1rem;
+            // background-color: white;
+            // border-radius: .5rem;
+            // border: 1px solid $text-blue;
+            font-family: $lightfont;
+            // margin: 0rem .5rem;
         }
     }
 }

@@ -13,7 +13,7 @@ const User = require('./../models/userModel');
     // 	next();
     // }
 const doctorFileStorage = multer.diskStorage({
-    destination: 'public/uploads/doctors',
+    destination: 'client/public/uploads/doctors',
     filename: function(req, file, callback){
         callback(null, `${req.body.phoneNumber}${path.extname(file.originalname)}`);
     }

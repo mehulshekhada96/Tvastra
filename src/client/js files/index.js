@@ -63,7 +63,7 @@
   
   // }
   
-  console.log("mehul");
+//error container
 const error = document.querySelector('.error_container');
 const cross = document.querySelector('.col--3');
 const hideError = () => {
@@ -83,3 +83,41 @@ if(error){
 } 
 
 cross.addEventListener('click', hideError);	
+
+//showmore in doctor filters
+
+function showMore(param){
+	let showList = param.parentElement.querySelectorAll('.checkbox_container');
+	showList.forEach(el => {
+		if(el.classList.contains('display_none')){
+			el.classList.remove('display_none');
+		}
+	});
+  
+	param.parentElement.querySelector('#show-less').classList.remove('display_none');
+	param.classList.add('display_none');
+  
+}
+
+function showLess(param){
+	let showList = param.parentElement.querySelectorAll('.checkbox_container');
+	showList.forEach((el, index) => {
+		if(index > 13){
+			if(el.classList.contains('display_none')){
+
+			} else {
+				el.classList.add('display_none');
+			}
+		}
+	});
+  
+	param.parentElement.querySelector('#show-more').classList.remove('display_none');
+	param.classList.add('display_none');
+
+}
+
+// function showMore(param){
+//   let showList = param.parentElement.querySelectorAll(".checkbox_container");
+//   console.log(showList);
+
+// }

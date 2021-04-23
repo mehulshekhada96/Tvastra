@@ -4,12 +4,12 @@ const down = document.getElementsByClassName("fa-angle-down");
 console.log(down);
 const para = document.getElementsByClassName("menu_para");
 console.log(para);
-
+const head =  document.getElementsByClassName("menu")
 for(let i = 0; i < up.length; i++){
         if(i==0){
             down[i].style.display= "none";
-        up[i].style.display= "block";
-        para[i].style.display= "block";
+            up[i].style.display= "block";
+            para[i].style.display= "block";
         } else{
             up[i].style.display= "none";
             down[i].style.display= "block";
@@ -27,3 +27,4 @@ for(let i = 0; i < up.length; i++){
         para[i].style.display= "block";
     })
 }
+

@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./theme.scss";
 .doc_top, .filter{
     visibility: hidden;
     display: none;
@@ -80,14 +81,23 @@
     font-weight: 900;
    
 }
-.doc_pro a {
+.display_none{
+    display: none;
+}
+.doc_pro a{
     height: 100vw;
     @media screen and (max-width: 767px){
         position: relative;
-        top: 0.25rem;
+        top: 0.6rem;
     }
     
 }
+.doctor_list__container__col-1__filter-by__tags{
+   padding: 1rem 0
+}
+
+
+
 @media only screen and (min-width: 768px){
     .doc_top{
         background:$light-blue;
@@ -159,55 +169,62 @@
         text-align: start;
     }
     
-    .filt span {
+    
+    .filt span  {
         display: grid;
-        grid-template-columns: 65% 35%;
+        grid-template-columns: 65% 25% 10%;
         margin: 1rem 0;
-    }
-    .filt span h6{
-        margin: 0;
-        font-size: 1.1em;
-        text-align: start;
-        padding: 0.4rem 0 0 1rem;
-        color: $text-gray;
-    }
-    .filt span button {
         background: none;
         padding: 0;
         border: none;
-        justify-self: end;
-        i{
-            font-size: 1rem;
-        }
-    }
-    .filt span button::after{
-        content: "\0A00\0a00\0a00\2500";  
         color: $text-gray;
         font-weight: 900;
         font-size: 1rem;
+        justify-self: end;
+        h6{
+            margin: 0;
+            font-size: 1.1em;
+            text-align: start;
+            align-self: center;
+            padding: 0.4rem 0 0 1rem;
+            color: $text-gray;
+    
+        }
+        i{
+            font-size: 1rem;
+        }
+        .fa-minus{
+          color: $light-gray;
+        }
     }
-    .filt div{
+    
+    .filt div div{
         padding: 0.25rem 0 0.25rem 1rem;
         display: grid;
         grid-template-columns: 10% 90%;
     }
     .filt div label {
         line-height: 1.2rem;
-        margin-left: 1rem;
+        margin:0.25rem 0 0.25rem 1rem;
+        
     }
     .filt div input{
         
         width: 1rem;
         height: 1rem;
         align-self: center;
+        margin: 0.15rem 0;
     }
     .showmore, .fa-search{
         color: $text-blue;
     }
     .showmore{
+        margin-top: 0.5rem;
         padding-left: 1rem;
+        cursor: pointer;
     }
     hr{
+        margin-top: 1rem;
         margin-right: 1rem;
         width: 100%;
         color: $text-gray;
@@ -228,7 +245,7 @@
     .doc_pro a{
         grid-area: photo; 
         width: 100%;
-        height: 25rem;
+        height: 20rem;
     }
     .doc_pro ul {
         grid-area: ul;
@@ -263,6 +280,38 @@
         color: $dark-blue;
         align-self: center;
     }
+
+    .filter_button{
+        border: 1px solid $text-blue;
+        border-radius: 1rem;
+        padding: .5rem;
+        margin: 0.5rem !important;
+        display: inline;
+        // line-height: 3rem;
+        white-space: nowrap;
+        p{
+            font-size: 1rem;
+            font-family: $boldfont;
+            color: $text-blue;
+            display: inline-block;
+        }
+        button{
+            background-color: $text-blue;
+            border: none;
+            border-radius: 50%;
+            width: 1.5rem;
+            position: relative;
+            padding:0 ;
+            // top: .2rem;
+            i{
+                position: relative;
+                // transform: translate(-50%);
+                color: white;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    
 }
 @media screen and (min-width: 1025px){
     .doc_top h1{
@@ -313,9 +362,7 @@
     .filt div{
         grid-template-columns: 10% 90%;
     }
-    .filt span button::after{
-        font-size: 1.5rem;
-    }
+    
     .help h2, .help p {
         text-align: start;
     }
@@ -326,4 +373,6 @@
         font-family:sans-serif;
         font-weight: 200;
     }
+
+
 }

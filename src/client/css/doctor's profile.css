@@ -442,7 +442,7 @@ button {
   position: relative;
   top: 0.2em;
 }
-.details .menu h3 {
+.details .menu h5 {
   margin: 0.4rem;
   color: #008dc5;
   text-align: start;
@@ -471,6 +471,9 @@ button {
   to {
     opacity: 1;
   }
+}
+.details .menu_para .detail-tag {
+  font-family: "Nexa-light";
 }
 
 @media screen and (min-width: 768px) {

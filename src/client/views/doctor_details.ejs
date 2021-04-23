@@ -22,43 +22,46 @@
     <section class="cont_top">
         <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png" alt="contactUs">
         <div class="title">
-            <h1>About John Nission</h1>
-            <h5><a href="index.html">Home</a> / <a href="doctor's Profile.html">Doctor Profile</a></h5>
+            <h1>About <%= doctor.name %>
+            </h1>
+            <h5><a href="/">Home</a> / <a href="#">Doctor Profile</a></h5>
         </div>
     </section>
     <section class="main">
         <div class="doctor">
             <figure>
-                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="John">
+                <img src="<%= doctor.display_picture %>" alt="<%= doctor.name  %>">
             </figure>
             <button class='darkbluebtn btn'> Book an Appointment</button>
         </div>
         <div class="details">
             <h2>
-                John Nission
+                <%= doctor.name %>
             </h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae illo odio impedit repellendus ullam,
-                molestias sed amet dolorem error quaerat
+                <%= doctor.doctor.description %>
             </p>
             <hr>
             <div class="menu">
                 <i class="fas fa-award"></i>
-                <h3>Specialization</h3>
+                <h5>Specialization</h5>
                 <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para">
+                <% for(let i=0; i < doctor.doctor.specializations.length; i++) { %>
+                    <span class="detail-tag">
+                        <%= doctor.doctor.specializations[i] %>
+                    </span>
+                    <% } %>
+            </p>
             <div class="menu">
                 <i class="fas fa-stethoscope"></i>
-                <h3>List Of Treatments</h3>
-                 <div class="arrows">
+                <h5>List Of Treatments</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
@@ -71,74 +74,79 @@
                 commodi consequatur deleniti.</p>
             <div class="menu">
                 <i class="fas fa-hospital"></i>
-                <h3>Work Experience</h3>
-                 <div class="arrows">
+                <h5>Work Experience</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
 
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para">
+                <span class="detail-tag">
+                   I have work experience of <%= doctor.doctor.experience %> Years
+                </span>
+            </p>
             <div class="menu">
                 <i class="fas fa-star"></i>
-                <h3>Qualification</h3>
-                 <div class="arrows">
+                <h5>Qualification</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
 
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para">
+                <% for(let i=0; i < doctor.doctor.qualifications.length; i++) { %>
+                    <span class="detail-tag">
+                     My qualifications are   <%= doctor.doctor.qualifications[i] %>
+                    </span>
+                    <% } %>
+            </p>
             <div class="menu">
                 <i class="fas fa-trophy"></i>
-                <h3>Awards</h3>
-                 <div class="arrows">
+                <h5>Awards</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
 
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para">
+                <% for(let i=0; i < doctor.doctor.awards.length; i++) { %>
+                    <span class="detail-tag">
+                      I have collected  <%= doctor.doctor.awards[i] %>
+                    </span>
+                    <% } %>
+            </p>
             <div class="menu">
                 <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                 <div class="arrows">
+                <h5>Location</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
 
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para"><span class="detail-tag">
+                <%= doctor.location %>,  <%= doctor.state %>,  <%= doctor.country %>	
+            </span></p>
             <div class="menu">
                 <i class="fas fa-rupee-sign"></i>
-                <h3>Avg Fees</h3>
-                 <div class="arrows">
+                <h5>Avg Fees</h5>
+                <div class="arrows">
                     <i class='fas fa-angle-up'></i>
                     <i class='fas fa-angle-down'></i>
                 </div>
 
             </div>
             <hr>
-            <p class="menu_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio aliquam
-                praesentium. Ab, et
-                saepe facilis fugit magnam quae explicabo aliquam laudantium inventore praesentium placeat fugiat nemo
-                commodi consequatur deleniti.</p>
+            <p class="menu_para"><span class="detail-tag">
+              My average fee is  Rs. <%= doctor.doctor.avg_fees %>	
+            </span></p>
         </div>
     </section>
     <section class="help">
