@@ -505,7 +505,7 @@ button {
   .doc_main {
     display: grid;
     grid-template-areas: "filter doctors";
-    grid-template-columns: 28% 72% !important;
+    grid-template-columns: 28% auto !important;
   }
 
   .filter, .filt {
@@ -698,8 +698,8 @@ button {
   }
 
   .doc_main {
-    padding-left: 4rem;
-    grid-template-columns: 28% 72%;
+    padding: 1rem 6rem 1rem 4rem !important;
+    grid-template-columns: 1fr 3fr;
   }
 
   .doctors_list {

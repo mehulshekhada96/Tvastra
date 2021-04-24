@@ -36,6 +36,10 @@ app.use(session({
 }));
 
 app.use(express.static(path.join(__dirname,"client")));
+
+// Public Folder
+app.use(express.static(path.join(__dirname, 'client/public')));
+
 app.use(cors());
 app.use(compression());
 app.use(bodyParser.urlencoded({extended: true}));

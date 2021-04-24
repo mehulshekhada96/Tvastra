@@ -1082,6 +1082,7 @@ footer p {
   }
 
   footer {
+    vertical-align: bottom;
     display: grid;
     background-color: white;
     grid-template-areas: "links logo" ". ." "copyright socials";

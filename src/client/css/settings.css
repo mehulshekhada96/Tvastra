@@ -6,16 +6,6 @@
   font-family: "Nexa-light";
   src: url(../fonts/Nexa-Light.otf);
 }
-* {
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  -moz-user-select: none;
-       user-select: none;
-  /* Standard syntax */
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Nexa-bold";
   color: #021433;
@@ -90,12 +80,6 @@ button {
   padding: 0.75rem;
   outline: none;
   letter-spacing: 0.05rem;
-}
-
-select {
-  background-color: white;
-  font-family: "Nexa-light";
-  font-size: 1rem;
 }
 
 button {
@@ -226,7 +210,7 @@ span {
     line-height: 1.2rem;
   }
 
-  input, select {
+  input {
     font-size: 0.85rem;
     line-height: 1rem;
     margin: 0.25rem;
@@ -327,7 +311,7 @@ span {
   }
 
   input,
-button, select {
+button {
     font-size: 0.9rem;
     margin: 0.25rem;
     padding: 0.75rem;
@@ -357,4 +341,88 @@ button, select {
   footer {
     padding: 3rem 5rem;
   }
-}/*# sourceMappingURL=theme.css.map */
+}
+.admin_sidebar {
+  margin: 1rem;
+}
+.admin_sidebar .menu_container {
+  padding: 1rem;
+}
+.admin_sidebar .menu_container .menu {
+  width: 95%;
+}
+.admin_sidebar .menu_container .menu li {
+  width: 100%;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 3rem auto;
+}
+.admin_sidebar .menu_container .menu li:not(:first-child):hover {
+  background-color: #d1d0d0;
+  border-left: 5px solid #008dc5;
+}
+.admin_sidebar .menu_container .menu li:not(:first-child):hover a {
+  color: #008dc5;
+  font-family: "Nexa-bold";
+}
+.admin_sidebar .menu_container .menu li:first-child {
+  font-family: "Nexa-bold";
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.admin_sidebar .menu_container .menu li i {
+  align-self: center;
+  color: #008dc5;
+}
+.admin_sidebar .menu_container .menu li p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.admin_sidebar .menu li:nth-child(2) {
+  background: none;
+  border-left: none;
+}
+.admin_sidebar .menu li:nth-child(2) a {
+  color: #021433;
+  font-family: "Nexa-light";
+}
+
+.admin_sidebar .menu li:nth-child(5) {
+  background-color: #d1d0d0;
+  border-left: 5px solid #008dc5;
+}
+.admin_sidebar .menu li:nth-child(5) a {
+  color: #008dc5;
+  font-family: "Nexa-bold";
+}
+
+.pwds .new_password {
+  border-top: 1px solid #d1d0d0;
+  border-bottom: 1px solid #d1d0d0;
+}
+
+@media (min-width: 768px) {
+  .pwds .current_password {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .pwds .new_password {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1025px) {
+  .pwds .current_password {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .pwds .new_password {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=settings.css.map */

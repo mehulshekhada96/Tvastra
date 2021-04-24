@@ -93,19 +93,9 @@ const addDoctorDetails = (req, res, next) => {
             	avg_fees: req.body.averageFees,
             	hospitalList: hospitalList
             }
-            // user.doctor.description = req.body.description;
-            // user.doctor.achievements = achievements;
-            // user.doctor.experience = experience;
-            // user.doctor.qualifications = qualifications;
-            // user.doctor.awards = awards;
-            // user.doctor.specializations = specializations;
-            // user.doctor.avg_fees = averageFees;
-            // user.doctor.hospitalList = hospitalList;
-            // user.display_picture = req.file.path;
+            
             await user.save();
-            // user.doctor.hospitalList.populate({
-            //     path: 'hospitalList'
-            // }); 
+            
             req.session.user = user;
             for(let i = 0; i < user.doctor.hospitalList.length; i++){
                 const hospital = await Hospital.findOne({ name: user.doctor.hospitalList[i] });

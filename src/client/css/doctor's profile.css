@@ -403,6 +403,7 @@ button {
 .details p {
   margin: 1rem;
   text-align: justify;
+  word-wrap: break-word;
 }
 .details hr {
   margin: 0 0.5rem;

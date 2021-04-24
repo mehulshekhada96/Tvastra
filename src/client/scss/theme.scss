@@ -7,6 +7,10 @@
      font-family: "Nexa-light";
      src: url(../fonts/Nexa-Light.otf)
 }
+*{-webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
 $boldfont : "Nexa-bold";
 $lightfont: "Nexa-light";
 h1,h2,h3,h4,h5,h6 {
@@ -79,6 +83,11 @@ button {
     padding: 0.75rem;
     outline: none;  
     letter-spacing: 0.05rem;
+}
+select{
+    background-color: white;
+    font-family: $lightfont;
+    font-size: 1rem;
 }
 button{
     font-size: 1rem;
@@ -196,7 +205,7 @@ span{
         font-size: 0.9rem;
         line-height: 1.2rem;
     }
-    input {
+    input,select {
         
         font-size: 0.85rem;
         line-height: 1rem;
@@ -282,7 +291,7 @@ span{
         object-fit: cover;
     }
     input, 
-    button {
+    button,select {
         font-size: 0.9rem;
         margin: 0.25rem;
         padding: 0.75rem;

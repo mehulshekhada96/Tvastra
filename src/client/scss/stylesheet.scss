@@ -585,6 +585,7 @@ footer{
         }
     }
     footer{
+        vertical-align:bottom;
         display: grid;
         background-color: white;
         grid-template-areas: "links logo"
@@ -949,6 +950,7 @@ footer{
         }
         
         footer{
+            
             margin: 0;
             
             .links a{

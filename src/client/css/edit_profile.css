@@ -1,0 +1,654 @@
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
+}
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #008dc5;
+  color: #eeeeee;
+  border: 2px solid #008dc5;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #008dc5;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+.admin_sidebar {
+  margin: 1rem;
+}
+.admin_sidebar .menu_container {
+  padding: 1rem;
+}
+.admin_sidebar .menu_container .menu {
+  width: 95%;
+}
+.admin_sidebar .menu_container .menu li {
+  width: 100%;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 3rem auto;
+}
+.admin_sidebar .menu_container .menu li:not(:first-child):hover {
+  background-color: #d1d0d0;
+  border-left: 5px solid #008dc5;
+}
+.admin_sidebar .menu_container .menu li:not(:first-child):hover a {
+  color: #008dc5;
+  font-family: "Nexa-bold";
+}
+.admin_sidebar .menu_container .menu li:first-child {
+  font-family: "Nexa-bold";
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.admin_sidebar .menu_container .menu li i {
+  align-self: center;
+  color: #008dc5;
+}
+.admin_sidebar .menu_container .menu li p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.display_none {
+  display: none;
+}
+
+.admin_sidebar .menu li:nth-child(2) {
+  background-color: #d1d0d0;
+  border-left: 5px solid #008dc5;
+}
+.admin_sidebar .menu li:nth-child(2) a {
+  color: #008dc5;
+  font-family: "Nexa-bold";
+}
+
+.background-dashboard {
+  background-color: #e4e4e483;
+}
+@media (min-width: 1025px) {
+  .background-dashboard {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+}
+.background-dashboard .dashboard_content {
+  width: 100%;
+}
+.background-dashboard .dashboard_content .edit_profile {
+  padding: 1rem;
+}
+.background-dashboard .dashboard_content .edit_profile_container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.background-dashboard .dashboard_content .edit_profile_container .edit_profile_heading {
+  padding: 1rem;
+  border-bottom: 1px solid #d1d0d0;
+}
+.background-dashboard .dashboard_content .edit_profile_container h3 {
+  text-align: left;
+}
+.background-dashboard .dashboard_content .edit_profile_container .skybluebtn {
+  width: 100%;
+  color: white;
+}
+.background-dashboard .dashboard_content .edit_profile_container label {
+  font-family: "Nexa-bold";
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing input, .background-dashboard .dashboard_content .edit_profile_container .editing select {
+  border: 2px solid #d1d0d0;
+  padding: 0.75rem;
+  margin: 0;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name {
+  width: 100%;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo {
+  display: grid;
+  grid-template-areas: "name name" "photo upload";
+  width: 90%;
+  height: auto;
+  grid-template-columns: 4rem 70%;
+  padding: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo span {
+  grid-area: name;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  width: 100%;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_photo_image_container {
+  grid-area: photo;
+  height: 4rem;
+  border-radius: 50%;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_photo_image_container img {
+  border-radius: 50%;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_image_container {
+  width: 100%;
+  height: 4rem;
+  grid-area: upload;
+  align-items: center;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_image_container p {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_image_container label {
+  font-family: "Nexa-bold";
+  text-decoration: underline;
+  cursor: pointer;
+  color: #008dc5;
+}
+.background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_image_container #display_picture {
+  visibility: hidden;
+}
+.background-dashboard .dashboard_content .edit_profile_container .edit_phone {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.background-dashboard .dashboard_content .edit_profile_container .edit_phone input {
+  width: 100%;
+}
+.background-dashboard .dashboard_content .edit_profile_container .edit_phone i {
+  position: absolute;
+  right: 1rem;
+  color: #008dc5;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .background-dashboard {
+    background-color: #e4e4e483;
+  }
+}
+@media (min-width: 768px) and (min-width: 1025px) {
+  .background-dashboard {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+}
+@media (min-width: 768px) {
+  .background-dashboard .dashboard_content {
+    width: 100%;
+  }
+  .background-dashboard .dashboard_content .edit_profile {
+    padding: 1rem;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container {
+    width: 100%;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .edit_profile_heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container h3 {
+    margin-bottom: 0;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .skybluebtn {
+    width: 100%;
+    color: white;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .edit_profile_photo {
+    padding: 1rem 0 !important;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .edit_other_details, .background-dashboard .dashboard_content .edit_profile_container .edit_address {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .editing {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .background-dashboard .dashboard_content .edit_profile_container .photo_and_name {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1025px) {
+  .background-dashboard {
+    padding: 3rem 5rem;
+  }
+
+  .dashboard_content {
+    width: 95% !important;
+  }
+
+  .photo_and_name {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 32% 33% !important;
+    gap: 0.5rem;
+  }
+  .photo_and_name .edit_name {
+    width: 100%;
+  }
+
+  .edit_other_details, .edit_address {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+}
+.change_phone_number_form_container {
+  position: fixed;
+  z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.change_phone_number_form_container .change_phone_number {
+  padding: 1rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20rem;
+  width: 25rem;
+  background-color: #f0f0f0;
+}
+.change_phone_number_form_container .change_phone_number h3 {
+  text-align: left;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid #d1d0d0;
+}
+.change_phone_number_form_container .change_phone_number .conf_btns {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #d1d0d0;
+  border-bottom: 1px solid #d1d0d0;
+}
+.change_phone_number_form_container .change_phone_number .close-form {
+  background-color: #fa8072;
+  border: none;
+  color: white;
+  margin: 0.5rem;
+}
+.change_phone_number_form_container .change_phone_number .send_otp {
+  background-color: #8fbc8f;
+  border: none;
+  color: white;
+  margin: 0.5rem;
+}
+
+.form_container__form__input_field {
+  padding: 0.25rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.form_container__form__input_field label {
+  font-family: "Nexa-bold";
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+.form_container__form__input_field input {
+  border: 2px solid #d1d0d0;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+.form_container__form__input_field input:disabled, .form_container__form__input_field input:focus {
+  border-color: #008dc5;
+}
+
+.otpField {
+  background-color: #f0f0f0;
+}/*# sourceMappingURL=edit_profile.css.map */

@@ -1,0 +1,63 @@
+
+@import 'theme';
+@import "sidebar";
+
+.admin_sidebar .menu li:nth-child(2) {
+    
+        background:none ;
+        border-left: none;
+        a{
+            color: $dark-blue;
+            font-family: $lightfont;
+        }
+    
+}
+
+.admin_sidebar .menu li:nth-child(5) {
+    
+        background-color: $light-gray ;
+        border-left: 5px solid $text-blue;
+        a{
+            color: $text-blue;
+            font-family: $boldfont;
+        }
+    
+}
+
+
+.pwds{
+    
+    
+    .new_password{
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+    }
+}
+@media (min-width:768px) {
+    .pwds{
+        .current_password{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .new_password{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+}
+@media (min-width:1025px) {
+    .pwds{
+        .current_password{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        .new_password{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+}
