@@ -38,7 +38,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname,"client")));
 
 // Public Folder
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 app.use(compression());

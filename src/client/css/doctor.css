@@ -7,6 +7,16 @@
   font-family: "Nexa-light";
   src: url(../fonts/Nexa-Light.otf);
 }
+* {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none;
+  /* Standard syntax */
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Nexa-bold";
   color: #021433;
@@ -81,6 +91,12 @@ button {
   padding: 0.75rem;
   outline: none;
   letter-spacing: 0.05rem;
+}
+
+select {
+  background-color: white;
+  font-family: "Nexa-light";
+  font-size: 1rem;
 }
 
 button {
@@ -211,7 +227,7 @@ span {
     line-height: 1.2rem;
   }
 
-  input {
+  input, select {
     font-size: 0.85rem;
     line-height: 1rem;
     margin: 0.25rem;
@@ -312,7 +328,7 @@ span {
   }
 
   input,
-button {
+button, select {
     font-size: 0.9rem;
     margin: 0.25rem;
     padding: 0.75rem;
@@ -357,6 +373,9 @@ button {
 .title span a {
   font-weight: 800;
   color: #626060;
+}
+.title .total_results {
+  margin-bottom: 0;
 }
 
 #sort {
@@ -462,6 +481,9 @@ button {
 
   .title {
     padding: 2rem 2rem 1rem;
+  }
+  .title .total_results {
+    margin-bottom: 0;
   }
 
   span a {
@@ -696,6 +718,9 @@ button {
   .doc_cont {
     margin: 1rem 3rem;
   }
+  .doc_cont .total_results {
+    margin-bottom: 0 !important;
+  }
 
   .doc_main {
     padding: 1rem 6rem 1rem 4rem !important;
@@ -740,5 +765,10 @@ button {
   footer p {
     font-family: sans-serif;
     font-weight: 200;
+  }
+
+  .pagination_cont {
+    width: 100%;
+    text-align: center;
   }
 }/*# sourceMappingURL=doctor.css.map */

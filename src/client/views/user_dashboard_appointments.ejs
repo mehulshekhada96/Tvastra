@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<title>
+			<%= session.user.name %>
+		</title>
+		<%- include('partials/head.ejs') %>
+			<link rel="stylesheet" href="../css/edit_profile.css">
+			<link rel="stylesheet" href="../css/otp.css">
+			<link rel="stylesheet" href="../css/medical_records.css">
+	</head>
+	<body class="user-dashboard">
+		<div class="background-dashboard">
+	<%- include('partials/admin_sidebar.ejs') %>
+	<div class="dashboard_content">
+		<section class="page-content">
+			<div class="page-content-container">
+				<div class="appointment_container">
+					<h3 class="recent_appointments__heading heading-3">Upcoming Appointments</h3>
+					<% if(!appointments.length) { %>
+						<div class="no_appointments_container">
+							<div class="no_appointments">
+								<i class="fas fa-folder-open"></i>
+								<h4 class="heading-4">No Appointments</h4>
+							</div>
+						</div>
+					<% } else { %>
+						<% for(let i = 0; i < appointments.length; i++) { %>
+							<% if(appointments[i].appointmentDate > Date.now()) { %>
+							<div class="appointment">
+								<div class="appointment_date">
+									<div class="appointment_date_date">
+										<%= appointments[i].appointmentDate.getDate() %>
+									</div>
+									<div class="appointment_date_month">
+										<%= appointments[i].appointmentDate.toDateString().split(' ')[1] %>
+									</div>
+								</div>
+								<div class="appointment_details">
+									<div class="appointment_details_doctor_name">
+										Dr. <%= doctors[i].name %>, Dentist
+									</div>
+									<div class="appointment_details_time">
+										<%= appointments[i].appointmentDate.toDateString().split(' ')[0] %>, <%= slots[i].subSlots.startTime %>
+									</div>
+									<div class="appointment_details_clinic">
+										<%= slots[i].hospital %>
+									</div>
+
+									<div class="appointment_details_status">
+										<% if((slots[i].holiday) || (slots[i].subSlots.isDisabled) || (appointments[i].status === 'Cancelled')) { %>
+											<span class="cancelled">
+												Cancelled
+											</span>
+										<% } else if(appointments[i].appointmentDate < Date.now()) { %>
+											<span class="approved">
+												Completed
+											</span>
+										<% } else if(appointments[i].status === 'Approved') { %>
+											<span class="approved">
+												Approved
+											</span>
+										<% } %>
+									</div>
+								</div>
+								<% if(appointments[i].status == 'Cancelled' || appointments[i].appointmentDate < Date.now()) { %>
+								<% } else { %>
+								<div class="appointment_view_details">
+									<button class="appointment_view_details_btn appointment_view_details_book_again" onclick="popupCancelAppointment(this)" data-appointment="<%= appointments[i]._id %>">
+										Cancel Appointment
+									</button>
+									<a href="/reschedule-appointment/<%= appointments[i]._id %>"><button class="appointment_view_details_btn appointment_view_details_view_details" onclick="rescheduleAppointment(this)">
+										Reschedule Appointment
+									</button></a>
+								</div>
+								<% } %>
+							</div>
+							<% } %>
+						<% } %>	
+					<% } %>
+					<h3 class="recent_appointments__heading heading-3">Last Appointments</h3>
+					<% if(!appointments.length) { %>
+						<div class="no_appointments_container">
+							<div class="no_appointments">
+								<i class="fas fa-folder-open"></i>
+								<h4 class="heading-4">No Appointments</h4>
+							</div>
+						</div>
+					<% } else { %>
+						<% for(let i = 0; i < appointments.length; i++) { %>
+							<% if(appointments[i].appointmentDate < Date.now()) { %>
+							<div class="appointment">
+								<div class="appointment_date">
+									<div class="appointment_date_date">
+										<%= appointments[i].appointmentDate.getDate() %>
+									</div>
+									<div class="appointment_date_month">
+										<%= appointments[i].appointmentDate.toDateString().split(' ')[1] %>
+									</div>
+								</div>
+								<div class="appointment_details">
+									<div class="appointment_details_doctor_name">
+										Dr. <%= doctors[i].name %>, Dentist
+									</div>
+									<div class="appointment_details_time">
+										<%= appointments[i].appointmentDate.toDateString().split(' ')[0] %>, <%= slots[i].subSlots.startTime %>
+									</div>
+									<div class="appointment_details_clinic">
+										<%= slots[i].hospital %>
+									</div>
+
+									<div class="appointment_details_status">
+										<% if((slots[i].holiday) || (slots[i].subSlots.isDisabled) || (appointments[i].status === 'Cancelled')) { %>
+											<span class="cancelled">
+												Cancelled
+											</span>
+										<% } else if(appointments[i].appointmentDate < Date.now()) { %>
+											<span class="approved">
+												Completed
+											</span>
+										<% } else if(appointments[i].status === 'Approved') { %>
+											<span class="approved">
+												Approved
+											</span>
+										<% } %>
+									</div>
+								</div>
+								<% if(appointments[i].status == 'Cancelled' || appointments[i].appointmentDate < Date.now()) { %>
+								<% } else { %>
+								<div class="appointment_view_details">
+									<button class="appointment_view_details_btn appointment_view_details_book_again" onclick="popupCancelAppointment(this)" data-appointment="<%= appointments[i]._id %>">
+										Cancel Appointment
+									</button>
+									<a href="/reschedule-appointment/<%= appointments[i]._id %>"><button class="appointment_view_details_btn appointment_view_details_view_details" onclick="rescheduleAppointment(this)">
+										Reschedule Appointment
+									</button></a>
+								</div>
+								<% } %>
+							</div>
+							<% } %>
+						<% } %>	
+					<% } %>
+				</div>
+			</div>
+		</section>
+	</div>
+	</div>
+	<div class="change_phone_number_form_container cancel_appointment_form_container display_none">
+		<div class="form_container__form change_phone_number cancel_appointment">
+			<h1 class="form_container__heading">Are you sure?</h1>
+			<div class="cancel_appointment_options_container">
+				<div class="cancel_appointment_options cancel_appointment_options--cancel">
+					<button onclick="cancelAppointment(this)">Yes</button>
+				</div>
+				<div class="cancel_appointment_options ">
+					<button onclick="popupCancelAppointment(this)">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		const menuItemActive = document.querySelectorAll(`a[href='/${window.location.href.split('/')[3]}']`);
+		menuItemActive[1].parentElement.parentElement.classList.add('menu-item--active');
+	</script>
+	<script>
+		async function cancelAppointment(button){
+			const res = await fetch(`/appointment-cancel/${button.dataset.appointment}`, {
+				method: 'POST'
+			});
+			window.location.href = res.url;
+		}
+
+		function popupCancelAppointment(button){
+			const popCancel = document.querySelector('.cancel_appointment_form_container');
+			popCancel.classList.toggle('display_none');
+			console.log(Array.from(popCancel.classList).indexOf('display_none'));
+			if(Array.from(popCancel.classList).indexOf('display_none') === -1) {
+				popCancel.querySelector('.cancel_appointment_options--cancel').children[0].dataset.appointment = button.dataset.appointment;
+			}
+		}
+	</script>
+	<script src="./../dashboard.js"></script>
+	<script src="./../error.js"></script>
+	<script src="./../index.js"></script>
+</body>
+</html>

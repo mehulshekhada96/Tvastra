@@ -4,16 +4,15 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-		<%= session.user.name %>
-	</title>
+	<title>Edit Profile Doctor</title>
+
 	<%- include('partials/head.ejs') %>
 		<link rel="stylesheet" href="../css/edit_profile.css">
 		<link rel="stylesheet" href="../css/otp.css">
+		<link rel="stylesheet" href="../css/tagify.css">
 </head>
 
-<body class="user-dashboard">
-
+<body>
 	<% if(error) {%>
 		<% if(errorType==='Success' ) { %>
 			<div class="error_container error_container--success">
@@ -85,37 +84,26 @@
 							</div>
 							<% } %>
 								<% } %>
-
-
-
 									<%- include('partials/header.ejs') %>
-
 										<div class="background-dashboard">
-
 											<%- include('partials/admin_sidebar.ejs') %>
 												<div class="dashboard_content">
 													<section class="edit_profile edit_profile--doctor">
 														<form action="/save-changes" id="edit-profile" method="POST"
 															enctype="multipart/form-data">
 															<div class="edit_profile_container">
-																<div
-																	class="edit_profile_heading edit_profile_heading--edit_profile">
-																	<h3 class="heading-4">Accounts</h3>
+																<div class="edit_profile_heading">
+																	<h3 class="heading-4">Account</h3>
 																	<div class="save_button">
-																		<button class="skybluebtn" type="submit"
-																			form="edit-profile">
+																		<button class="skybluebtn" type="submit" form="edit-profile">
 																			<span>
 																				Save Changes
 																			</span>
 																		</button>
 																	</div>
-
 																</div>
-
 																<div class="photo_and_name">
-
 																	<div class="edit_profile_photo">
-																		<span>Profile Photo</span>
 																		<div class="upload_photo_image_container">
 																			<img src="<%= session.user.display_picture ? session.user.display_picture : 'public/uploads/users/default-user.png'  %>"
 																				alt="">
@@ -130,7 +118,7 @@
 																	</div>
 																	<div class="edit_name editing">
 																		<label for="name">Name</label>
-																		<input type="text" id="name" name="name"
+																		<input type="text" name="name"
 																			value="<%= session.user.name %>"
 																			placeholder="Enter your name" required>
 																	</div>
@@ -140,18 +128,17 @@
 																		<div class="edit_phone_number editing">
 																			<label for="phoneNumber">Phone
 																				Number</label>
-																			<!-- <span id="edit_phone_number">Edit
-																				Number</span> -->
-
-																			<div class="edit_phone">
-																				<input type="text" name="phoneNumber"
-																					value="<%= session.user.phoneNumber %>"
-																					placeholder="Enter your phone number"
-																					required readonly>
-																				<i id="edit_phone_number"
-																					class="fas fa-pen"></i>
-																			</div>
+																			
+																		
+																		<div class="edit_phone">
+																			<input type="text" name="phoneNumber"
+																				value="<%= session.user.phoneNumber %>"
+																				placeholder="Enter your phone number"
+																				required readonly>
+																			<i id="edit_phone_number"
+																				class="fas fa-pen"></i>
 																		</div>
+																	</div>
 																	</div>
 																	<div class="edit_field editing">
 																		<label for="email">Email</label>
@@ -231,6 +218,58 @@
 																		</select>
 																	</div>
 																</div>
+																<div class="edit_doctor_details">
+																	<div class="edit_field editing">
+																		<label for="hospitalList">Hospitals</label>
+																		<input class="hospital_list_input" type="text"
+																			name="hospitalList"
+																			value="<%= session.user.doctor.hospitalList %>">
+																	</div>
+																	<div class="edit_field editing">
+																		<label for="achievements">Achievments</label>
+																		<input class="achievements_input" type="text"
+																			name="achievements"
+																			value="<%= session.user.doctor.achievements %>">
+																	</div>
+																	<div class="edit_field editing">
+																		<label for="experience">Experience</label>
+																		<input class="experience_input" type="number"
+																			name="experience"
+																			value="<%= session.user.doctor.experience %>">
+																	</div>
+																	<div class="edit_field editing">
+																		<label
+																			for="specializations">Specializations</label>
+																		<input class="specializations_input" type="text"
+																			name="specializations"
+																			value='<%= session.user.doctor.specializations %>'>
+																	</div>
+																	<div class="edit_field editing">
+																		<label
+																			for="qualifications">Qualifications</label>
+																		<input class="qualifications_input" type="text"
+																			name="qualifications"
+																			value="<%= session.user.doctor.qualifications %>">
+																	</div>
+																	<div class="edit_field editing">
+																		<label for="awards">Awards</label>
+																		<input class="awards_input" type="text"
+																			name="awards"
+																			value="<%= session.user.doctor.awards %>">
+																	</div>
+																	<div class="edit_field editing">
+																		<label for="averageFees">Average Fees</label>
+																		<input class="averageFees_input" type="number"
+																			name="averageFees"
+																			value="<%= session.user.doctor.avg_fees %>">
+																	</div>
+																	
+																</div>
+																<div class="edit_field editing">
+																	<label for="description">Description</label>
+																	<textarea name="description" id="" cols="30"
+																		rows="10"><%= session.user.doctor.description %></textarea>
+																</div>
 															</div>
 														</form>
 													</section>
@@ -261,13 +300,11 @@
 												</div>
 											</div>
 										</div>
-										<footer>
-											<%- include ('partials/footer.ejs') %>
-										</footer>
 										<script>
 											const menuItemActive = document.querySelectorAll(`a[href='/${window.location.href.split('/')[3]}']`);
 											menuItemActive[1].parentElement.parentElement.classList.add('menu-item--active');
 										</script>
+										<script src="../js files/tagify.js"></script>
 										<script>
 
 											var editNumber = document.getElementById('edit_phone_number');
@@ -286,8 +323,8 @@
 
 											var otpForm = `<h1 class="form_container__heading">OTP</h1>
 			<div class="form_container__form">
-				<p class="para-1 otp-message">We have sent One Time Password (OTP) to your registered Phone Number.</p>
-				<div class="form_container__form__input_field otp_field">
+				<h3 class="para-1 otp-message">We have sent One Time Password (OTP) to your registered Phone Number.</h3>
+				<div class="form_container__form__input_field">
 					<!-- <input name="otp" id="otp" type="text" class="form_container__form__otp" required onKeyPress="if(this.value.length==4) return false;" maxlength="4"> -->
 					<!-- <i class="fas fa-question-circle"></i> -->
 
@@ -297,13 +334,11 @@
 					<input class="otpField" name="otp_4" id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)" required>
 
 				</div>
-				<div class="conf_btns">
-				<button onclick="verifyOTP()" type="submit" id="otpSubmit" class="form_container__form__submit send_otp">
-					Submit
+				<button onclick="verifyOTP()" type="submit" id="otpSubmit" class="form_container__form__submit">
+					<span class="form_container__form__submit__text">Submit</span>
+					<span class="form_container__form__submit__icon"><i class="fas fa-arrow-right"></i></span>
 				</button>
-				
-				<button class="close-form form_container__form__submit">Cancel</button>
-				</div>
+				<span class="close-form"><i class="fas fa-times"></i></span>
 				</div>`
 											async function sendOTP() {
 												console.log(phoneNumber.value);
@@ -351,6 +386,7 @@
 
 
 										</script>
+										
 										<script>
 											const gender = document.querySelector('select[name="gender"]');
 											const country = document.querySelector('select[name="country"]');
@@ -374,31 +410,59 @@
 										</script>
 										<script>
 
-
-											const cross_sidebar = document.querySelector('.cross-sidebar');
-											const burger = document.querySelector('.navbar__burger');
-											const sidebar = document.querySelector('.admin_sidebar');
-
-											if (window.matchMedia('(min-width: 1024px)').matches) {
-												sidebar.style.display = 'flex';
-												burger.style.display = 'none';
-												cross_sidebar.style.display = 'none';
+											const hospitalWhitelist = [];
+											const fetchHospitals = async () => {
+												const hospitals = await fetch('/autoCompleteHospital', {
+													method: 'GET'
+												});
+												const hospitalData = await hospitals.json();
+												console.log(hospitalData);
+												hospitalData.data.forEach(el => {
+													hospitalWhitelist.push(el.name);
+												})
 											}
+											fetchHospitals();
+											console.log(hospitalWhitelist);
+											const specializationsInput = document.querySelector('.specializations_input');
+											const specializationsTagify = new Tagify(specializationsInput, {
+												enforceWhitelist: true,
+												whitelist: ['Family Physician', 'Internal Medicine Physician', 'Pediatrician', 'Obstetrician', 'Gynecologist', 'Surgeon', 'Psychiatrist', 'Cardiologist', 'Dermatologist', 'Endocrinologist', 'Gastroenterologist', 'Infectious Disease Physician', 'Nephrologist', 'Ophthalmologist', 'Otolaryngologist', 'Pulmonologist', 'Neurologist', 'Physician Executive', 'Radiologist', 'Anesthesiologist', 'Oncologist']
+											});
+											const achievements = document.querySelector('.achievements_input');
+											const achievmentsTagify = new Tagify(achievements);
+											const qualifications = document.querySelector('.qualifications_input');
+											const qualificationsTagify = new Tagify(qualifications);
+											const awards = document.querySelector('.awards_input');
+											const awardsTagify = new Tagify(awards);
+											const hospitalInput = document.querySelector('.hospital_list_input');
+											const hospitalInputTagify = new Tagify(hospitalInput, {
+												whitelist: hospitalWhitelist,
+												enforceWhitelist: true
+											});
 
-											const hideSidebar = () => {
-												sidebar.style.display = 'none';
-											}
+											const slot_duration = document.querySelector('input[name="slotDuration"]');
+											const slotTagify = new Tagify(slot_duration, {
+												whitelist: ['60 Mins', '45 Mins', '30 Mins', '15 Mins'],
+												mode: 'select',
+												dropdown: {
+													className: 'color-blue',
+													enabled: 1,
+													maxItems: 4,
+													position: 'text',
+													closeOnSelect: true,
+													highlightFirst: true
+												}
+											});
 
-											const showSidebar = () => {
-												sidebar.style.display = 'flex';
-											}
-
-
-											cross_sidebar.addEventListener('click', hideSidebar);
+		// if(<%- session.user.doctor.specializations %>){
+		// 	specializationsTagify.addTags(session.user.doctor.specializations);	
+		// }
 										</script>
-										<script src="../js files/index.js"></script>
-
-
+										<script src="../js files/index.js">
+										</script>
+										
+										<!-- <script src="./../dashboard.js"></script> -->
+									
 </body>
 
 </html>

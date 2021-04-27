@@ -34,7 +34,8 @@
     </div>
     <div class="title doc_cont">
         <span><a href="/">Home</a> <a href="doctors">/ Doctor List</a></span>
-
+        <p class="total_results"> Total Results: <%= doctors.length %>
+        </p>
         <form method="POST" action="/sort-by" id="sort">
             <select class="breadcrumb__sort" name="sort" onchange="this.form.submit()" id="sortbtn">
                 <option value="not-specified" selected disabled>Sort By</option>
@@ -76,7 +77,7 @@
                     </span>
                     <div>
                         <% for(let i=0; i < filters.location.length; i++) { %>
-                            <% if(i <=6) { %>
+                            <% if(i <=5) { %>
                                 <input type="checkbox"
                                     class="<%= '_' + filters.location[i].split(' ').join('-') %> checkbox_container"
                                     onclick="this.form.submit()" id="New Delhi" name="location[]"
@@ -116,7 +117,7 @@
 
                     <div>
                         <% for(let i=0; i < filters.specializations.length; i++) { %>
-                            <% if(i <=6) { %>
+                            <% if(i <=5) { %>
                                 <input type="checkbox"
                                     class="<%= '_' + filters.specializations[i].split(' ').join('-') %> checkbox_container"
                                     onclick="this.form.submit()" id="New Delhi" name="specializations[]"
@@ -153,7 +154,7 @@
                     </span>
                     <div>
                         <% for(let i=0; i < filters.hospital.length; i++) { %>
-                            <% if(i <=6) { %>
+                            <% if(i <=5) { %>
                                 <input type="checkbox"
                                     class="<%= '_' + filters.hospital[i].split(' ').join('-') %> checkbox_container"
                                     onclick="this.form.submit()" id="New Delhi" name="hospital[]"
@@ -252,31 +253,31 @@
                                             <%= doctors[i].doctor.achievements[1] %>
                                         </li>
                                         <% } %> -->
+                                    <li
+                                        class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__experience">
+                                        <span><i class="fas fa-clock"></i></span>
+                                        <%= doctors[i].doctor.experience %> Years Of Experience
+                                    </li>
+                                    <li
+                                        class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__experience">
+                                        <span><i class='fas fa-user-graduate'></i></span>
+                                        <%= doctors[i].doctor.qualifications[0] %>
+                                    </li>
+                                    <% for(let h=0; h < doctors[i].doctor.hospitalList.length; h++) { %>
+                                        <li
+                                            class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__hospital">
+                                            <span><i class="fas fa-building"></i></span>
+                                            <%= doctors[i].doctor.hospitalList[h] %>
+                                        </li>
+                                        <% } %>
                                             <li
-                                                class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__experience">
-                                                <span><i class="fas fa-clock"></i></span>
-                                                <%= doctors[i].doctor.experience %> Years Of Experience
+                                                class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__location">
+                                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                                <%= doctors[i].location %>
                                             </li>
-                                            <li
-                                                class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__experience">
-                                                <span><i class='fas fa-user-graduate'></i></span>
-                                                <%= doctors[i].doctor.qualifications[0] %>
+                                            <li><span><i class="fas fa-money-bill"></i></span>
+                                                <%= doctors[i].doctor.avg_fees %>
                                             </li>
-                                            <% for(let h=0; h < doctors[i].doctor.hospitalList.length; h++) { %>
-                                                <li
-                                                    class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__hospital">
-                                                    <span><i class="fas fa-building"></i></span>
-                                                    <%= doctors[i].doctor.hospitalList[h] %>
-                                                </li>
-                                                <% } %>
-                                                    <li
-                                                        class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__location">
-                                                        <span><i class="fas fa-map-marker-alt"></i></span>
-                                                        <%= doctors[i].location %>
-                                                    </li>
-                                                    <li><span><i class="fas fa-money-bill"></i></span>
-                                                        <%= doctors[i].doctor.avg_fees %>
-                                                    </li>
 
                                 </ul>
                                 <button class="doctor_list__container__col-2__card__book darkbluebtn btn">Book an
@@ -292,11 +293,12 @@
                         <% } %>
                             <% } %>
 
-
+                                
 
 
 
     </section>
+    <div class="pagination_cont">pagination container</div>
     <section class="container help">
         <h2>Need Help?</h2>
         <p>Just let us know, we will happy to assist you</p>
@@ -417,11 +419,11 @@
             }
         }
 
-       
+
     </script>
 
 
-<!--  -->
+    <!--  -->
     <script src="../js files/index.js"></script>
 </body>
 

@@ -13,6 +13,9 @@
         font-weight: 800;
         color: $text-gray;
     }
+    .total_results{
+        margin-bottom: 0;
+    }
 }
 
 #sort{
@@ -113,6 +116,9 @@
     }
     .title{
         padding: 2rem 2rem 1rem;
+        .total_results{
+            margin-bottom: 0;
+        }
     }
     span a{
         font-size: 1.2rem;
@@ -335,6 +341,10 @@
     }
     .doc_cont {
         margin: 1rem 3rem;
+        .total_results{
+            margin-bottom: 0 !important;
+        }
+
      }
     .doc_main {
         padding:1rem  6rem  1rem 4rem!important;
@@ -375,6 +385,10 @@
         font-family:sans-serif;
         font-weight: 200;
     }
-
+   .pagination_cont{
+       width: 100%;
+       text-align: center;
+    
+   }
 
 }

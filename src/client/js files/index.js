@@ -102,7 +102,7 @@ function showMore(param){
 function showLess(param){
 	let showList = param.parentElement.querySelectorAll('.checkbox_container');
 	showList.forEach((el, index) => {
-		if(index > 13){
+		if(index > 11){
 			if(el.classList.contains('display_none')){
 
 			} else {
