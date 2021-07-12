@@ -122,9 +122,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -154,7 +154,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -381,11 +381,11 @@ button, select {
 }
 #treatments_sideMenu:hover {
   cursor: pointer;
-  color: #008dc5;
+  color: #0a7abb;
 }
 #treatments_sideMenu:hover .fa-chevron-down {
   cursor: pointer;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 #side_menu_treatments {
@@ -399,7 +399,7 @@ button, select {
   position: absolute;
   z-index: 1000;
   background-color: white;
-  border: 1px solid #008dc5;
+  border: 1px solid #0a7abb;
 }
 .display_none li {
   padding: 0.5rem 1rem;
@@ -410,7 +410,7 @@ button, select {
   background-color: #e4e4e483;
 }
 .display_none li:hover a {
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 .profile_menu_class {
@@ -426,17 +426,17 @@ button, select {
 }
 
 .tvastra-plus {
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
 }
 .tvastra-plus:hover {
-  color: #008dc5 !important;
+  color: #0a7abb !important;
 }
 
 .profile_small_details {
   display: grid;
   grid-template-columns: 3.5rem auto;
   gap: 0.5rem;
-  border-bottom: 1px solid #008dc5;
+  border-bottom: 1px solid #0a7abb;
 }
 .profile_small_details .profile_picture__container {
   height: 3rem;
@@ -454,7 +454,7 @@ button, select {
 .profile_small_details .name_and_phone span {
   margin-top: 0.2rem;
   line-height: 1rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 .profile_small_details .name_and_phone .phoneNumber {
   font-family: "Nexa-light";
@@ -558,7 +558,7 @@ nav a {
   font-weight: 600;
 }
 nav a:hover {
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 .error_container {
@@ -584,14 +584,33 @@ nav a:hover {
   }
 }
 .error_container--success {
+  background-color: #b9f6c5;
   border-left: 4px solid green;
+  color: green;
+}
+.error_container--success .col--1 i {
   color: green;
 }
 .error_container--success .col--2 #cancelLogin {
   color: green;
 }
+.error_container--failure {
+  border-left: 4px solid red;
+  background-color: #ffccaa;
+  color: red;
+}
+.error_container--failure .col--1 .fa-times-circle {
+  color: red !important;
+}
+.error_container--failure .col--2 #cancelLogin {
+  color: red;
+}
 .error_container--info {
   border-left: 4px solid blue;
+  background-color: #ccddff;
+  color: blue;
+}
+.error_container--info .col--1 i {
   color: blue;
 }
 .error_container--info .col--2 #cancelLogin {
@@ -631,10 +650,10 @@ nav a:hover {
   cursor: pointer;
 }
 .navbar__profile:hover {
-  color: #008dc5;
+  color: #0a7abb;
 }
 .navbar__profile:hover .fa-chevron-down, .navbar__profile:hover span {
-  color: #008dc5;
+  color: #0a7abb;
 }
 .navbar__profile:hover span {
   font-size: 1rem;
@@ -740,7 +759,7 @@ form .fa-crosshairs {
   color: #021433;
 }
 .active h3 .number {
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 .doctors {
@@ -762,7 +781,7 @@ form .fa-crosshairs {
   height: 95vw;
 }
 .doctors figure figcaption {
-  color: #008dc5;
+  color: #0a7abb;
   margin: 0.3rem 0;
 }
 .doctors figure figcaption::before {
@@ -894,7 +913,7 @@ footer p {
 
 .lastline {
   padding: 0.3rem;
-  background-color: #008dc5;
+  background-color: #0a7abb;
 }
 
 @media screen and (max-width: 768px) {
@@ -1232,7 +1251,7 @@ footer p {
   }
 
   .active {
-    border-color: #008dc5;
+    border-color: #0a7abb;
   }
 
   .how_it_works {
@@ -1349,7 +1368,7 @@ footer p {
 
   .activedot {
     background-color: #021433;
-    border: 4px solid #008dc5;
+    border: 4px solid #0a7abb;
   }
 
   .mad_trit {
@@ -1422,7 +1441,7 @@ footer p {
 
   .activedot1 {
     background-color: #ffffff;
-    border: 4px solid #008dc5;
+    border: 4px solid #0a7abb;
   }
 
   .services {

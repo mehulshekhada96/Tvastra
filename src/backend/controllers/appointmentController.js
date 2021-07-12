@@ -49,7 +49,7 @@ const loadingDataOnAppointmentPage = async (req, res, next) => {
 	console.log(slot);
 	console.log(req.query.date);
 	// console.log(subSlot);
-	res.render('views/appointment.ejs', { session: req.session, doctor: doctor, slot: slot, date: req.query.date });
+	res.render('appointment.ejs', { session: req.session, doctor: doctor, slot: slot, date: req.query.date });
 }
 
 const createAppointment = async (req, res, next) => {

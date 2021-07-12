@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const path = require("path");
 const app = express();
+const ejsLint = require('ejs-lint');
 const multer = require('multer');
 const userController = require('./backend/controllers/userController');
 const doctorController = require('./backend/controllers/doctorController');
@@ -38,7 +39,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname,"client")));
 
 // Public Folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './client/public')));
 
 app.use(cors());
 app.use(compression());
@@ -173,7 +174,27 @@ app.put('/disable-error', authenticationController.clearError);
 app.get('/doctors', authenticationController.redirectLogin, doctorController.getAllDoctors, (req, res) => {
 	res.render('doctor.ejs', {dateFromServer: res.locals.currentDate, currentDay: res.locals.currentDay , doctors : res.locals.doctors, session: req.session, filter: req.session.filters ?  req.session.filters : '', sort: req.session.sortBy ?  req.session.sortBy : '', filters: res.locals.allFilters});
 });
-
+app.get('/doctors/:page', function(req, res, next) {
+    var perPage = 3
+    var page = req.params.page || 1
+ 
+    Doctor
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, doctors) {
+            Doctor.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('doctor.ejs', {
+                    doctors: doctors,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+					
+                })
+				console.log("page count is" + count);
+            })
+        })
+})
 app.get('/hospitals', authenticationController.redirectLogin, hospitalController.getAllHospitals, (req, res) => {
 	res.render('hospital.ejs', {hospital : res.locals.hospitals, session: req.session});
 });

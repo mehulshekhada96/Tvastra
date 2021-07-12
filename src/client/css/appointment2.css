@@ -1,0 +1,619 @@
+@font-face {
+  font-family: "Nexa-bold";
+  src: url(../fonts/Nexa-Bold.otf);
+}
+@font-face {
+  font-family: "Nexa-light";
+  src: url(../fonts/Nexa-Light.otf);
+}
+* {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none;
+  /* Standard syntax */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa-bold";
+  color: #021433;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+p, li {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+li {
+  font-size: 0.9rem;
+  list-style-type: none;
+  line-height: 1.3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+input,
+button {
+  font-family: "Nexa-light";
+  padding: 0.75rem;
+  outline: none;
+  letter-spacing: 0.05rem;
+}
+
+select {
+  background-color: white;
+  font-family: "Nexa-light";
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: #021433;
+  border-radius: 0.3rem;
+}
+
+.darkbluebtn {
+  background-color: #021433;
+  color: #eeeeee;
+  border: 2px solid #021433;
+  border-radius: 0.3rem;
+}
+
+.skybluebtn {
+  background-color: #0a7abb;
+  color: #eeeeee;
+  border: 2px solid #0a7abb;
+  border-radius: 0.3rem;
+}
+
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.8rem;
+  font-family: "Nexa-light";
+  letter-spacing: 0.05rem;
+  color: #021433;
+}
+
+i {
+  font-size: 0.85rem;
+  color: #021433;
+}
+
+section, footer {
+  padding: 2rem 1rem;
+}
+
+figcaption {
+  font-family: "Nexa-bold";
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #0a7abb;
+}
+
+nav {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+}
+
+textarea {
+  font-family: "Nexa-light";
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  outline: none;
+}
+
+label {
+  font-family: "Nexa-light";
+  color: #021433;
+  letter-spacing: 0.05rem;
+}
+
+span {
+  font-family: "Nexa-bold";
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  input, select {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 1rem;
+    font-weight: 900;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 4rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  input,
+button, select {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 5rem;
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 3rem 5rem;
+  }
+}
+.login-body-flex {
+  background-color: #e4e4e483;
+  display: flex;
+  flex-direction: column;
+  min-height: 99vh;
+  justify-content: space-between;
+}
+
+.appointment__col--1 {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.appointment__col--1 .appointment_type {
+  border-bottom: 1px solid #626060;
+  margin-top: 1rem;
+}
+.appointment__col--1 h1 {
+  color: #0a7abb;
+}
+
+.appointment_date_and_time {
+  padding-top: 0.5rem;
+}
+.appointment_date_and_time i {
+  color: #0a7abb;
+  margin-right: 0.5rem;
+}
+.appointment_date_and_time span {
+  font-family: "Nexa-light";
+  line-height: 1.6rem;
+}
+.appointment_date_and_time .time {
+  text-transform: uppercase;
+}
+
+.appointment_change_schedule a {
+  color: #0a7abb;
+  font-family: "Nexa-bold";
+}
+.appointment_change_schedule a:hover {
+  text-decoration: underline;
+}
+
+.appointment_doctor_details, .appointment_hospital_details {
+  padding: 0.5rem 0;
+}
+.appointment_doctor_details__info_card, .appointment_hospital_details__info_card {
+  display: flex;
+}
+.appointment_doctor_details__info_card .doctor_display_picture_container, .appointment_doctor_details__info_card .hospital_display_picture_container, .appointment_hospital_details__info_card .doctor_display_picture_container, .appointment_hospital_details__info_card .hospital_display_picture_container {
+  width: 7rem;
+  height: 7rem;
+}
+
+.doctor_info, .hospital_info {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.doctor_info span, .doctor_info .doctor_name, .doctor_info .hospital_name, .hospital_info span, .hospital_info .doctor_name, .hospital_info .hospital_name {
+  font-family: "Nexa-light";
+  line-height: 1.6rem;
+}
+
+.appointment__col--2 {
+  background-color: white;
+  padding: 1rem;
+  margin: 4rem 0;
+  box-shadow: 0 0 2rem #d1d0d0;
+}
+.appointment__col--2 .appointment_form_title {
+  margin: 0 -1rem;
+  border-bottom: 2px solid #d1d0d0;
+}
+.appointment__col--2 .appointment_form_title h2 {
+  color: #0a7abb;
+}
+.appointment__col--2 form {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.appointment__col--2 .appointment_form_patient_title span {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.appointment_form_patient_select_item {
+  margin: 0.75rem 0;
+}
+.appointment_form_patient_select_item label {
+  margin: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Nexa-bold";
+  color: #0a7abb;
+}
+
+.current_user_form span {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+.current_user_form .appointment_form_input_field {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.current_user_form .appointment_form_input_field label {
+  font-family: "Nexa-bold";
+  color: #0a7abb;
+  margin-bottom: 0.5rem;
+}
+.current_user_form .appointment_form_input_field input {
+  border: 2px solid #d1d0d0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.current_user_form .appointment_form_input_field input:-moz-read-only {
+  background: #e4e4e483;
+}
+.current_user_form .appointment_form_input_field input:read-only {
+  background: #e4e4e483;
+}
+.current_user_form .appointment_form_button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-top: 1rem;
+}
+.current_user_form .appointment_form_button button {
+  width: 100%;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.3rem;
+}
+.current_user_form .appointment_form_button i {
+  color: white;
+  position: absolute;
+  right: 1.5rem;
+}
+
+.confirm_appointment {
+  padding: 1rem;
+}
+.confirm_appointment .appointment_form_title {
+  margin-bottom: 1rem;
+}
+.confirm_appointment .appointment_form_title span {
+  font-size: 1.5rem;
+}
+.confirm_appointment .appointment_form_title span i {
+  color: #8fbc8f;
+  font-size: 1.5rem;
+}
+
+.appointment_booked_details h4 {
+  text-align: left;
+}
+
+.appointment_booked_detail_container .appointment_booked_detail_heading {
+  font-family: "Nexa-bold";
+  margin-bottom: 0.85rem;
+  color: #0a7abb;
+  font-size: 1.1rem;
+}
+.appointment_booked_detail_container .appointment_booked_detail {
+  font-family: "Nexa-light";
+  margin-bottom: 0.85rem;
+  font-size: 1.1rem;
+}
+
+.appointment_booked_detail_container--buttons button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.change_phone_number_form_container {
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 20rem;
+  background-color: #ffffff;
+  border: 2px solid #d1d0d0;
+}
+.change_phone_number_form_container .cancel_appointment_options_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.change_phone_number_form_container .cancel_appointment_options_container .greenbtn {
+  background-color: #8fbc8f;
+  border: none;
+  width: 45%;
+}
+.change_phone_number_form_container .cancel_appointment_options_container .redbtn {
+  background-color: #fa8072;
+  border: none;
+  width: 45%;
+}
+
+@media (min-width: 768px) {
+  .appointment-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .appointment-page .appointment__col--2 {
+    margin: 0;
+  }
+
+  .appointment_date_and_time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    margin: 0;
+    padding: 2rem;
+  }
+}
+@media (min-width: 1025px) {
+  h1, h2 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  .appointment-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  footer {
+    padding: 2rem 5rem;
+  }
+
+  .appointment_booked_detail_container--buttons {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    margin-top: 2rem;
+    gap: 10%;
+  }
+}/*# sourceMappingURL=appointment2.css.map */

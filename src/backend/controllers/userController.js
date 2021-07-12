@@ -12,14 +12,14 @@ const nexmo = new Vonage({
 });
 // File Storage
 const userFileStorage = multer.diskStorage({
-	destination: 'public/uploads/users',
+	destination: 'client/public/uploads/users',
 	filename: function(req, file, callback){
 		callback(null, `${req.session.user._id}${path.extname(file.originalname)}`);
 	}
 })
 
 const doctorFileStorage = multer.diskStorage({
-    destination: 'public/uploads/doctors',
+    destination: 'client/public/uploads/doctors',
     filename: function(req, file, callback){
         callback(null, `${req.session.user.phoneNumber}${path.extname(file.originalname)}`);
     }

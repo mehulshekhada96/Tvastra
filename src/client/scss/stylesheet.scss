@@ -24,17 +24,44 @@ nav{
     
 	}
 	&--success{
+        background-color: $lightgreen;
 		border-left: 4px solid green;
 		color: green;
+        .col--1{
+            i{
+                color: green;
+            }
+        }
 		.col--2{
 			#cancelLogin{
 				color: green;
 			}	
 		}
 	}
+    &--failure{
+        border-left: 4px solid red;
+        background-color: $lightred;
+		color: red;
+        .col--1{
+            .fa-times-circle{
+                color: red !important;
+            }
+        }
+		.col--2{
+			#cancelLogin{
+				color: red;
+			}	
+		}
+    }
 	&--info{
 		border-left: 4px solid blue;
+        background-color: $lightblue;
 		color: blue;
+        .col--1{
+            i{
+                color: blue;
+            }
+        }
 		.col--2{
 			#cancelLogin{
 				color: blue;

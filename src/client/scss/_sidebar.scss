@@ -8,7 +8,7 @@ padding: 1rem;
 width: 95%;
 
           li{
-              width: 100%;
+            width: auto;
             padding: 0.5rem;
             display: grid;
             grid-template-columns: 3rem auto;
@@ -36,6 +36,10 @@ width: 95%;
             p{
                 margin-bottom: 0;
                 text-align: left;
+                line-height: 1.3rem;
+                a{
+                    line-height: 1.3rem;
+                }
             }
             
 

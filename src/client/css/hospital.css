@@ -122,9 +122,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -154,7 +154,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -430,7 +430,7 @@ li .fas_icon {
   position: relative;
   margin-left: 0.5rem;
   font-size: 1.1rem;
-  color: #008dc5;
+  color: #0a7abb;
   grid-area: icon;
   align-self: center;
 }
@@ -439,7 +439,7 @@ li .fas_icon {
   text-align: left;
   margin-left: 0;
   margin-top: 1rem;
-  color: #008dc5;
+  color: #0a7abb;
   display: grid;
   grid-template-columns: 13% auto;
 }
@@ -605,7 +605,7 @@ li .fas_icon {
   }
 
   .showmore, .fa-search {
-    color: #008dc5;
+    color: #0a7abb;
   }
 
   .showmore {

@@ -121,9 +121,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -153,7 +153,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -363,7 +363,7 @@ button, select {
 }
 
 h1, .timer h6 {
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 .otp_field {
@@ -382,7 +382,7 @@ h1, .timer h6 {
   border: none !important;
   font-family: "Nexa-bold";
   font-size: 1.5rem;
-  border-bottom: 3px solid #008dc5 !important;
+  border-bottom: 3px solid #0a7abb !important;
   -moz-appearance: textfield;
 }
 .otpField:last-child {
@@ -394,7 +394,7 @@ h1, .timer h6 {
   margin: 0;
 }
 .otpField:focus, .otpField.focus {
-  border-color: #008dc5;
+  border-color: #0a7abb;
   outline: none;
   box-shadow: none;
 }

@@ -121,9 +121,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -153,7 +153,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -368,17 +368,17 @@ button, select {
   width: 95%;
 }
 .admin_sidebar .menu_container .menu li {
-  width: 100%;
+  width: auto;
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 3rem auto;
 }
 .admin_sidebar .menu_container .menu li:not(:first-child):hover {
   background-color: #d1d0d0;
-  border-left: 5px solid #008dc5;
+  border-left: 5px solid #0a7abb;
 }
 .admin_sidebar .menu_container .menu li:not(:first-child):hover a {
-  color: #008dc5;
+  color: #0a7abb;
   font-family: "Nexa-bold";
 }
 .admin_sidebar .menu_container .menu li:first-child {
@@ -388,11 +388,15 @@ button, select {
 }
 .admin_sidebar .menu_container .menu li i {
   align-self: center;
-  color: #008dc5;
+  color: #0a7abb;
 }
 .admin_sidebar .menu_container .menu li p {
   margin-bottom: 0;
   text-align: left;
+  line-height: 1.3rem;
+}
+.admin_sidebar .menu_container .menu li p a {
+  line-height: 1.3rem;
 }
 
 .admin_sidebar .menu li:nth-child(2) {
@@ -406,10 +410,10 @@ button, select {
 
 .admin_sidebar .menu li:nth-child(5) {
   background-color: #d1d0d0;
-  border-left: 5px solid #008dc5;
+  border-left: 5px solid #0a7abb;
 }
 .admin_sidebar .menu li:nth-child(5) a {
-  color: #008dc5;
+  color: #0a7abb;
   font-family: "Nexa-bold";
 }
 

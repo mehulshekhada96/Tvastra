@@ -1,68 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Appointment</title>
-    <%- include ('partials/head.ejs') %>
-    <link rel="stylesheet" href="../css/signin.css">
-    <link rel="stylesheet" href="../css/signup.css">
-    <link rel="stylesheet" href="../css/appointment.css">
-    
+    <meta charset="UTF-8">
+    <title>Book An Appointment</title>
+    <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="../css/appointment2.css">
 </head>
 
-<body>
-    <header>
-        <%- include ('partials/header.ejs') %>
-    </header>
-    <section id="full">
-       
-        <div class="formcont">
-            <h1>Book an Appointment</h1>
-            <hr>
-            <form class="signinform" action="signin" method="POST">
-                <h5>Select Appointment Date*</h5>
-                <input type="date" id="date">
-                <h5>Time Interval*</h5>
-                <div class="radiobtn"><input type="radio" name="timeinterval" value="Morning" id="morning">
-                    <label for="morning">Morning</label>
-                </div>
-                <div class="radiobtn"><input type="radio" name="timeinterval" value="Afternoon" id="Afternoon">
-                    <label for="Afternoon">Afternoon</label>
-                </div>
-                <div class="radiobtn"><input type="radio" name="timeinterval" value="Evening" id="Evening">
-                    <label for="Evening">Evening</label>
-                </div>
-                <h5>Appointment Status/Urgency*</h5>
-                <div class="radiobtn"><input type="radio" name="urgency" value="routine" id="routine">
-                    <label for="routine">Routine Check-Up</label>
-                </div>
-                <div class="radiobtn"><input type="radio" name="urgency" value="nonurgent" id="nonurgent">
-                    <label for="nonurgent">Non Urgent Check-Up</label>
-                </div>
-                <div class="radiobtn"><input type="radio" name="urgency" value="urgent" id="urgent">
-                    <label for="urgent"> Urgent Check-Up</label>
-                </div>
-                <div class="radiobtn"><input type="radio" name="urgency" value="surgical" id="surgical">
-                    <label for="surgical">Surgical Appointment</label>
-                </div>
-                <h5>Upload Previous Health Record</h5>
-                <input type="file" id="file">
-                <h5>Appointment Details</h5>
-                <textarea name="details" id="appoinment" cols="30" rows="5"></textarea>
+<body class="login-body">
+    <div class="login-body-flex">
+        <header>
+            <%- include('partials/header.ejs') %>
+        </header>
+        <section class="appointment-page">
+            <div class="appointment__col--1">
+                <div class="appointment_details">
+                    <div class="appointment_type">
+                        <h1>In Clinic Appointment</h1>
+                    </div>
+                    <div class="appointment_schedule">
+                        <div class="appointment_date_and_time">
+                            <div class="appointment_date">
+                                <i class="fa fa-calendar"></i>
 
-                <button class="darkbluebtn btn" id="login" type="submit">BOOK APPOINTMENT</button>
-                <i class='fas fa-arrow-right arrow'></i>
-            </form>
-        </div>
-        
+                                <span>
+                                    <%= date %>
+                                </span>
+                            </div>
+                            <div class="appointment_time">
+                                <i class="fas fa-clock"></i>
+                                <span>From</span>
+                                <span class="time">
+                                    <%= slot.subSlots.startTime %>
+                                </span>
+                            </div>
+                            <div class="appointment_time">
+                                <i class="fas fa-clock"></i>
+                                <span>To</span>
+                                <span class="time">
+                                    <%= slot.subSlots.endTime %>
+                                </span>
+                            </div>
+                            <div class="appointment_change_schedule">
+                                <a href="/doctors">Change Date & Time</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="appointment_doctor_details">
+                        <div class="appointment_doctor_details__info_card">
+                            <div class="doctor_display_picture_container">
+                                <img src="<%= doctor.display_picture %>" alt="">
+                            </div>
+                            <div class="doctor_info">
+                                <div class="doctor_name">
+                                    <span>
+                                        <%= doctor.name %>
+                                    </span>
+                                </div>
+                                <div class="doctor_qualifications">
+                                    <% for(let i=0; i < doctor.doctor.qualifications.length; i++) { %>
+                                        <span>
+                                            <%= doctor.doctor.qualifications[i] %>
+                                        </span>
+                                        <% } %>
+                                </div>
+                                <div class="doctor_specializations">
+                                    <% for(let i=0; i < doctor.doctor.specializations.length; i++) { %>
+                                        <span>
+                                            <%= doctor.doctor.specializations[i] %>
+                                        </span>
+                                        <!-- <span>,</span> -->
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment_hospital_details">
+                        <div class="appointment_hospital_details__info_card">
+                            <div class="hospital_display_picture_container">
+                                <img src="../public/" alt="hospital">
+                            </div>
+                            <div class="hospital_info">
+                                <div class="hospital_name">
+                                    <span>
+                                        <%= slot.hospital %>
+                                    </span>
+                                </div>
+                                <!-- <div class="hospital_address">
+                                    <span>Sahyadri Nagar, Charkop, Kandivali West</span>
+                                </div> -->
+                                <!-- <div class="hospital_get_directions">
+                                    <a href="">Get Directions</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    </section>
-    <section class="foooter">
-        <h6>All Rights Reserved. &#169 tvastra 2021</h6>
-    </section>
-    <script src="../js files/index.js"></script>
+
+            </div>
+            <div class="appointment__col--2">
+                <div class="appointment_form">
+                    <div class="appointment_form_title">
+                        <h2> Patient Details </h2>
+                    </div>
+                    <div class="appointment_form_patient">
+                        <form id="appointment_form"
+                            action="/appointment/<%= slot.subSlots._id %>?appointmentDate=<%= new Date(date) %>"
+                            method="POST">
+                            <div class="appointment_form_patient_title">
+                                <span> This appointment is for: </span>
+
+                            </div>
+                            <div class="appointment_form_patient_select">
+                                <div class="appointment_form_patient_select_item">
+                                    <div>
+                                        <input type="radio" name="isFor" id="self" value="self" onchange="other(this)"
+                                            checked="">
+                                        <label for="self">Self</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="isFor" id="someoneElse" value="someoneElse"
+                                            onchange="other(this)" onblur="other(this)">
+                                        <label for="someoneElse">Someone else</label>
+                                    </div>
+                                   
+                                </div>
+                               
+                            </div>
+                            <div class="current_user_form">
+                                <span>Please provide the following Informations:</span>
+                                <div class="appointment_form_input_field">
+                                    <label for="someone_name"> Patient's Name:</label>
+                                    <input type="text" name="someone_name" value="<%= session.user.name %>" required readonly>
+                                </div>
+                                <div class="appointment_form_input_field">
+                                    <label for="current_user_phoneNumber">Mobile Number:</label>
+                                    <input type="text" name="current_user_phoneNumber" id="" required
+                                        value="<%= session.user.phoneNumber %>" readonly>
+                                </div>
+                                <div class="appointment_form_input_field">
+                                    <label for="current_user_phoneNumber">Patient's Mobile Number:</label>
+                                    <input type="text" name="patientMobile" id="" required
+                                        value="<%= session.user.phoneNumber %>" readonly>
+                                </div>
+                                <div class="appointment_form_input_field">
+                                    <label for="current_user_email">Your Email:</label>
+                                    <input type="email" value="<%= session.user.email %>"   name="current_user_email" id="" placeholder="" readonly>
+                                </div>
+                                <div class="appointment_form_button">
+                                    <button class="darkbluebtn" type="submit">Book Appointment</button>
+                                    <i class='fas fa-arrow-right arrow'></i>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <%- include ('partials/footer.ejs') %>
+        </footer>
+        <div class="lastline"></div>
+              
+        <script>
+
+
+            var nameInput = document.querySelector("[name='someone_name']");
+            var patientMobileInput = document.querySelector("[name='patientMobile']");
+            var emailInput = document.querySelector("[name='current_user_email']");
+
+            var nameValue = nameInput.value;
+            var patientMobileValue = patientMobileInput.value;
+            var emailValue = emailInput.value;
+
+            var someoneElseInput = document.getElementById("someoneElse");
+
+            function other(e) {
+                if (someoneElseInput.checked) {
+                    nameInput.value = "";
+                    patientMobileInput.value = "";
+                    emailInput.value = "";
+                    nameInput.readOnly = false;
+                    patientMobileInput.readOnly = false;
+                    emailInput.readOnly = false;
+                } else {
+                    nameInput.value = nameValue;
+                    patientMobileInput.value = patientMobileValue;
+                    emailInput.value = emailValue;
+                    nameInput.readOnly = true;
+                    patientMobileInput.readOnly = true;
+                    emailInput.readOnly = true;
+                }
+            }
+        </script>
+
+<script src="../js files/index.js"></script>
+    </div>
 </body>
 
 </html>

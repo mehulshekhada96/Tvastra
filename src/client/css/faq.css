@@ -121,9 +121,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -153,7 +153,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -410,11 +410,11 @@ button, select {
 .details .menu {
   display: grid;
   grid-template-columns: auto 10%;
-  color: #008dc5;
+  color: #0a7abb;
   padding: 0.5rem;
 }
 .details .menu i {
-  color: #008dc5;
+  color: #0a7abb;
   margin: 0.5rem 0;
   font-size: 1.1rem;
   align-self: center;
@@ -443,7 +443,7 @@ button, select {
 }
 .details .menu h3 {
   margin: 0.4rem;
-  color: #008dc5;
+  color: #0a7abb;
   text-align: start;
   align-self: center;
 }

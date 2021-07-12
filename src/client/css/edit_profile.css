@@ -121,9 +121,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -153,7 +153,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -368,17 +368,17 @@ button, select {
   width: 95%;
 }
 .admin_sidebar .menu_container .menu li {
-  width: 100%;
+  width: auto;
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 3rem auto;
 }
 .admin_sidebar .menu_container .menu li:not(:first-child):hover {
   background-color: #d1d0d0;
-  border-left: 5px solid #008dc5;
+  border-left: 5px solid #0a7abb;
 }
 .admin_sidebar .menu_container .menu li:not(:first-child):hover a {
-  color: #008dc5;
+  color: #0a7abb;
   font-family: "Nexa-bold";
 }
 .admin_sidebar .menu_container .menu li:first-child {
@@ -388,11 +388,15 @@ button, select {
 }
 .admin_sidebar .menu_container .menu li i {
   align-self: center;
-  color: #008dc5;
+  color: #0a7abb;
 }
 .admin_sidebar .menu_container .menu li p {
   margin-bottom: 0;
   text-align: left;
+  line-height: 1.3rem;
+}
+.admin_sidebar .menu_container .menu li p a {
+  line-height: 1.3rem;
 }
 
 .display_none {
@@ -401,10 +405,10 @@ button, select {
 
 .admin_sidebar .menu li:nth-child(2) {
   background-color: #d1d0d0;
-  border-left: 5px solid #008dc5;
+  border-left: 5px solid #0a7abb;
 }
 .admin_sidebar .menu li:nth-child(2) a {
-  color: #008dc5;
+  color: #0a7abb;
   font-family: "Nexa-bold";
 }
 
@@ -418,15 +422,13 @@ button, select {
   }
 }
 .background-dashboard .dashboard_content {
-  width: 100%;
+  width: auto;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 0.5rem;
 }
 .background-dashboard .dashboard_content .edit_profile {
   padding: 1rem;
-}
-.background-dashboard .dashboard_content .edit_profile_container {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
 }
 .background-dashboard .dashboard_content .edit_profile_container .edit_profile_heading {
   padding: 1rem;
@@ -451,8 +453,22 @@ button, select {
 }
 .background-dashboard .dashboard_content .edit_profile_container .editing input, .background-dashboard .dashboard_content .edit_profile_container .editing select {
   border: 2px solid #d1d0d0;
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   margin: 0;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing input:focus, .background-dashboard .dashboard_content .edit_profile_container .editing select:focus {
+  border-color: #0a7abb !important;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing .tagify {
+  border-width: 2px;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing select {
+  outline: none;
+  padding: 0.65rem 0.75rem;
+  margin: 0;
+}
+.background-dashboard .dashboard_content .edit_profile_container .editing input[type=date]::-webkit-calendar-picker-indicator {
+  font-size: 0.7rem;
 }
 .background-dashboard .dashboard_content .edit_profile_container .photo_and_name {
   width: 100%;
@@ -499,7 +515,7 @@ button, select {
   font-family: "Nexa-bold";
   text-decoration: underline;
   cursor: pointer;
-  color: #008dc5;
+  color: #0a7abb;
 }
 .background-dashboard .dashboard_content .edit_profile_container .photo_and_name .edit_profile_photo .upload_image_container #display_picture {
   visibility: hidden;
@@ -516,7 +532,7 @@ button, select {
 .background-dashboard .dashboard_content .edit_profile_container .edit_phone i {
   position: absolute;
   right: 1rem;
-  color: #008dc5;
+  color: #0a7abb;
   font-size: 1.2rem;
 }
 
@@ -627,23 +643,28 @@ button, select {
   margin-bottom: 0;
   border-bottom: 1px solid #d1d0d0;
 }
-.change_phone_number_form_container .change_phone_number .conf_btns {
+
+.conf_btns {
   display: flex;
   justify-content: flex-end;
   border-top: 1px solid #d1d0d0;
   border-bottom: 1px solid #d1d0d0;
 }
-.change_phone_number_form_container .change_phone_number .close-form {
+
+.close-form {
   background-color: #fa8072;
   border: none;
   color: white;
   margin: 0.5rem;
+  padding: 0.5rem 1rem;
 }
-.change_phone_number_form_container .change_phone_number .send_otp {
+
+.send_otp {
   background-color: #8fbc8f;
   border: none;
   color: white;
   margin: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .form_container__form__input_field {
@@ -662,7 +683,7 @@ button, select {
   margin-bottom: 1rem;
 }
 .form_container__form__input_field input:disabled, .form_container__form__input_field input:focus {
-  border-color: #008dc5;
+  border-color: #0a7abb;
 }
 
 .otpField {

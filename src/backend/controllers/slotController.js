@@ -1,4 +1,4 @@
-const Slot = require('./../models/slotModel.js');
+const Slot = require('../models/slotModel.js');
 const Mongoose = require('mongoose');
 
 const addSlot = async (req, res, next) => {
@@ -47,7 +47,7 @@ const addSlot = async (req, res, next) => {
 		 	} else {
 		 		req.session.error = slotTimeValidate;
 		 		req.session.errorType = 'Failure';
-		 		res.redirect('/schdeule-appointment');
+		 		res.redirect('/schedule-appointment');
 		 	}
 					
 		} else {

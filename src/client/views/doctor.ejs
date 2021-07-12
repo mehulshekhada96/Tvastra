@@ -4,7 +4,9 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Doctor</title>
+    <title> Doctor</title>
+    <!-- <link rel = "icon" href = #
+            type = "image/x-icon"> -->
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/stylesheet.css">
@@ -238,6 +240,11 @@
                                         </h3>
                                     </a>
                                 </div>
+
+
+
+
+
                                 <ul class="qualification">
                                     <li
                                         class="doctor_list__container__col-2__card__other_details__para doctor_list__container__col-2__card__other_details__achievement-1">
@@ -287,82 +294,514 @@
                                         alt="" class="doctor_list__container__col-2__card__doctor_img_wrapper__img">
                                 </a>
 
+
+
                             </div>
+                            <div class="slots_container">
+                                <% if(doctors[i].slots.length===0){ %>
+                                    <h5 class="no_schedule">No Schedule</h5>
+                                    <% } else { %>
+                                        <div class="time-slots-header carousel">
+                                            <div class="time-slots-header-controls time-slots-header-left-mobile ">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </div>
+                                            <div class="time-slots-header-controls time-slots-header-left-tablet left ">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </div>
+                                            <div class="carousel-dates slides">
+                                                <div class="date-heading date-heading--active current slide">
+                                                    <% var k=currentDay; %>
 
-                        </div>
-                        <% } %>
-                            <% } %>
+                                                        <% var rightNowCount=new Date(dateFromServer);
+                                                            rightNowCount.setHours(rightNowCount.getHours() + 5);
+                                                            rightNowCount.setMinutes(rightNowCount.getMinutes() + 30);
+                                                            var dateForSlotsCount=new Date(dateFromServer);
+                                                            dateForSlotsCount.setHours(dateForSlotsCount.getHours() +
+                                                            5);
+                                                            dateForSlotsCount.setMinutes(dateForSlotsCount.getMinutes()
+                                                            + 30); %>
+                                                            <% const days=['sunday', 'monday' , 'tuesday' , 'wednesday'
+                                                                , 'thursday' , 'friday' , 'saturday' ]; %>
 
-                                
+                                                                <% 
+                                                                function slotsAvailable(day, k) {
+                                                                   let slotCount = 0;
+                                                                   for (let j = 0; j < doctors[i].slots.length; j++) {
+                                                                      if ((doctors[i].slots[j].isDisabled) ||
+                                                                         (doctors[i].slots[j].holiday)) { } else {
+                                                                         if (doctors[i].slots[j].days.indexOf(day) !== -1) {
+                                                                            for (let
+                                                                               c = 0; c < doctors[i].slots[j].subSlots.length; c++) {
+                                                                               if (doctors[i].slots[j].subSlots[c].isBooked ||
+                                                                                  doctors[i].slots[j].subSlots[c].isDisabled) { } else {
+                                                                                  var hoursCount;
+                                                                                  if (doctors[i].slots[j].subSlots[c].startTime.split(':')[1].split(' ')[1] == 'pm'){
+                                                                                  if (doctors[i].slots[j].subSlots[c].startTime.split(':')[0] == '12'
+                                                                                  ) {
+                                                                                     hoursCount = parseInt(doctors[i].slots[j].subSlots[c].startTime.split(':')[0]);
+                                                                                  } else {
+                                                                                     hoursCount = parseInt(doctors[i].slots[j].subSlots[c].startTime.split(':')[0])
+                                                                                        + 12;
+                                                                                  }
+                                                                               } else {
+                                                                                  hoursCount = parseInt(doctors[i].slots[j].subSlots[c].startTime.split(':')[0]);
+                                                                               } var
+                                                                                  minutesCount = parseInt(doctors[i].slots[j].subSlots[c].startTime.split(':')[1].split(' ')[0]);
+                                                                
+                                                                
+                                                                               dateForSlotsCount = new Date(dateFromServer);
+                                                                
+                                                                
+                                                                
+                                                                               while (days.indexOf(day) !== dateForSlotsCount.getDay()) {
+                                                                                  dateForSlotsCount.setDate(dateForSlotsCount.getDate() + 1);
+                                                                               }
+                                                                
+                                                                
+                                                                
+                                                                               dateForSlotsCount.setHours(hoursCount);
+                                                                
+                                                                
+                                                                               dateForSlotsCount.setHours(dateForSlotsCount.getHours() + 5);
+                                                                
+                                                                
+                                                                               dateForSlotsCount.setMinutes(minutesCount);
+                                                                
+                                                                               dateForSlotsCount.setMinutes(dateForSlotsCount.getMinutes() + 30);
+                                                                
+                                                                
+                                                                               if (rightNowCount < dateForSlotsCount) {
+                                                                                  slotCount++;
+                                                                               }
+                                                                            }
+                                                                         }
+                                                                      }
+                                                                   }
+                                                                }
+                                                                return slotCount;
+                                                                }%>
+                                                    <div class="date-heading slide slot-dates">
+                                                        <div class="day-date">
+                                                            <span>Today</span>
+                                                        </div>
+                                                        <div class="day-slots-available">
+                                                            <% let AvailableSlots = slotsAvailable(days[k]) %>
+                                                            <%= AvailableSlots === 0 ? ' No' : AvailableSlots %> Slots
+                                                                            Available
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="date-heading slide slot-dates">
+                                                        <div class="day-date">
+                                                            <span>Tommorow</span>
+                                                        </div>
+                                                        <div class="day-slots-available">
+                                                            <% AvailableSlots=slotsAvailable(days[k+1]) %>
+                                                                <%= AvailableSlots===0 ? 'No' : AvailableSlots %> Slots Available
+                                                        </div>
+                                                    </div>
+                                                    <% let dateForCarousel=dateFromServer; let carouselDate=new Date(dateForCarousel);
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    +carouselDate.setDate(carouselDate.getDate() + 1); k=k+2; 
+                                                    for(let r=1; r < 6 ; r++) { %>
+                                                    <% k=k==7 ? k % 7 : k; %>
+                                                        <div class="date-heading slide slot-dates">
+                                                            <div class="day-date">
+                                                                <% carouselDate.setDate(carouselDate.getDate() + 1) %>
+                                                                    <span>
+                                                                        <%= new Date(carouselDate).toDateString() %>
+                                                                    </span>
+                                                            </div>
+                                                            <div class="day-slots-available">
+                                                                <% AvailableSlots=slotsAvailable(days[k]) %>
+                                                                    <%= AvailableSlots===0 ? 'No' : AvailableSlots %> Slots
+                                                                        Available
+                                                            </div>
+                                                        </div>
+                                                        <% k++ %>
+                                                            <% } %>
+                                            </div>
+                                        
+
+                                       </div>
+                                       <div class="time-slots-header-controls time-slots-header-right-mobile ">
+                                        <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="time-slots-header-controls time-slots-header-right-tablet right ">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+
+                                        </div>
+                            <div class="time-slots-container time-slots-carousel">
+								<% let current = currentDay;
+								
+								var subslots = [];	
+								var dateForSlots = new Date(dateFromServer);
+								var dateForTime = new Date(dateFromServer);
+								
+								
+
+								var rightNow = new Date(dateFromServer);
+								rightNow.setHours(dateFromServer.getHours() + 5);
+								rightNow.setMinutes(dateFromServer.getMinutes() + 30);
+								dateForSlots.setHours(dateFromServer.getHours() + 5);
+								dateForSlots.setMinutes(dateFromServer.getMinutes() + 30);
+								
+
+
+								%>
+								<% for(let j = 0; j < 7; j++) { %>
+
+										
+									<% 
+									let subslots = [];
+									let morningSlots = [];
+									let morningDoctor = [];
+									let afternoonSlots = [];
+									let afternoonDoctor = [];
+									let eveningSlots = [];
+									let eveningDoctor = [];
+									let morningColor = [];
+									let afternoonColor = [];
+									let eveningColor = [];
+									let morningDates = [];
+									let afternoonDates = [];
+									let eveningDates = [];
+
+									noSlots = 0;
+									if(current >= 7) current = current % 7;
+									
+									for(let q = 0; q < doctors[i].slots.length; q++){
+										if((doctors[i].slots[q].isDisabled) || (doctors[i].slots[q].isHoliday)){
+												
+										} else {	
+											if(doctors[i].slots[q].days.indexOf(days[current]) !== -1){
+												for(let m = 0; m < doctors[i].slots[q].subSlots.length; m++){
+													if(doctors[i].slots[q].subSlots[m].isBooked || doctors[i].slots[q].subSlots[m].isDisabled){
+
+													} else {
+
+
+														var hours;
+
+														if(doctors[i].slots[q].subSlots[m].startTime.split(':')[1].split(' ')[1] == 'pm'){
+
+															if(doctors[i].slots[q].subSlots[m].startTime.split(':')[0] == '12'){
+																
+																hours = parseInt(doctors[i].slots[q].subSlots[m].startTime.split(':')[0]);
+
+															} else {
+																
+																hours = parseInt(doctors[i].slots[q].subSlots[m].startTime.split(':')[0]) + 12;
+
+															}
+														} else {
+
+															hours = parseInt(doctors[i].slots[q].subSlots[m].startTime.split(':')[0]);
+
+														}
+
+														var minutes = parseInt(doctors[i].slots[q].subSlots[m].startTime.split(':')[1].split(' ')[0]);
+
+														dateForSlots = new Date(dateFromServer);
+														dateForSlots.setDate(dateForSlots.getDate() + j);
+
+														dateForSlots.setHours(hours);
+
+														dateForSlots.setHours(dateForSlots.getHours() + 5);
+														
+
+
+														dateForSlots.setMinutes(minutes);
+														dateForSlots.setMinutes(dateForSlots.getMinutes() + 30);
+
+
+														if(rightNow < dateForSlots){
+															
+															if(dateForSlots.getUTCHours() >= 8 && dateForSlots.getUTCHours() < 12){
+																
+																morningSlots.push(doctors[i].slots[q].subSlots[m]);
+																morningColor.push(q);
+																morningDoctor.push(doctors[i]._id);
+
+															} else if(dateForSlots.getUTCHours() >= 12 && dateForSlots.getUTCHours() < 17) {
+
+																afternoonSlots.push(doctors[i].slots[q].subSlots[m]);
+																afternoonColor.push(q);
+																afternoonDoctor.push(doctors[i]._id);
+
+															} else if(dateForSlots.getUTCHours() >= 17 && dateForSlots.getUTCHours() < 23) {
+																eveningSlots.push(doctors[i].slots[q].subSlots[m]);
+																eveningColor.push(q);
+																eveningDoctor.push(doctors[i]._id);
+															}	
+
+														}	
+
+													}
+												}
+											}
+										}	
+											
+									}
+												
+									%>	
+									<div class="time-slots time-slot-slide">
+										<div class="time-slot-day-wise">
+											<div class="time-slot-morning">
+												<div class="time-slot-day-wise-heading">
+													<!-- <i class="far fa-sun"></i> -->
+													<p class="para-1">Morning</p>
+												</div>
+												<div class="time-slot-day-wise-slots">
+													<% for(let d = 0; d < morningSlots.length; d++){ %>
+														<% if(morningColor[d] == 0){ %>
+															<div class="slot" onclick="goToAppointment(this)" data-subslotid="<%= morningSlots[d]._id %>" data-doctorid="<%= morningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= morningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(morningColor[d] == 1){ %>
+															<div class="slot slot-red" onclick="goToAppointment(this)" data-subslotid="<%= morningSlots[d]._id %>" data-doctorid="<%= morningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= morningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(morningColor[d] == 2){ %>
+															<div class="slot slot-purple" onclick="goToAppointment(this)" data-subslotid="<%= morningSlots[d]._id %>" data-doctorid="<%= morningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= morningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(morningColor[d] == 3){ %>
+															<div class="slot slot-green" onclick="goToAppointment(this)" data-subslotid="<%= morningSlots[d]._id %>" data-doctorid="<%= morningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= morningSlots[d].startTime %>
+															</div>
+														<% } %>
+														
+													<% } %>
+													
+												</div>
+											</div>
+											<div class="time-slot-morning">
+												<div class="time-slot-day-wise-heading">
+													<!-- <i class="far fa-sun"></i> -->
+													<p class="para-1">Afternoon</p>
+												</div>
+												<div class="time-slot-day-wise-slots">
+													<% for(let d = 0; d < afternoonSlots.length; d++){ %>
+														<% if(afternoonColor[d] == 0){ %>
+															<div class="slot" onclick="goToAppointment(this)" data-subslotid="<%= afternoonSlots[d]._id %>" data-doctorid="<%= afternoonDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= afternoonSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(afternoonColor[d] == 1){ %>
+															<div class="slot slot-red" onclick="goToAppointment(this)" data-subslotid="<%= afternoonSlots[d]._id %>" data-doctorid="<%= afternoonDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= afternoonSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(afternoonColor[d] == 2){ %>
+															<div class="slot slot-purple" onclick="goToAppointment(this)" data-subslotid="<%= afternoonSlots[d]._id %>" data-doctorid="<%= afternoonDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= afternoonSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(afternoonColor[d] == 3){ %>
+															<div class="slot slot-green" onclick="goToAppointment(this)"data-subslotid="<%= afternoonSlots[d]._id %>" data-doctorid="<%= afternoonDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= afternoonSlots[d].startTime %>
+															</div>
+														<% } %>
+													<% } %>
+												</div>
+											</div>
+											<div class="time-slot-morning">
+												<div class="time-slot-day-wise-heading">
+													<!-- <i class="far fa-sun"></i> -->
+													<p class="para-1">Evening</p>
+												</div>
+												<div class="time-slot-day-wise-slots">
+													<% for(let d = 0; d < eveningSlots.length; d++){ %>
+														<% if(eveningColor[d] == 0){ %>
+															<div class="slot" onclick="goToAppointment(this)" data-subslotid="<%= eveningSlots[d]._id %>" data-doctorid="<%= eveningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= eveningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(eveningColor[d] == 1){ %>
+															<div class="slot slot-red" onclick="goToAppointment(this)" data-subslotid="<%= eveningSlots[d]._id %>" data-doctorid="<%= eveningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= eveningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(eveningColor[d] == 2){ %>
+															<div class="slot slot-purple" onclick="goToAppointment(this)" data-subslotid="<%= eveningSlots[d]._id %>" data-doctorid="<%= eveningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= eveningSlots[d].startTime %>
+															</div>
+														<% } %>
+														<% if(eveningColor[d] == 3){ %>
+															<div class="slot slot-green" onclick="goToAppointment(this)"data-subslotid="<%= eveningSlots[d]._id %>" data-doctorid="<%= eveningDoctor[d] %>" data-date="<%= dateForSlots.toDateString() %>">
+																<%= eveningSlots[d].startTime %>
+															</div>
+														<% } %>
+														
+													<% } %>
+												</div>
+											</div>
+										</div>
+									
+									</div>
+									
+									<% current++ %>
+									<% %>
+								<% } %>
+							</div>
+                            <div class="legend">
+                                <% for(let n = 0; n < doctors[i].slots.length; n++) { %>
+                                    <% if((doctors[i].slots[n].isDisabled) || (doctors[i].slots[n].holiday)) { %>
+                                        <% } else { %>
+                                            <% if(n == 0) { %>
+                                                <div class="legend-item legend-item-blue">
+                                                    <%= doctors[i].slots[n].hospital %>
+                                                </div>
+                                            <% } %>
+                                            <% if(n == 1) { %>
+                                                <div class="legend-item legend-item-red">
+                                                    <%= doctors[i].slots[n].hospital %>
+                                                </div>
+                                            <% } %>
+                                            <% if(n == 2) { %>
+                                                <div class="legend-item legend-item-purple">
+                                                    <%= doctors[i].slots[n].hospital %>
+                                                </div>
+                                            <% } %>
+                                            <% if(n == 3) { %>
+                                                <div class="legend-item legend-item-green">
+                                                    <%= doctors[i].slots[n].hospital %>
+                                                </div>
+                                            <% } %>
+                                    <% } %>
+                                <% } %>
+                            </div>
+        
+                      </div>
+                           
+        
+                            <%}%>
+                            
+        </div>
+                        
+                        
+    
+
+
+
+
+
+
+        <% } %>
+            <% } %>
+
 
 
 
     </section>
-    <div class="pagination_cont">pagination container</div>
-    <section class="container help">
-        <h2>Need Help?</h2>
-        <p>Just let us know, we will happy to assist you</p>
-        <button class=" skybluebtn btns">Submit your enquiry</button>
-    </section>
-    <footer>
-        <%- include ('partials/footer.ejs') %>
-    </footer>
-    <div class="lastline"></div>
-    <script>
-        function goToAppointment(slot) {
-            window.location.href = `http://localhost:8000/appointment/${slot.dataset.doctorid}?slot=${slot.dataset.subslotid}&date=${slot.dataset.date}`;
-        }
-    </script>
-    <script>
-        let form_submit = (doc) => {
+    <!-- <% var pages = Math.ceil(doctors.length/3), current = 3 %> -->
+    <% if (pages> 0) { %>
+        <ul class="pagination text-center">
+            <% if (current==1) { %>
+                <li class="disabled"><a>First</a></li>
+                <% } else { %>
+                    <li><a href="/doctors/1">First</a></li>
+                    <% } %>
+                        <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %>
+                            <% if (i !==1) { %>
+                                <li class="disabled"><a>...</a></li>
+                                <% } %>
+                                    <% for (; i <=(Number(current) + 4) && i <=pages; i++) { %>
+                                        <% if (i==current) { %>
+                                            <li class="active"><a>
+                                                    <%= i %>
+                                                </a></li>
+                                            <% } else { %>
+                                                <li><a href="/doctors/<%= i %>">
+                                                        <%= i %>
+                                                    </a></li>
+                                                <% } %>
+                                                    <% if (i==Number(current) + 4 && i < pages) { %>
+                                                        <li class="disabled"><a>...</a></li>
+                                                        <% } %>
+                                                            <% } %>
+                                                                <% if (current==pages) { %>
+                                                                    <li class="disabled"><a>Last</a></li>
+                                                                    <% } else { %>
+                                                                        <li><a href="/doctors/<%= pages %>">Last</a>
+                                                                        </li>
+                                                                        <% } %>
+        </ul>
+        <% } %>
 
-            let filter_finder = doc.parentElement.querySelector(".text");
+            <section class="container help">
+                <h2>Need Help?</h2>
+                <p>Just let us know, we will happy to assist you</p>
+                <button class="skybluebtn btns">Submit your enquiry</button>
+            </section>
+            <footer>
+                <%- include ('partials/footer.ejs') %>
+            </footer>
+            <div class="lastline"></div>
+            <script>
+                function goToAppointment(slot) {
+                    window.location.href = `http://localhost:4000/appointment/${slot.dataset.doctorid}?slot=${slot.dataset.subslotid}&date=${slot.dataset.date}`;
+                }
+            </script>
+            <script src="../js files/doctor.js"></script>
+            <script>
+                let form_submit = (doc) => {
+
+                    let filter_finder = doc.parentElement.querySelector(".text");
 
 
 
-            if (document.querySelector("._" + filter_finder.innerText.split(' ').join('-'))) {
-                document.querySelector("._" + filter_finder.innerText.split(' ').join('-')).removeAttribute("checked", false);
-            }
+                    if (document.querySelector("._" + filter_finder.innerText.split(' ').join('-'))) {
+                        document.querySelector("._" + filter_finder.innerText.split(' ').join('-')).removeAttribute("checked", false);
+                    }
 
 
-            document.querySelector("#filter_form").submit();
-
-        }
-
-
-        let filter = '<%- JSON.stringify(filter) %>';
-        let sort_by = '<%- JSON.stringify(sort) %>';
-        // console.log(filter);
-        filter = JSON.parse(filter);
-        sort_by = JSON.parse(sort_by);
-        if (filter) {
-            let key = Object.keys(filter)
-            key.forEach(element => {
-                for (let i = 0; i < filter[element].length; i++) {
-
-                    document.querySelector("._" + filter[element][i].split(' ').join('-')).setAttribute("checked", true);
+                    document.querySelector("#filter_form").submit();
 
                 }
-            });
-        }
-        if (sort_by && sort_by != 'none') {
-            document.querySelector(`option[value="${sort_by}"]`).setAttribute('selected', true);
-        } else {
-            document.querySelector('.not-specfied').setAttribute('selected', true);
-        }
-    </script>
-    <!-- <script src="./../doctors.js"></script> -->
-    <script>
-        let url = window.location.search;
-        url = url.split('%20').join(' ');
-        const checkboxes = document.getElementsByClassName('checkbox_container');
-        // console.log(checkboxes);
 
-        [...checkboxes].forEach(checkbox => {
-            if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
-                checkbox.firstChild.checked = true;
-                document.getElementById("doctor_list__container__col-1__filter-by__tags").innerHTML +=
-                    `<div class='filter_button'>
+
+                let filter = '<%- JSON.stringify(filter) %>';
+                let sort_by = '<%- JSON.stringify(sort) %>';
+                // console.log(filter);
+                filter = JSON.parse(filter);
+                sort_by = JSON.parse(sort_by);
+                if (filter) {
+                    let key = Object.keys(filter)
+                    key.forEach(element => {
+                        for (let i = 0; i < filter[element].length; i++) {
+
+                            document.querySelector("._" + filter[element][i].split(' ').join('-')).setAttribute("checked", true);
+
+                        }
+                    });
+                }
+                if (sort_by && sort_by != 'none') {
+                    document.querySelector(`option[value="${sort_by}"]`).setAttribute('selected', true);
+                } else {
+                    document.querySelector('.not-specfied').setAttribute('selected', true);
+                }
+            </script>
+
+            <script>
+                let url = window.location.search;
+                url = url.split('%20').join(' ');
+                const checkboxes = document.getElementsByClassName('checkbox_container');
+                // console.log(checkboxes);
+
+                [...checkboxes].forEach(checkbox => {
+                    if (url.indexOf(checkbox.firstChild.getAttribute('value')) > -1) {
+                        checkbox.firstChild.checked = true;
+                        document.getElementById("doctor_list__container__col-1__filter-by__tags").innerHTML +=
+                            `<div class='filter_button'>
 		        <p>${checkbox.firstChild.getAttribute('value')}</p>
 		        <button 
 		          name='${checkbox.firstChild.getAttribute('name')}'
@@ -372,59 +811,59 @@
 		          <i class='fa fa-times'></i>
 		        </button>
 		      </div>`;
-            }
-        });
+                    }
+                });
 
 
-        function add(some) {
-            let newUrl = window.location.href;
-            if (some.checked) {
-                //add query
-                if (newUrl.indexOf('?') == -1) {
-                    newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
-                }
-                else {
-                    newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
-                }
-            }
-            else {
-                //remove query
-                newUrl = newUrl.split('%20').join(' ');
-                const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
-                const inx = newUrl.indexOf(query);
-                if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
-                    if (newUrl[inx - 1] === '&') {
-                        newUrl = newUrl.replace('&' + query, '');
+                function add(some) {
+                    let newUrl = window.location.href;
+                    if (some.checked) {
+                        //add query
+                        if (newUrl.indexOf('?') == -1) {
+                            newUrl += `?${some.getAttribute('name')}=${some.getAttribute('value')}`;
+                        }
+                        else {
+                            newUrl += `&${some.getAttribute('name')}=${some.getAttribute('value')}`
+                        }
                     }
                     else {
-                        newUrl = newUrl.replace(query, '');
+                        //remove query
+                        newUrl = newUrl.split('%20').join(' ');
+                        const query = `${some.getAttribute('name')}=${some.getAttribute('value')}`;
+                        const inx = newUrl.indexOf(query);
+                        if (newUrl.indexOf(`${some.getAttribute('name')}=${some.getAttribute('value')}`) > -1) {
+                            if (newUrl[inx - 1] === '&') {
+                                newUrl = newUrl.replace('&' + query, '');
+                            }
+                            else {
+                                newUrl = newUrl.replace(query, '');
+                            }
+                        }
+                    }
+                    window.location.href = newUrl; //this line will redirect to new location
+                }
+                function remove(ele) {
+                    let newUrl = window.location.href;
+                    newUrl = newUrl.split('%20').join(' ');
+                    const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
+                    const inx = newUrl.indexOf(query);
+                    if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
+                        if (newUrl[inx - 1] === '&') {
+                            newUrl = newUrl.replace('&' + query, '');
+                        }
+                        else {
+                            newUrl = newUrl.replace(query, '');
+                        }
+                        window.location.href = newUrl; //this line will redirect to new location
                     }
                 }
-            }
-            window.location.href = newUrl; //this line will redirect to new location
-        }
-        function remove(ele) {
-            let newUrl = window.location.href;
-            newUrl = newUrl.split('%20').join(' ');
-            const query = `${ele.getAttribute('name')}=${ele.getAttribute('value')}`;
-            const inx = newUrl.indexOf(query);
-            if (newUrl.indexOf(`${ele.getAttribute('name')}=${ele.getAttribute('value')}`) > -1) {
-                if (newUrl[inx - 1] === '&') {
-                    newUrl = newUrl.replace('&' + query, '');
-                }
-                else {
-                    newUrl = newUrl.replace(query, '');
-                }
-                window.location.href = newUrl; //this line will redirect to new location
-            }
-        }
 
 
-    </script>
+            </script>
 
 
-    <!--  -->
-    <script src="../js files/index.js"></script>
+            <!--  -->
+            <script src="../js files/index.js"></script>
 </body>
 
 </html>

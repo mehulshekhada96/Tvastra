@@ -7,9 +7,10 @@
 	<title>Edit Profile Doctor</title>
 
 	<%- include('partials/head.ejs') %>
-		<link rel="stylesheet" href="../css/edit_profile.css">
+	<link rel="stylesheet" href="../css/tagify.css">	
+	<link rel="stylesheet" href="../css/edit_profile.css">
 		<link rel="stylesheet" href="../css/otp.css">
-		<link rel="stylesheet" href="../css/tagify.css">
+		
 </head>
 
 <body>
@@ -219,12 +220,12 @@
 																	</div>
 																</div>
 																<div class="edit_doctor_details">
-																	<div class="edit_field editing">
+																	<!-- <div class="edit_field editing">
 																		<label for="hospitalList">Hospitals</label>
 																		<input class="hospital_list_input" type="text"
 																			name="hospitalList"
 																			value="<%= session.user.doctor.hospitalList %>">
-																	</div>
+																	</div> -->
 																	<div class="edit_field editing">
 																		<label for="achievements">Achievments</label>
 																		<input class="achievements_input" type="text"
@@ -323,8 +324,8 @@
 
 											var otpForm = `<h1 class="form_container__heading">OTP</h1>
 			<div class="form_container__form">
-				<h3 class="para-1 otp-message">We have sent One Time Password (OTP) to your registered Phone Number.</h3>
-				<div class="form_container__form__input_field">
+				<p class="para-1 otp-message">We have sent One Time Password (OTP) to your registered Phone Number.</p>
+				<div class="form_container__form__input_field otp_field">
 					<!-- <input name="otp" id="otp" type="text" class="form_container__form__otp" required onKeyPress="if(this.value.length==4) return false;" maxlength="4"> -->
 					<!-- <i class="fas fa-question-circle"></i> -->
 
@@ -334,11 +335,13 @@
 					<input class="otpField" name="otp_4" id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)" required>
 
 				</div>
-				<button onclick="verifyOTP()" type="submit" id="otpSubmit" class="form_container__form__submit">
-					<span class="form_container__form__submit__text">Submit</span>
-					<span class="form_container__form__submit__icon"><i class="fas fa-arrow-right"></i></span>
+				<div class="conf_btns">
+				<button onclick="verifyOTP()" type="submit" id="otpSubmit" class="form_container__form__submit send_otp">
+					Submit
 				</button>
-				<span class="close-form"><i class="fas fa-times"></i></span>
+				
+				<button class="close-form form_container__form__submit">Cancel</button>
+				</div>
 				</div>`
 											async function sendOTP() {
 												console.log(phoneNumber.value);
@@ -410,19 +413,19 @@
 										</script>
 										<script>
 
-											const hospitalWhitelist = [];
-											const fetchHospitals = async () => {
-												const hospitals = await fetch('/autoCompleteHospital', {
-													method: 'GET'
-												});
-												const hospitalData = await hospitals.json();
-												console.log(hospitalData);
-												hospitalData.data.forEach(el => {
-													hospitalWhitelist.push(el.name);
-												})
-											}
-											fetchHospitals();
-											console.log(hospitalWhitelist);
+											// const hospitalWhitelist = [];
+											// const fetchHospitals = async () => {
+											// 	const hospitals = await fetch('/autoCompleteHospital', {
+											// 		method: 'GET'
+											// 	});
+											// 	const hospitalData = await hospitals.json();
+											// 	console.log(hospitalData);
+											// 	hospitalData.data.forEach(el => {
+											// 		hospitalWhitelist.push(el.name);
+											// 	})
+											// }
+											// fetchHospitals();
+											// console.log(hospitalWhitelist);
 											const specializationsInput = document.querySelector('.specializations_input');
 											const specializationsTagify = new Tagify(specializationsInput, {
 												enforceWhitelist: true,
@@ -435,10 +438,7 @@
 											const awards = document.querySelector('.awards_input');
 											const awardsTagify = new Tagify(awards);
 											const hospitalInput = document.querySelector('.hospital_list_input');
-											const hospitalInputTagify = new Tagify(hospitalInput, {
-												whitelist: hospitalWhitelist,
-												enforceWhitelist: true
-											});
+											const hospitalInputTagify = new Tagify(hospitalInput)
 
 											const slot_duration = document.querySelector('input[name="slotDuration"]');
 											const slotTagify = new Tagify(slot_duration, {

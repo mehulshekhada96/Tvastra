@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Nexa-bold";
   src: url(../fonts/Nexa-Bold.otf);
@@ -359,360 +358,255 @@ button, select {
     padding: 3rem 5rem;
   }
 }
-.logo {
-  padding: 1rem auto;
+.admin_sidebar .menu li:nth-child(2) {
+  background: none;
+  border-left: none;
+}
+.admin_sidebar .menu li:nth-child(2) a {
+  color: #021433;
+  font-family: "Nexa-light";
 }
 
-.dent_top {
-  width: 100%;
-  height: 15rem;
-  position: relative;
-  background: linear-gradient(to right, #0a7abb, rgba(255, 255, 255, 0));
-  padding: 0;
+.admin_sidebar .menu li:nth-child(4) {
+  background-color: #d1d0d0;
+  border-left: 5px solid #0a7abb;
+}
+.admin_sidebar .menu li:nth-child(4) a {
+  color: #0a7abb;
+  font-family: "Nexa-bold";
 }
 
-.dent_top img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  -o-object-position: 10% 10%;
-     object-position: 10% 10%;
+.dashboard_content {
+  padding: 1rem;
+  margin: 0.5rem !important;
 }
 
-.title {
-  position: absolute;
+.heading_and_button {
+  display: flex;
+  flex-direction: column;
+}
+.heading_and_button h3 {
+  text-align: left;
+}
+.heading_and_button .skybluebtn {
+  padding: 0.75rem 1rem;
+  color: white;
+}
+
+.schedule_appointment_container {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+.schedule_appointment_container form {
+  padding: 1rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 25rem;
+  background-color: #f0f0f0;
+}
+.schedule_appointment_container form .hospital_list_input {
+  background-color: white;
+}
+.schedule_appointment_container form .start_end_times {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "start end" "small small";
+  grid-template-columns: 50% 50%;
+}
+.schedule_appointment_container form .start_end_times .startTime {
+  grid-area: start;
+}
+.schedule_appointment_container form .start_end_times .endTime {
+  grid-area: end;
+}
+.schedule_appointment_container form .start_end_times small {
+  grid-area: small;
+  font-family: "Nexa-light";
+  color: red;
+  font-size: 0.85rem;
+}
+.schedule_appointment_container form .start_end_times input {
+  width: 85%;
+}
+
+.editing {
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+.editing label {
+  font-family: "Nexa-bold";
+  margin-bottom: 0.3rem;
+}
+.editing input, .editing select {
+  border: 2px solid #d1d0d0;
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+}
+.editing input:focus, .editing select:focus {
+  border-color: #0a7abb !important;
+}
+.editing .tagify {
+  border-width: 2px;
+}
+.editing select {
+  outline: none;
+  padding: 0.65rem 0.75rem;
+  margin: 0;
+}
+.editing input[type=date]::-webkit-calendar-picker-indicator {
+  font-size: 0.7rem;
 }
 
-.title h1, .title h5, .title h5 a {
-  color: #ffffff;
-  font-weight: 700;
-  text-align: center;
-}
-
-.vacc {
-  padding: 0;
-}
-
-.abt_dent {
-  padding: 0;
-}
-
-.abt_dent h3, .abt_dent p {
-  text-align: start;
-  line-height: 1.4rem;
-  margin: 1rem 0;
-}
-
-.desease li::before {
-  content: "•";
-  color: #0a7abb;
-  font-weight: 900;
-  display: inline-block;
-  font-size: 1.5rem;
-  align-self: center;
-  width: 1rem;
-  margin-left: -1rem;
-}
-
-.desease li {
-  font-size: 1rem;
-  line-height: 1.8rem;
-  margin-left: 1rem;
+.allslots {
+  margin: 1rem 0 !important;
   display: flex;
-  flex-direction: row;
-}
-
-.symb {
-  width: 2rem;
-  height: 2rem;
-  background-color: #b7dfffb2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin: 0 auto;
+  flex-direction: column;
+  background-color: #e4e4e483;
+  border-radius: 0.5rem;
+  margin: 1rem;
   padding: 1rem;
 }
-
-.symb .fas {
-  color: #021433;
-  padding: 0;
-  font-size: 1.5rem;
-}
-
-.types, .types1 {
-  padding: 1rem 0;
-}
-
-.types1 h4, .types1 p {
-  margin: 0.5rem 0;
-}
-
-.cards {
-  border: 2px solid #d1d0d0;
-  padding: 0.5rem 0rem;
-  margin: 0.5rem;
-  border-radius: 1rem;
-  height: auto;
-}
-
-.card {
-  padding: 0;
-  padding-bottom: 1rem;
-}
-
-.cards h3 {
-  text-align: start;
-  margin: 1rem 0;
-}
-
-.cards h3::before {
-  content: "─਀";
-  color: #0a7abb;
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-hr {
-  color: #d1d0d0;
-  margin: 0.3rem 1.5rem;
-}
-
-.card_details {
-  padding: 0.75rem 1.5rem 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.card_details h5 {
-  margin: 0;
-}
-
-.value {
-  color: #626060;
-}
-
-.moreservice h2 {
-  color: white;
-}
-
-.moreservice {
-  background-color: #6aa5cf;
-}
-
-.arrows {
-  display: flex;
-  padding: 0;
-  justify-content: center;
-  margin-bottom: 0 !important;
-}
-
-.arrows i {
-  width: 2rem;
-  height: 2rem;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.25rem;
-  cursor: pointer;
-}
-
-.moreservice div {
-  padding: 0;
-}
-
-.figs {
-  padding: 0;
-}
-
-.figs .figures_treat {
-  margin: 0.5rem;
-  padding: 0;
-  height: 22rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
+.allslots .scheduled_slots__slot {
+  width: 100%;
+  align-self: center;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
-.figs .figures_treat .figures {
+.allslots .scheduled_slots__slot .scheduled_slots__day {
   width: 100%;
-  height: 22rem;
-  -webkit-animation-name: fade;
-          animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  position: relative;
-}
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fade {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-figure img {
-  border-radius: 1rem 1rem 0 0;
-  width: 100%;
-  height: 81%;
-}
-
-figcaption {
-  height: 2rem;
-  padding: 1rem 0;
-  font-size: 1.2rem;
-  margin: 0;
-  color: #021433;
-  display: grid;
-  grid-template-columns: 2rem auto;
-  align-content: center;
-}
-
-figcaption::before {
-  content: "―";
-  margin-right: 0.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
   color: #0a7abb;
-  font-size: 1.5rem;
-  font-weight: 900;
-  transform: translateY(-0.1rem);
+  font-size: 1.2rem;
+}
+.allslots .scheduled_slots__slot .scheduled_slots__hospital_and_time {
+  display: flex;
+  flex-direction: column;
+}
+.allslots .scheduled_slots__slot .scheduled_slots__hospital_and_time .scheduled_slots__hospital {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #021433;
+  font-size: 1.2rem;
+}
+.allslots .scheduled_slots__slot .scheduled_slots__hospital_and_time .scheduled_slots__time {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.allslots .scheduled_slots__slot .scheduled_slots__hospital_and_time .scheduled_slots__time span {
+  color: #021433;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.allslots .scheduled_slots__slot .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.allslots .scheduled_slots__slot .buttons button {
+  margin: 0.25rem;
+  font-size: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+}
+.allslots .scheduled_slots__slot .buttons input {
+  width: 1rem;
+  height: 1rem;
+  margin: 1rem;
 }
 
-@media screen and (min-width: 768px) {
-  .vacc {
-    display: grid;
-    grid-template-areas: "title title" "image about";
-    grid-template-columns: 40% 60%;
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.time-slots .slot_container {
+  background-color: white;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.time-slots .slot_container--disabled {
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .dashboard_content {
+    width: auto !important;
+    margin: 2rem !important;
+    padding: 2rem;
   }
 
-  .vacc h2 {
-    grid-area: title;
-    text-align: start;
-    margin: 1rem 0;
-  }
-
-  .vacc img {
-    grid-area: image;
-  }
-
-  .abt_dent {
-    padding-left: 1.5rem;
-  }
-
-  .abt_dent h3 {
-    margin-top: 0;
-  }
-
-  .types {
-    display: flex;
-    padding: 0.2rem;
-  }
-
-  .card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .cards:nth-child(2) {
-    height: 11rem;
-  }
-
-  .symb {
-    margin: 1rem auto;
-  }
-
-  .moreservice div {
-    display: flex;
+  .heading_and_button {
+    flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1rem;
     align-items: center;
   }
-
-  figure {
-    width: 32%;
+  .heading_and_button h3 {
+    margin-bottom: 0;
   }
 
-  .figs {
-    display: flex;
+  .allslots .scheduled_slots__slot {
+    display: grid;
+    grid-template-columns: 25% 35% 40%;
+  }
+  .allslots .buttons {
+    justify-self: flex-end;
+  }
+  .allslots .scheduled_slots__day {
+    text-align: left !important;
+    align-self: center;
+    margin-bottom: 0 !important;
+  }
+  .allslots .scheduled_slots__hospital {
+    margin-bottom: 0 !important;
+  }
+  .allslots .scheduled_slots__time {
+    margin-bottom: 0 !important;
+    margin-top: 1rem;
+  }
+
+  form {
+    display: block;
+  }
+
+  .time-slots {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .time-slots .slot_container {
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem !important;
+  }
+  .time-slots .slot_container--disabled {
+    opacity: 0.5;
   }
 }
-@media screen and (min-width: 1025px) {
-  .title {
-    width: auto;
-    align-items: flex-start;
-    padding-left: 5rem;
-  }
-
-  .main {
+@media (min-width: 1025px) {
+  .time-slots {
     display: grid;
-    grid-template-areas: "vacc card" "det card";
-    grid-template-columns: 70% 30%;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  p {
-    font-weight: lighter;
+  .buttons button {
+    padding: 0.5rem 1rem !important;
   }
-
-  .vacc {
-    grid-area: vacc;
-  }
-
-  .vacc img {
-    height: 20rem;
-  }
-
-  li {
-    font-weight: 500;
-  }
-
-  .card {
-    grid-area: card;
-    padding: 1rem;
-    border-width: 4px;
-  }
-
-  .types {
-    grid-area: det;
-  }
-
-  .types1 {
-    margin: 0.2rem;
-  }
-
-  h4 {
-    text-align: center;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer {
-    padding: 2rem 4rem;
-  }
-}/*# sourceMappingURL=dentistry.css.map */
+}/*# sourceMappingURL=schedule_appointment.css.map */

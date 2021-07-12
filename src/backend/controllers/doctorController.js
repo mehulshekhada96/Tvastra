@@ -418,7 +418,28 @@ const adminEditDoctor = (req, res, next) => {
         }
     })
 }
-
+function pagination(req, res, next) {
+    var perPage = 3
+    var page = req.params.page || 1
+ 
+    Doctor
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, doctors) {
+            Doctor.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('doctor.ejs', {
+                    doctors: doctors,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+					
+                })
+				
+            })
+        })
+        console.log("page count is" + count);
+    }
 
 module.exports = {
 	getAllDoctors: getAllDoctors,
@@ -430,5 +451,6 @@ module.exports = {
     getDoctor: getDoctor,
     adminEditDoctor: adminEditDoctor,
     filter_search: filter_search,
-    getSearch: valueApi
+    getSearch: valueApi,
+    pagination: pagination
 }

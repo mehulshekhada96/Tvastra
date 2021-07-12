@@ -121,9 +121,9 @@ button:hover {
 }
 
 .skybluebtn {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: #eeeeee;
-  border: 2px solid #008dc5;
+  border: 2px solid #0a7abb;
   border-radius: 0.3rem;
 }
 
@@ -153,7 +153,7 @@ figcaption {
   font-family: "Nexa-bold";
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 
 nav {
@@ -453,7 +453,7 @@ button, select {
   align-items: center;
 }
 .hero .plans .basic .buy h4, .hero .plans .advanced .buy h4, .hero .plans .compre .buy h4 {
-  color: #008dc5;
+  color: #0a7abb;
   margin-top: 0;
 }
 .hero .plans .basic .buy .skybluebtn, .hero .plans .advanced .buy .skybluebtn, .hero .plans .compre .buy .skybluebtn {
@@ -466,8 +466,8 @@ button, select {
 }
 @media screen and (min-width: 768px) {
   .hero .plans .advanced {
-    border-left: 1px solid #008dc5;
-    border-right: 1px solid #008dc5;
+    border-left: 1px solid #0a7abb;
+    border-right: 1px solid #0a7abb;
   }
 }
 .hero .plans .advanced .pop {
@@ -530,11 +530,11 @@ button, select {
   padding: 0;
 }
 .review .rating .stars i {
-  color: #008dc5;
+  color: #0a7abb;
   margin: 0rem;
 }
 .review .rating h2 {
-  color: #008dc5;
+  color: #0a7abb;
   font-size: 2.5rem;
   margin: 0.5rem;
 }
@@ -542,7 +542,7 @@ button, select {
   font-size: 1rem;
   margin: 0.5rem auto;
   font-family: "Nexa-light";
-  color: #008dc5;
+  color: #0a7abb;
 }
 .review .rating_bars {
   margin: 1rem auto;
@@ -557,7 +557,7 @@ button, select {
   font-size: 1rem;
   font-family: "Nexa-bold";
   font-size: 1.2rem;
-  color: #008dc5;
+  color: #0a7abb;
 }
 .review .rating_bars .row .middle {
   width: auto;
@@ -570,7 +570,7 @@ button, select {
   border-radius: 0.5rem;
 }
 .review .rating_bars .row .bar-container .bar-5, .review .rating_bars .row .bar-container .bar-1, .review .rating_bars .row .bar-container .bar-2, .review .rating_bars .row .bar-container .bar-3, .review .rating_bars .row .bar-container .bar-4 {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   width: 70%;
   height: 1rem;
   border-radius: 0.5rem;
@@ -593,22 +593,22 @@ button, select {
   padding: 1rem 0;
 }
 .review .achievements .achievement {
-  color: #008dc5;
+  color: #0a7abb;
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 .review .achievements .achievement i {
   font-size: xx-large;
-  color: #008dc5;
+  color: #0a7abb;
   text-align: center;
 }
 .review .achievements .achievement h3 {
-  color: #008dc5;
+  color: #0a7abb;
   margin: 0.5rem 0;
 }
 .review .achievements .achievement h5 {
-  color: #008dc5;
+  color: #0a7abb;
   font-family: "Nexa-light";
 }
 
@@ -788,7 +788,7 @@ button, select {
   cursor: pointer;
 }
 .dots .active_dot {
-  background-color: #008dc5;
+  background-color: #0a7abb;
 }
 
 .love .love_heading {
@@ -802,7 +802,7 @@ button, select {
   margin-right: 0.5rem;
 }
 .love span {
-  background-color: #008dc5;
+  background-color: #0a7abb;
   color: white;
   padding: 0.7rem;
   border-radius: 0.3rem;
@@ -844,7 +844,7 @@ button, select {
   text-align: left;
   margin: 0 0 0 1rem;
   align-self: center;
-  color: #008dc5;
+  color: #0a7abb;
   background-color: #b7dfffb2;
   padding: 0.5rem 1rem;
   width: -webkit-fit-content;
@@ -856,11 +856,11 @@ button, select {
 .menu {
   display: grid;
   grid-template-columns: auto 10%;
-  color: #008dc5;
+  color: #0a7abb;
   padding: 0.5rem;
 }
 .menu i {
-  color: #008dc5;
+  color: #0a7abb;
   margin: 0.5rem 0;
   font-size: 1.1rem;
   align-self: center;
@@ -889,7 +889,7 @@ button, select {
 }
 .menu h4 {
   margin: 0.4rem;
-  color: #008dc5;
+  color: #0a7abb;
   text-align: start;
   align-self: center;
 }
