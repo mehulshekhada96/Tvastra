@@ -54,7 +54,7 @@ app.set("port",process.env.PORT || 5000)
 
 let mongoose = require('mongoose');
 
-const uri = "mongodb+srv://Tvastra:Sgoc.2030@cluster0.w2dnb.mongodb.net/Tvastra?retryWrites=true&w=majority";
+const uri = `${process.env.MONGO_URI}`;
 
 mongoose.connect(uri, 
     {useNewUrlParser: true, 
